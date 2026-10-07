@@ -597,7 +597,7 @@ button.pav{padding:0;border-radius:50%}
 .auth .authart{height:200px;border-radius:24px;overflow:hidden;margin-top:12px}
 .auth .authart img{width:100%;height:100%;object-fit:cover;object-position:80% 40%}
 .phone-in{display:flex;gap:8px}
-.phone-in span{height:46px;display:grid;place-items:center;padding:0 14px;border-radius:12px;background:var(--tint);color:var(--green);font-weight:700;font-size:14px}
+.phone-in>span{height:46px;display:grid;place-items:center;padding:0 14px;border-radius:12px;background:var(--tint);color:var(--green);font-weight:700;font-size:14px}
 .authhelp{font-size:12.5px;color:var(--muted);text-align:center;margin-top:18px}
 .authhelp button{color:var(--green);font-weight:700}
 .otp{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:24px}
@@ -842,6 +842,23 @@ button.pav{padding:0;border-radius:50%}
 .authswitch{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
 .authswitch button{color:var(--green);font-weight:700}
 @media (min-width:700px){.obtext{left:50%;transform:translateX(-50%);width:min(560px,90%);right:auto}.obfoot{left:50%;transform:translateX(-50%);width:min(480px,92%);right:auto;padding-left:0;padding-right:0}.fphead,.fpbtns{padding-left:max(24px,calc(50% - 320px));padding-right:max(24px,calc(50% - 320px))}}
+
+/* ---------- COUNTRY CODE PICKER ---------- */
+.ccbtn{height:46px;display:flex;align-items:center;gap:6px;padding:0 10px 0 12px;border-radius:12px;background:var(--tint);color:var(--green);font-weight:700;font-size:14px;flex:none;transition:transform .15s,box-shadow .2s}
+.ccbtn:active{transform:scale(.96)}
+.ccf{font-size:20px;line-height:1}
+.ccbtn svg{width:14px;height:14px;opacity:.7}
+.ccsheet{max-height:78%;align-items:stretch;text-align:left}
+.ccsheet>b,.ccsheet>.grab{align-self:center}
+.ccsheet .search{flex:none;height:46px}
+.cclist{overflow-y:auto;margin:0 -20px;padding:0 20px;flex:1;min-height:0}
+.ccrow{display:flex;align-items:center;gap:12px;width:100%;height:52px;border-top:1px solid #f0f1f0;text-align:left;font-size:14px}
+.ccrow .ccf{font-size:24px;width:30px;text-align:center}
+.ccrow span.n{flex:1;min-width:0;font-weight:500}
+.ccrow em{font-style:normal;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.ccrow.on span.n,.ccrow.on em{color:var(--green);font-weight:700}
+.ccrow.on:after{content:"\2713";color:var(--green);font-weight:800;margin-left:6px}
+.cchd{font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--muted-2);padding:12px 0 4px}
 
 /* ---------- MOTION & INTERACTION ---------- */
 .btn,.chip,.nav button,.qa .t{position:relative;overflow:hidden}
@@ -1592,7 +1609,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
     <p class="sub">Welcome back! please enter your phone number.</p>
     <form id="lg-form" class="form">
       <label class="fl" for="lg-phone">Phone Number</label>
-      <div class="phone-in"><span>+62</span><input class="inp" id="lg-phone" type="tel" inputmode="numeric" placeholder="812 3456 7890" autocomplete="tel"></div>
+      <div class="phone-in"><button type="button" class="ccbtn" id="cc-btn" aria-label="Country code: Indonesia +62"><span class="ccf" id="cc-flag">🇮🇩</span><b id="cc-code">+62</b><svg data-i="chevd"></svg></button><input class="inp" id="lg-phone" type="tel" inputmode="numeric" placeholder="812 3456 7890" autocomplete="tel"></div>
       <button class="btn" type="submit" style="margin-top:20px">CONTINUE</button>
     </form>
     <div class="ordiv"><span>or</span></div>
@@ -1637,6 +1654,14 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   <div class="scroll"><div class="top pad" id="su-body"></div></div>
   <div class="sufoot"><button class="btn" id="su-next">Continue</button></div>
 </section>
+
+<!-- COUNTRY PICKER -->
+<div class="sheetbg" id="ccbg" hidden></div>
+<div class="sheet ccsheet" id="ccsheet" hidden role="dialog" aria-modal="true" aria-labelledby="cc-title"><div class="grab"></div>
+  <b id="cc-title">Select your country</b>
+  <label class="search" style="margin:12px 0 6px;width:100%"><svg data-i="search"></svg><input id="cc-q" placeholder="Search country or code" aria-label="Search country"></label>
+  <div class="cclist" id="cc-list"></div>
+</div>
 
 <!-- BOTTOM SHEET -->
 <div class="sheetbg" id="sheetbg" hidden></div>
@@ -1707,6 +1732,7 @@ const I={
  mars:'<circle cx="10" cy="14" r="6"/><path d="M14.5 9.5 20 4M15 4h5v5"/>',
  venus:'<circle cx="12" cy="9" r="6"/><path d="M12 15v7M9 19h6"/>',
  checkc:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>',
+ chevd:'<path d="m6 9 6 6 6-6"/>',
  heart:'<path d="M12 20s-7-4.4-9.2-8.6C1.3 8.4 3 5 6.4 5c2 0 3.6 1.2 4.4 2.6h2.4C14 6.2 15.6 5 17.6 5 21 5 22.7 8.4 21.2 11.4 19 15.6 12 20 12 20z"/>',
  brain2:'<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/>',
  bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -1973,7 +1999,7 @@ $('sh-ok').addEventListener('click',()=>{const s=curSheet;closeSheet();s&&s.go()
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
 // login + OTP
 $('lg-form').addEventListener('submit',e=>{e.preventDefault();const p=$('lg-phone').value.replace(/\D/g,'');if(p.length<8){toast('Enter a valid phone number');$('lg-phone').focus();return}
-  $('otp-to').textContent='+62 '+p.replace(/(\d{3})(\d{4})(\d+)/,'$1-$2-$3');show('otp',true,'fwd');startOtpTimer();setTimeout(()=>$('otp').querySelector('input').focus(),350)});
+  $('otp-to').textContent=ccSel[2]+' '+p.replace(/(\d{3})(\d{4})(\d+)/,'$1-$2-$3');show('otp',true,'fwd');startOtpTimer();setTimeout(()=>$('otp').querySelector('input').focus(),350)});
 const otpIn=[...$('otp').querySelectorAll('input')];
 otpIn.forEach((inp,k)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);if(inp.value&&otpIn[k+1])otpIn[k+1].focus();checkOtp()});
   inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&otpIn[k-1])otpIn[k-1].focus()});
@@ -2088,6 +2114,21 @@ function confettiBurst(){if(REDUCE)return;const ph=$('phone');let cv=$('fp-confe
   const r=ph.getBoundingClientRect(),dpr=devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);
   const C=['#075844','#10b97f','#e96f69','#ffd144','#7c5cf0','#7cc4f5'],P=Array.from({length:130},()=>({x:r.width/2,y:r.height*.3,vx:(Math.random()-.5)*11,vy:-Math.random()*10-4,s:Math.random()*6+4,c:C[Math.random()*6|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
   const t0=performance.now();(function f(t){const el=t-t0;c.clearRect(0,0,r.width,r.height);P.forEach(p=>{p.vy+=.3;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;c.save();c.translate(p.x,p.y);c.rotate(p.a);c.globalAlpha=Math.max(0,1-el/2200);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore()});if(el<2200)requestAnimationFrame(f);else c.clearRect(0,0,r.width,r.height)})(t0)}
+
+// ---------- Country code picker ----------
+const CC=[['🇮🇩','Indonesia','+62','812 3456 7890'],['🇲🇾','Malaysia','+60','12 345 6789'],['🇸🇬','Singapore','+65','8123 4567'],['🇹🇭','Thailand','+66','81 234 5678'],['🇻🇳','Vietnam','+84','91 234 56 78'],['🇵🇭','Philippines','+63','912 345 6789'],['🇲🇲','Myanmar','+95','9 123 456 789'],['🇰🇭','Cambodia','+855','12 345 678'],['🇱🇦','Laos','+856','20 2345 6789'],['🇧🇳','Brunei','+673','712 3456'],['🇹🇱','Timor-Leste','+670','7721 2345'],
+ ['🇦🇺','Australia','+61','412 345 678'],['🇧🇩','Bangladesh','+880','1812 345678'],['🇧🇷','Brazil','+55','11 91234 5678'],['🇨🇦','Canada','+1','506 234 5678'],['🇨🇳','China','+86','131 2345 6789'],['🇪🇬','Egypt','+20','100 123 4567'],['🇫🇷','France','+33','6 12 34 56 78'],['🇩🇪','Germany','+49','1512 3456789'],['🇭🇰','Hong Kong','+852','5123 4567'],['🇮🇳','India','+91','81234 56789'],['🇮🇹','Italy','+39','312 345 6789'],['🇯🇵','Japan','+81','90 1234 5678'],['🇰🇪','Kenya','+254','712 123456'],['🇲🇽','Mexico','+52','222 123 4567'],['🇳🇵','Nepal','+977','984 1234567'],['🇳🇱','Netherlands','+31','6 12345678'],['🇳🇿','New Zealand','+64','21 123 4567'],['🇳🇬','Nigeria','+234','802 123 4567'],['🇵🇰','Pakistan','+92','301 2345678'],['🇶🇦','Qatar','+974','3312 3456'],['🇸🇦','Saudi Arabia','+966','51 234 5678'],['🇿🇦','South Africa','+27','71 123 4567'],['🇰🇷','South Korea','+82','10 2345 6789'],['🇪🇸','Spain','+34','612 34 56 78'],['🇱🇰','Sri Lanka','+94','71 234 5678'],['🇹🇼','Taiwan','+886','912 345 678'],['🇹🇷','Turkey','+90','501 234 56 78'],['🇦🇪','United Arab Emirates','+971','50 123 4567'],['🇬🇧','United Kingdom','+44','7400 123456'],['🇺🇸','United States','+1','201 555 0123']];
+let ccSel=CC[0];
+function renderCC(){const q=$('cc-q').value.trim().toLowerCase();const row=c=>`<button class="ccrow${c===ccSel?' on':''}" data-cc="${CC.indexOf(c)}"><span class="ccf">${c[0]}</span><span class="n">${c[1]}</span><em>${c[2]}</em></button>`;
+  const L=CC.filter(c=>(c[1]+' '+c[2]).toLowerCase().includes(q)||(q.replace('+','')&&c[2].slice(1).startsWith(q.replace('+',''))));
+  $('cc-list').innerHTML=!L.length?'<p class="sub" style="text-align:center;padding:20px 0">No country found</p>':q?L.map(row).join(''):'<div class="cchd">SOUTHEAST ASIA</div>'+CC.slice(0,11).map(row).join('')+'<div class="cchd">ALL COUNTRIES</div>'+CC.slice(11).map(row).join('')}
+function openCC(){$('cc-q').value='';renderCC();$('ccbg').hidden=false;$('ccsheet').hidden=false;const on=$('cc-list').querySelector('.on');if(on)on.scrollIntoView({block:'center'});setTimeout(()=>$('cc-q').focus({preventScroll:true}),250)}
+function closeCC(){$('ccbg').hidden=true;$('ccsheet').hidden=true;$('cc-btn').focus()}
+$('cc-btn').addEventListener('click',openCC);$('ccbg').addEventListener('click',closeCC);$('cc-q').addEventListener('input',renderCC);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('ccsheet').hidden)closeCC()});
+$('cc-list').addEventListener('click',e=>{const b=e.target.closest('[data-cc]');if(!b)return;ccSel=CC[+b.dataset.cc];
+  $('cc-flag').textContent=ccSel[0];$('cc-code').textContent=ccSel[2];$('lg-phone').placeholder=ccSel[3];$('cc-btn').setAttribute('aria-label',`Country code: ${ccSel[1]} ${ccSel[2]}`);
+  popEl($('cc-btn'));closeCC();$('lg-phone').focus()});
 
 // Router: tokens like "recipe-24" open a detail screen; a stack powers the back buttons
 const screens=[...document.querySelectorAll('.screen')];
