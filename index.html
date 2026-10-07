@@ -631,6 +631,27 @@ button.pav{padding:0;border-radius:50%}
 [data-screen=home] .prog{box-shadow:0 12px 30px rgba(7,88,68,.18);border-color:transparent}
 @media (min-width:700px){.scroll>.homebg{max-width:none;margin:0}}
 
+/* ---------- DAILY PROGRESS LAYOUT ---------- */
+.prog{padding:20px 20px 22px}
+.prog h3{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.prog .today{font-size:11px;font-weight:600;color:var(--green);background:var(--tint);padding:4px 10px;border-radius:999px}
+.progrow{gap:22px;align-items:center}
+.prog .ring{margin:0;width:104px;height:104px}
+.prog .ring svg{width:104px;height:104px}
+.prog .ring b{font-size:22px}
+.prog .goals{flex:1;min-width:0;gap:16px}
+.prog .goal{gap:12px;align-items:center}
+.prog .goal>i{width:34px;height:34px}
+.prog .goal>i svg{width:17px;height:17px}
+.prog .gt{flex:1;min-width:0}
+.prog .gl{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.prog .gl b{display:inline;font-size:13.5px}
+.prog .gl span{font-size:11px;color:var(--muted-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.prog .gpbar{height:5px;border-radius:9px;background:#eef1ef;margin-top:7px;overflow:hidden}
+.prog .gpbar i{display:block;height:100%;border-radius:9px}
+@media (prefers-reduced-motion:no-preference){.prog .gpbar i{transform-origin:left;animation:growx 1s .4s cubic-bezier(.2,.8,.2,1) backwards}}
+@media (max-width:360px){.progrow{gap:14px}.prog .ring,.prog .ring svg{width:88px;height:88px}}
+
 /* ---------- MOTION & INTERACTION ---------- */
 .btn,.chip,.nav button,.qa .t{position:relative;overflow:hidden}
 .stretch .pl{position:relative}
@@ -739,16 +760,16 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
     </div>
     <div class="pad">
       <div class="card prog">
-        <h3>Daily Progress</h3>
-        <div class="row" style="gap:0">
+        <h3>Daily Progress<span class="today">Today</span></h3>
+        <div class="row progrow">
           <div class="ring">
             <svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="40" fill="none" stroke="#e7efe9" stroke-width="9"/><circle id="ring-arc" cx="48" cy="48" r="40" fill="none" stroke="#075844" stroke-width="9" stroke-dasharray="251.3" stroke-dashoffset="0" transform="rotate(-90 48 48)"/></svg>
             <b><span data-count="78" data-suf="%">78%</span><small>of daily<br>goal</small></b>
           </div>
           <div class="goals">
-            <div class="goal"><i style="background:#fdeceb;color:#e96f69"><svg data-i="run"></svg></i><div><b>Move</b><span>42 / 60 min</span></div></div>
-            <div class="goal"><i style="background:#e5f6ea;color:#22a05a"><svg data-i="utensils"></svg></i><div><b>Eat Healthy</b><span>2 / 3 meals</span></div></div>
-            <div class="goal"><i style="background:#efeafd;color:#8b6cf0"><svg data-i="brain"></svg></i><div><b>Mind</b><span>12 / 20 min</span></div></div>
+            <div class="goal"><i style="background:#fdeceb;color:#e96f69"><svg data-i="run"></svg></i><div class="gt"><div class="gl"><b>Move</b><span>42 / 60 min</span></div><div class="gpbar"><i style="width:70%;background:#e96f69"></i></div></div></div>
+            <div class="goal"><i style="background:#e5f6ea;color:#22a05a"><svg data-i="utensils"></svg></i><div class="gt"><div class="gl"><b>Eat Healthy</b><span>2 / 3 meals</span></div><div class="gpbar"><i style="width:66.7%;background:#22a05a"></i></div></div></div>
+            <div class="goal"><i style="background:#efeafd;color:#8b6cf0"><svg data-i="brain"></svg></i><div class="gt"><div class="gl"><b>Mind</b><span>12 / 20 min</span></div><div class="gpbar"><i style="width:60%;background:#8b6cf0"></i></div></div></div>
           </div>
         </div>
       </div>
