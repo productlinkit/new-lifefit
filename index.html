@@ -652,6 +652,90 @@ button.pav{padding:0;border-radius:50%}
 @media (prefers-reduced-motion:no-preference){.prog .gpbar i{transform-origin:left;animation:growx 1s .4s cubic-bezier(.2,.8,.2,1) backwards}}
 @media (max-width:360px){.progrow{gap:14px}.prog .ring,.prog .ring svg{width:88px;height:88px}}
 
+/* ---------- ONBOARDING & FIT PLAN ---------- */
+.obslides{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.obslides::-webkit-scrollbar{display:none}
+.obs{position:relative;flex:none;width:100%;height:100%;scroll-snap-align:start}
+.obs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.obs:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(5,30,22,.88) 78%)}
+.obtext{position:absolute;z-index:1;left:24px;right:24px;bottom:200px;color:#fff}
+.obtext h2{font-size:30px;font-weight:800;line-height:1.15;margin:0;letter-spacing:-.5px;text-wrap:balance}
+.obtext p{font-size:15px;line-height:1.55;opacity:.85;margin:12px 0 0;max-width:330px}
+.obfoot{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
+.obdots{display:flex;gap:6px;margin-bottom:14px}
+.obdots i{width:8px;height:8px;border-radius:9px;background:rgba(255,255,255,.35);transition:width .3s,background .3s}
+.obdots i.on{width:26px;background:#fff}
+.obfoot .btn{background:#fff;color:var(--green);height:54px}
+.oblink{height:44px;color:#fff;font-weight:600;font-size:14px;opacity:.9}
+.fpw{display:flex;flex-direction:column;padding-top:20px}
+.fpwimg{width:100%;max-width:360px;margin:10px auto 18px;border-radius:24px;background:#f3f0ff}
+.fpwlist{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.fpwlist span{background:var(--bg-2);border-radius:14px;padding:12px 6px;text-align:center;font-size:11px;color:var(--muted)}
+.fpwlist b{display:block;font-size:18px;color:var(--green)}
+.fphead{flex:none;padding:10px 16px 6px}
+.fpmeta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.fpmeta b{color:var(--ink)}
+.fpbar{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin-top:10px}
+.fpbar i{height:5px;border-radius:9px;background:#e9ece9;overflow:hidden;position:relative}
+.fpbar i:after{content:"";position:absolute;inset:0;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.fpbar i.on:after{transform:scaleX(1)}
+.fpq{padding-top:18px}
+.fpq.anim-n{animation:scrFwd .4s cubic-bezier(.2,.8,.2,1)}
+.fpq.anim-p{animation:scrBack .4s cubic-bezier(.2,.8,.2,1)}
+.fpt{font-size:26px;font-weight:500;line-height:1.25;margin:0;letter-spacing:-.4px;text-wrap:balance}
+.fpt b{font-weight:800;color:var(--green)}
+.fpd{font-size:14px;color:var(--muted);line-height:1.55;margin:10px 0 0}
+.fpinp{width:100%;border:0;border-bottom:2px solid #dfe3e0;background:none;font:inherit;font-size:26px;font-weight:700;padding:10px 0;outline:0;color:var(--ink);margin-top:34px;transition:border-color .2s}
+.fpinp:focus{border-color:var(--green)}
+.fpinp:focus-visible{outline:none}
+.fpinp::-webkit-outer-spin-button,.fpinp::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.fpinp[type=number]{-moz-appearance:textfield}
+.fpinp::placeholder{color:#c7ccc9;font-weight:600}
+.fpnum{display:flex;align-items:baseline;gap:10px;margin-top:34px}
+.fpnum .fpinp{width:150px;margin:0;font-size:44px;text-align:center}
+.fpnum span{font-size:18px;font-weight:700;color:var(--muted)}
+.fpunit{display:inline-flex;background:var(--bg-2);border-radius:12px;padding:4px;margin-top:22px}
+.fpunit button{height:36px;padding:0 20px;border-radius:9px;font-size:13px;font-weight:700;color:var(--muted)}
+.fpunit button.on{background:var(--white);color:var(--green);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.fpopts{display:flex;flex-direction:column;gap:10px;margin-top:26px}
+.fpopt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border-radius:16px;border:1.5px solid #e6e9e6;background:var(--white);transition:border-color .2s,background .2s,transform .15s}
+.fpopt:active{transform:scale(.98)}
+.fpopt .ot{flex:1;min-width:0}
+.fpopt h4{margin:0;font-size:15px;font-weight:700}
+.fpopt p{margin:3px 0 0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.fpopt .oi{width:42px;height:42px;border-radius:12px;background:var(--bg-2);display:grid;place-items:center;flex:none;font-size:20px}
+.fpopt .oi img{width:22px;height:22px}
+.fpopt .ck{width:22px;height:22px;border-radius:50%;border:2px solid #cfd4d0;flex:none;display:grid;place-items:center;transition:all .2s}
+.fpopt.on{border-color:var(--green);background:var(--tint)}
+.fpopt.on .ck{border-color:var(--green);background:var(--green)}
+.fpopt.on .ck:after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.fpopt.on .oi{background:var(--white)}
+.fpbubble{display:inline-block;background:#fff4dc;color:#8a5a00;font-size:13px;font-weight:600;padding:10px 14px;border-radius:14px 14px 14px 4px;margin-bottom:18px;animation:bounceIn .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bounceIn{0%{transform:scale(.6) translateY(10px);opacity:0}100%{transform:none;opacity:1}}
+.fpbmi{background:var(--tint);border-radius:18px;padding:16px;margin-top:22px}
+.fpbmi .bh{display:flex;justify-content:space-between;font-size:12px;font-weight:600}
+.fpbmi .bh b{color:var(--green)}
+.fpbmi .bv{font-size:34px;font-weight:800;margin:6px 0 10px;font-variant-numeric:tabular-nums}
+.fpscale{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.fpscale i{height:8px;border-radius:9px}
+.fpscale .mk{position:absolute;top:-5px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--green);transform:translateX(-50%);transition:left 1s cubic-bezier(.2,.8,.2,1);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.fpscale+div{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:10.5px;color:var(--muted);margin-top:8px}
+.fpsum{margin-top:16px;border:1px solid #ebedeb;border-radius:16px;padding:4px 16px}
+.fpsum div{display:flex;justify-content:space-between;padding:13px 0;border-top:1px solid #efefed;font-size:13px}
+.fpsum div:first-child{border-top:0}
+.fpsum b{font-weight:700}
+.fpsum span{color:var(--muted)}
+.fpdone{text-align:center;padding-top:20px}
+.fpdone img{width:200px;margin:20px auto;display:block;animation:bounceIn .8s cubic-bezier(.3,1.6,.5,1)}
+.fpbtns{flex:none;display:flex;gap:10px;padding:10px 16px calc(14px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid #f1f2f1}
+.fpbtns .btn{flex:2;height:52px}
+.fpbtns .btn:disabled{opacity:.4;pointer-events:none}
+.fpprev{flex:1;height:52px;border-radius:16px;border:1.5px solid #e3e6e3;font-weight:600;color:var(--ink-2);background:var(--white)}
+.fpprev[hidden]{display:none}
+.authswitch{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
+.authswitch button{color:var(--green);font-weight:700}
+@media (min-width:700px){.obtext{left:50%;transform:translateX(-50%);width:min(560px,90%);right:auto}.obfoot{left:50%;transform:translateX(-50%);width:min(480px,92%);right:auto;padding-left:0;padding-right:0}.fphead,.fpbtns{padding-left:max(24px,calc(50% - 320px));padding-right:max(24px,calc(50% - 320px))}}
+
 /* ---------- MOTION & INTERACTION ---------- */
 .btn,.chip,.nav button,.qa .t{position:relative;overflow:hidden}
 .stretch .pl{position:relative}
@@ -1404,6 +1488,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
       <div class="phone-in"><span>+62</span><input class="inp" id="lg-phone" type="tel" inputmode="numeric" placeholder="812 3456 7890" autocomplete="tel"></div>
       <button class="btn" type="submit" style="margin-top:20px">CONTINUE</button>
     </form>
+    <p class="authswitch" id="auth-switch"></p>
     <p class="authhelp">Having trouble logging in? <button data-go="help">Get Help</button></p>
   </div></div>
 </section>
@@ -1419,6 +1504,46 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
     <p class="authhelp">Didn't get the OTP? <button id="otp-resend">Resend OTP</button> <span id="otp-timer"></span></p>
     <p class="authhelp" style="margin-top:4px;font-size:11px">Demo: any 6 digits work.</p>
   </div></div>
+</section>
+
+<!-- ONBOARDING (logged out) -->
+<section class="screen" data-screen="onboard" style="background:#0c1310">
+  <div class="obslides" id="ob-slides">
+    <div class="obs"><img src="img/ob/onboard1.jpg" alt=""><div class="obtext"><h2>Breathe, Move, Thrive</h2><p>Wellness, meditation, and fitness—all in one place to help you live your best life.</p></div></div>
+    <div class="obs"><img src="img/ob/onboard2.jpg" alt=""><div class="obtext"><h2>Stronger Body, Sharper Mind</h2><p>Unlock your full potential with guided workouts, mindfulness practices, and wellness routines.</p></div></div>
+    <div class="obs"><img src="img/ob/onboard3.jpg" alt=""><div class="obtext"><h2>Find Your Balance</h2><p>Take small steps every day toward a healthier, happier you.</p></div></div>
+  </div>
+  <div class="obfoot">
+    <div class="obdots" id="ob-dots"><i class="on"></i><i></i><i></i></div>
+    <button class="btn" id="ob-start">Start Your Journey</button>
+    <button class="oblink" data-go="login">I already have an account</button>
+  </div>
+</section>
+
+<!-- FIT PLAN WELCOME -->
+<section class="screen" data-screen="fitwelcome">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad fpw">
+    <img src="img/ob/img-onboard01.png" alt="" class="fpwimg">
+    <h1 class="h1" style="text-align:center;font-size:26px">Welcome to LifeFit!</h1>
+    <p class="sub" style="text-align:center;max-width:300px;margin:10px auto 0">To create a workout plan that's truly personalized, we'd love to start by learning a little about you.</p>
+    <div class="fpwlist"><span><b>11</b>quick steps</span><span><b>2</b>minutes</span><span><b>100%</b>personal</span></div>
+    <button class="btn" data-go="fitplan" style="margin-top:26px">Let's Dive In</button>
+  </div></div>
+</section>
+
+<!-- FIT PLAN QUESTIONS -->
+<section class="screen" data-screen="fitplan">
+  <div class="status" data-status></div>
+  <div class="fphead">
+    <div class="fpmeta"><span>Step <b id="fp-step">1</b></span><span id="fp-of">1/11</span></div>
+    <div class="fpbar" id="fp-bar"></div>
+  </div>
+  <div class="scroll"><div class="top pad" id="fp-body"></div></div>
+  <div class="fpbtns">
+    <button class="fpprev" id="fp-prev">Previous</button>
+    <button class="btn" id="fp-next">Continue</button>
+  </div>
 </section>
 
 <!-- BOTTOM SHEET -->
@@ -1588,6 +1713,7 @@ function playMedia(el){
 }
 
 const DETAIL={
+  fitplan(){fpRender()},
   editprofile(){fillEP()},
   legal(i){renderLegal(i)},
   contact(){$('ct-form').hidden=false;$('ct-sent').hidden=true;$('ct-form').reset()},
@@ -1739,7 +1865,7 @@ const LEGAL=[['Terms and Conditions',[['1. Using LifeFit','LifeFit gives you fit
 function renderLegal(i){i=+i||0;$('lg-title').textContent=LEGAL[i][0];document.querySelectorAll('[data-legal]').forEach(b=>b.classList.toggle('on',+b.dataset.legal===i));$('lgl-body').innerHTML=LEGAL[i][1].map(([h,p])=>`<h3>${h}</h3><p>${p}</p>`).join('')}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-legal]');if(b)renderLegal(b.dataset.legal)});
 // bottom sheet (logout / delete)
-const SHEETS={logout:{ic:'logout',c:'#e96f69',bg:'#fdeeed',t:'Log out of LifeFit?',p:'You can sign back in anytime with your phone number.',ok:'Log Out',go:()=>{stack.length=0;show('login',false,'fwd')}},
+const SHEETS={logout:{ic:'logout',c:'#e96f69',bg:'#fdeeed',t:'Log out of LifeFit?',p:'You can sign back in anytime with your phone number.',ok:'Log Out',go:()=>{stack.length=0;setAuthMode(false);$('ob-slides').scrollLeft=0;show('onboard',false,'fwd')}},
   delete:{ic:'trash',c:'#e5484d',bg:'#fdeeed',t:'Delete your account?',p:'This permanently removes your profile, progress and favourites. This action cannot be undone.',ok:'Delete Account',go:()=>{toast('Account deletion requested (demo)')}}};
 let curSheet=null;
 function openSheet(k){const s=SHEETS[k];curSheet=s;$('sh-ic').style.cssText=`background:${s.bg};color:${s.c}`;$('sh-ic').innerHTML=`<svg data-i="${s.ic}"></svg>`;icons($('sh-ic'));$('sh-t').textContent=s.t;$('sh-p').textContent=s.p;$('sh-ok').textContent=s.ok;$('sh-ok').classList.add('danger');$('sheetbg').hidden=false;$('sheet').hidden=false;$('sh-no').focus()}
@@ -1755,7 +1881,7 @@ const otpIn=[...$('otp').querySelectorAll('input')];
 otpIn.forEach((inp,k)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);if(inp.value&&otpIn[k+1])otpIn[k+1].focus();checkOtp()});
   inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&otpIn[k-1])otpIn[k-1].focus()});
   inp.addEventListener('paste',e=>{const d=(e.clipboardData.getData('text')||'').replace(/\D/g,'').slice(0,6);if(!d)return;e.preventDefault();d.split('').forEach((c,j)=>{if(otpIn[j])otpIn[j].value=c});checkOtp()})});
-function checkOtp(){if(otpIn.every(i=>i.value)){toast('Verified! Welcome back');setTimeout(()=>{otpIn.forEach(i=>i.value='');stack.length=0;show('home',false,'tab')},600)}}
+function checkOtp(){if(otpIn.every(i=>i.value)){toast(signupMode?'Verified! Let\'s set up your plan':'Verified! Welcome back');setTimeout(()=>{otpIn.forEach(i=>i.value='');stack.length=0;if(signupMode){Object.keys(FP).forEach(k=>FP[k]=k.endsWith('unit')?'kg':'');fpi=0;show('fitwelcome',false,'fwd')}else show('home',false,'tab')},600)}}
 let otpT;function startOtpTimer(){let n=59;clearInterval(otpT);$('otp-resend').disabled=true;$('otp-resend').style.opacity=.4;$('otp-timer').textContent='(0:59)';otpT=setInterval(()=>{n--;$('otp-timer').textContent=n>0?`(0:${String(n).padStart(2,'0')})`:'';if(n<=0){clearInterval(otpT);$('otp-resend').disabled=false;$('otp-resend').style.opacity=1}},1000)}
 $('otp-resend').addEventListener('click',()=>{toast('New OTP sent');startOtpTimer()});
 paintPF();
@@ -1765,13 +1891,88 @@ function sizeHomeBg(){const bg=$('homebg'),card=document.querySelector('[data-sc
   const top=bg.getBoundingClientRect().top,r=card.getBoundingClientRect();bg.style.height=Math.round(r.top-top+r.height/2)+'px'}
 addEventListener('resize',sizeHomeBg);
 
+// ---------- Onboarding + sign-up Fit Plan (11 steps, copy from demo.lifefit.mobi) ----------
+let signupMode=false;
+(()=>{const sl=$('ob-slides'),dots=[...$('ob-dots').children];
+  sl.addEventListener('scroll',()=>{const i=Math.round(sl.scrollLeft/sl.clientWidth);dots.forEach((d,k)=>d.classList.toggle('on',k===i))},{passive:true});
+  $('ob-dots').addEventListener('click',e=>{const k=dots.indexOf(e.target);if(k>=0)sl.scrollTo({left:k*sl.clientWidth,behavior:'smooth'})});
+  $('ob-start').addEventListener('click',()=>{const i=Math.round(sl.scrollLeft/sl.clientWidth);if(i<2){sl.scrollTo({left:(i+1)*sl.clientWidth,behavior:'smooth'});return}setAuthMode(true);show('login',true,'fwd')});
+  setInterval(()=>{if(cur!=='onboard'||document.hidden)return;const i=Math.round(sl.scrollLeft/sl.clientWidth);if(i<2)sl.scrollTo({left:(i+1)*sl.clientWidth,behavior:REDUCE?'auto':'smooth'})},4500);
+})();
+function setAuthMode(up){signupMode=up;const h=document.querySelector('[data-screen=login] .h1'),p=document.querySelector('[data-screen=login] .sub');
+  h.textContent=up?'Create your account':'Sign in or Sign Up';p.textContent=up?'Enter your phone number to get started.':'Welcome back! please enter your phone number.';
+  $('auth-switch').innerHTML=up?'Already have an account? <button type="button" data-auth="in">Sign in</button>':'New to LifeFit? <button type="button" data-auth="up">Create an account</button>'}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-auth]');if(b)setAuthMode(b.dataset.auth==='up')});
+
+const FP={name:'',goal:'',gender:'',body:'',age:'',height:'',weight:'',wunit:'kg',wgoal:'',gunit:'kg',level:''};
+const OPT=(k,id,t,d,ic)=>({k,id,t,d,ic});
+const FPS=[
+ {t:"Hey there! What's <b>your name?</b>",type:'text',k:'name',ph:'your name'},
+ {t:'What is <b>your fitness goal?</b>',d:"Let us know what you're aiming for, so we can guide you every step of the way!",type:'opts',k:'goal',opts:[
+   OPT('goal','build_strength','Build Strength','For those looking to get stronger and increase muscle.','💪'),OPT('goal','lose_weight','Lose Weight','If shedding a few pounds is your main goal.','🔥'),
+   OPT('goal','tone_define','Tone & Define','For shaping and refining your body.','✨'),OPT('goal','relieve_stress','Relieve Stress',"If you're here for wellness and relaxation benefits.",'🧘'),
+   OPT('goal','just_stay_active','Just Stay Active','For those who simply want to keep moving and feel good.','🚶')]},
+ {t:"What's <b>your gender?</b>",type:'opts',k:'gender',opts:[OPT('gender','female','Female','','img/ob/icon-female.svg'),OPT('gender','male','Male','','img/ob/icon-male.svg'),OPT('gender','non_binary','Non-Binary','','img/ob/icon-nonbinary.svg')]},
+ {t:"What's Your <b>Body Type?</b>",d:"Select the option that feels closest to your current body shape. Don't worry, we're here to help you get where you want to be!",type:'opts',k:'body',opts:[
+   OPT('body','regular','Regular','A balanced body type, neither too slim nor too heavy.'),OPT('body','flabby','Flabby','More soft or loose skin, with areas that may need toning and firming.'),
+   OPT('body','overweight','Overweight','Carrying extra weight, and looking to focus on weight loss and fitness goals.'),OPT('body','flat','Flat','A leaner body type with less body fat, focusing on building muscle or toning.'),
+   OPT('body','athletic','Athletic','Muscular and fit, with a strong build from regular exercise.'),OPT('body','curvy','Curvy','Fuller figure with more curves, focusing on shaping and toning specific areas.'),
+   OPT('body','not_sure','Not Sure',"If you're unsure, don't worry! We'll help customize based on your fitness goals.")]},
+ {t:'<b>How old</b> are you?',type:'num',k:'age',ph:'18',unit:'years',min:10,max:100},
+ {t:'<b>How tall</b> are you?',type:'num',k:'height',ph:'170',unit:'cm',min:100,max:250},
+ {t:"What's Your <b>Current Weight?</b>",type:'num',k:'weight',ph:'65',unitKey:'wunit',min:25,max:400},
+ {t:"What's Your <b>Weight Goal</b>",bubble:"Way to go! Setting goals is such a powerful start, and we're here with you!🚀💪",type:'num',k:'wgoal',ph:'60',unitKey:'gunit',min:25,max:400},
+ {t:'<b>How active</b> are you right now?',bubble:'Pssst! You are almost done😆👏',d:"Whether you're just starting or already active, we'll create a plan that's perfect for you.",type:'opts',k:'level',opts:[
+   OPT('level','beginner','Beginner','I am new to fitness','🌱'),OPT('level','intermediate','Intermediate','I work out 2-3 times a week','⚡'),OPT('level','advance','Advance','I Exercise regularly','🏆')]},
+ {t:'Your <b>fitness summary</b>',type:'summary'},
+ {t:"You're All Set!",type:'done'}];
+let fpi=0;
+$('fp-bar').innerHTML=FPS.map(()=>'<i></i>').join('');
+const kg=(v,u)=>u==='lbs'?v*0.4536:v;
+function fpValid(){const s=FPS[fpi];if(s.type==='text')return FP.name.trim().length>0;if(s.type==='opts')return !!FP[s.k];
+  if(s.type==='num'){const v=parseFloat(FP[s.k]);return v>=s.min&&v<=s.max*(s.unitKey&&FP[s.unitKey]==='lbs'?2.2:1)}return true}
+function fpRender(dir){const s=FPS[fpi];
+  $('fp-step').textContent=fpi+1;$('fp-of').textContent=(fpi+1)+'/11';[...$('fp-bar').children].forEach((b,k)=>b.classList.toggle('on',k<=fpi));
+  let h=(s.bubble?`<div class="fpbubble">${s.bubble}</div>`:'')+(s.type==='done'?'':`<h1 class="fpt">${s.t}</h1>`)+(s.d?`<p class="fpd">${s.d}</p>`:'');
+  if(s.type==='text')h+=`<input class="fpinp" id="fp-in" placeholder="${s.ph}" value="${esc(FP.name)}" autocomplete="given-name" aria-label="Your name">`;
+  if(s.type==='opts')h+=`<div class="fpopts">${s.opts.map(o=>`<button class="fpopt${FP[s.k]===o.id?' on':''}" data-opt="${o.id}">${o.ic?`<span class="oi">${o.ic.endsWith('.svg')?`<img src="${o.ic}" alt="">`:o.ic}</span>`:''}<span class="ot"><h4>${o.t}</h4>${o.d?`<p>${o.d}</p>`:''}</span><span class="ck"></span></button>`).join('')}</div>`;
+  if(s.type==='num'){const u=s.unitKey?FP[s.unitKey]:s.unit;h+=`<div class="fpnum"><input class="fpinp" id="fp-in" type="number" inputmode="decimal" placeholder="${s.ph}" value="${FP[s.k]}" aria-label="${s.k}"><span>${u}</span></div>`+(s.unitKey?`<div class="fpunit" data-unit="${s.unitKey}"><button class="${u==='kg'?'on':''}" data-u="kg">KG</button><button class="${u==='lbs'?'on':''}" data-u="lbs">LBS</button></div>`:'')}
+  if(s.type==='summary'){const w=kg(+FP.weight,FP.wunit),hgt=+FP.height/100,b=w/(hgt*hgt),cat=b<18.5?'Underweight':b<25?'Normal':b<30?'Overweight':'Obese';
+    const pos=Math.max(2,Math.min(98,b<18.5?(b-14)/4.5*25:b<25?25+(b-18.5)/6.5*25:b<30?50+(b-25)/5*25:75+Math.min(1,(b-30)/10)*25));
+    const goalT=FPS[1].opts.find(o=>o.id===FP.goal),lvl=FPS[8].opts.find(o=>o.id===FP.level);
+    h+=`<div class="fpbmi"><div class="bh"><span>Body Mass Index (BMI)</span><b>${cat}</b></div><div class="bv" id="fp-bmi">${b.toFixed(1)}</div>
+      <div class="fpscale"><i style="background:#90caf9"></i><i style="background:#81c784"></i><i style="background:#ffb74d"></i><i style="background:#e57373"></i><span class="mk" id="fp-mk" style="left:0%"></span></div>
+      <div><span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span></div></div>
+      <div class="fpsum"><div><b>Activity</b><span>${lvl?lvl.t:'-'}</span></div><div><b>Current Weight</b><span>${FP.weight} ${FP.wunit}</span></div><div><b>Weight Goals</b><span>${FP.wgoal} ${FP.gunit}</span></div><div><b>Fitness Goals</b><span>${goalT?goalT.t:'-'}</span></div></div>`;
+    setTimeout(()=>{const m=$('fp-mk');if(m)m.style.left=pos+'%'},120)}
+  if(s.type==='done')h+=`<div class="fpdone"><h1 class="fpt" style="font-weight:700">You're All Set!</h1><img src="img/ob/question11.png" alt=""><p class="fpd">Everything's set up for you. Now, let's make those goals a reality!</p></div>`;
+  $('fp-body').innerHTML=`<div class="fpq ${dir==='p'?'anim-p':dir==='n'?'anim-n':''}">${h}</div>`;
+  $('fp-prev').hidden=fpi===0;$('fp-next').textContent=s.type==='done'?'See your plan':s.type==='summary'?'Finish':'Continue';$('fp-next').disabled=!fpValid();
+  const inp=$('fp-in');if(inp){setTimeout(()=>inp.focus({preventScroll:true}),300);inp.addEventListener('input',()=>{FP[s.k]=inp.value;$('fp-next').disabled=!fpValid()});inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&fpValid())$('fp-next').click()})}
+  if(s.type==='done'&&typeof confettiBurst==='function')confettiBurst();
+}
+$('fp-body').addEventListener('click',e=>{const o=e.target.closest('[data-opt]');const s=FPS[fpi];
+  if(o){FP[s.k]=o.dataset.opt;$('fp-body').querySelectorAll('.fpopt').forEach(x=>x.classList.toggle('on',x===o));$('fp-next').disabled=false;return}
+  const u=e.target.closest('[data-u]');if(u){FP[u.parentElement.dataset.unit]=u.dataset.u;fpRender()}});
+$('fp-next').addEventListener('click',()=>{if(!fpValid())return;
+  if(fpi<FPS.length-1){fpi++;fpRender('n');document.querySelector('[data-screen=fitplan] .scroll').scrollTop=0;return}
+  // finish: personalise the app
+  PF.name=FP.name.trim()||PF.name;PF.gender=FP.gender==='female'?'Female':'Male';PF.h=+FP.height||PF.h;PF.w=Math.round(kg(+FP.weight,FP.wunit))||PF.w;paintPF();
+  stack.length=0;show('home',false,'tab');toast(`Welcome, ${PF.name.split(' ')[0]}! Your plan is ready 🎉`)});
+$('fp-prev').addEventListener('click',()=>{if(fpi>0){fpi--;fpRender('p')}});
+setAuthMode(false);
+function confettiBurst(){if(REDUCE)return;const ph=$('phone');let cv=$('fp-confetti');if(!cv){cv=document.createElement('canvas');cv.id='fp-confetti';cv.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:40';ph.appendChild(cv)}
+  const r=ph.getBoundingClientRect(),dpr=devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);
+  const C=['#075844','#10b97f','#e96f69','#ffd144','#7c5cf0','#7cc4f5'],P=Array.from({length:130},()=>({x:r.width/2,y:r.height*.3,vx:(Math.random()-.5)*11,vy:-Math.random()*10-4,s:Math.random()*6+4,c:C[Math.random()*6|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
+  const t0=performance.now();(function f(t){const el=t-t0;c.clearRect(0,0,r.width,r.height);P.forEach(p=>{p.vy+=.3;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;c.save();c.translate(p.x,p.y);c.rotate(p.a);c.globalAlpha=Math.max(0,1-el/2200);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore()});if(el<2200)requestAnimationFrame(f);else c.clearRect(0,0,r.width,r.height)})(t0)}
+
 // Router: tokens like "recipe-24" open a detail screen; a stack powers the back buttons
 const screens=[...document.querySelectorAll('.screen')];
 const stack=[];let cur='home';
 function show(token,push,mode){
   const m=String(token||'').match(/^([a-z]+)(?:-([0-9x]+))?$/);let id=m?m[1]:'home',param=m?m[2]:null;
   if(!screens.some(s=>s.dataset.screen===id)){id='home';param=null}
-  if(DETAIL[id]){if(!LF&&!['editprofile','legal','contact'].includes(id))return;DETAIL[id](param??0)}
+  if(DETAIL[id]){if(!LF&&!['editprofile','legal','contact','fitplan'].includes(id))return;DETAIL[id](param??0)}
   const tok=param!=null?id+'-'+param:id;
   if(push&&tok!==cur)stack.push(cur);
   cur=tok;
