@@ -652,6 +652,107 @@ button.pav{padding:0;border-radius:50%}
 @media (prefers-reduced-motion:no-preference){.prog .gpbar i{transform-origin:left;animation:growx 1s .4s cubic-bezier(.2,.8,.2,1) backwards}}
 @media (max-width:360px){.progrow{gap:14px}.prog .ring,.prog .ring svg{width:88px;height:88px}}
 
+/* ---------- SIGN-UP FLOW ---------- */
+.suw{padding-top:12px}
+.sulogo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--green);letter-spacing:-.3px}
+.sulogo span{width:38px;height:38px;border-radius:11px;background:var(--green);color:#fff;display:grid;place-items:center}
+.sulogo svg{width:20px;height:20px}
+.suwimg{margin-top:18px;border-radius:24px;overflow:hidden;aspect-ratio:334/247;box-shadow:0 14px 30px rgba(7,88,68,.14)}
+.suwimg img{width:100%;height:100%;object-fit:cover}
+.sut{font-size:26px;font-weight:800;line-height:1.2;letter-spacing:-.5px;margin:22px 0 0;text-wrap:balance}
+.sud{font-size:14.5px;color:var(--muted);line-height:1.55;margin:10px 0 0}
+.suav{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:12.5px;color:var(--muted)}
+.avs{display:flex}
+.avs img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-8px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.avs img:first-child{margin-left:0}
+.sufoot{flex:none;padding:12px 16px calc(16px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid #f1f2f1;display:flex;flex-direction:column;gap:4px}
+.sufoot .btn{height:54px;box-shadow:0 10px 22px rgba(7,88,68,.2)}
+.sufoot .btn:disabled{opacity:.4;box-shadow:none;pointer-events:none}
+.sulink{height:40px;font-size:13.5px;font-weight:600;color:var(--green)}
+.suhead{flex:none;padding:6px 16px 4px}
+.suhrow{display:flex;align-items:center;justify-content:space-between}
+.suhrow b{font-size:14px;font-weight:700;color:var(--green)}
+.subar{height:6px;border-radius:9px;background:#ebe8e1;margin-top:12px;overflow:hidden}
+.subar i{display:block;height:100%;border-radius:9px;background:var(--green);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.suq{padding-top:18px}
+.suq.anim-n{animation:scrFwd .4s cubic-bezier(.2,.8,.2,1)}
+.suq.anim-p{animation:scrBack .4s cubic-bezier(.2,.8,.2,1)}
+.suq h1{font-size:26px;font-weight:800;line-height:1.2;letter-spacing:-.5px;margin:0;text-wrap:balance}
+.suq>p.sd{font-size:14px;color:var(--muted);line-height:1.55;margin:8px 0 0}
+.sufl{display:block;font-size:13px;font-weight:700;margin:22px 0 8px}
+.suinp{width:100%;height:50px;border-radius:14px;border:1.5px solid #e6e9e6;background:var(--white);padding:0 16px;font:inherit;font-size:15px;outline:0;transition:border-color .2s,box-shadow .2s}
+.suinp:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(7,88,68,.1)}
+.sutip{margin-top:22px;background:var(--tint);border:1px solid #cfe5dc;border-radius:14px;padding:12px 14px;font-size:12.5px;color:#2f6b58;line-height:1.5}
+.suopts{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.suopt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px;border-radius:18px;border:1.5px solid #eceeec;background:var(--white);transition:border-color .2s,background .2s,transform .15s,box-shadow .2s}
+.suopt:active{transform:scale(.98)}
+.suopt .oi{width:42px;height:42px;border-radius:12px;background:var(--tint);color:var(--green);display:grid;place-items:center;flex:none}
+.suopt .oi svg{width:20px;height:20px}
+.suopt .ot{flex:1;min-width:0}
+.suopt h4{margin:0;font-size:15px;font-weight:700}
+.suopt p{margin:3px 0 0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.suopt .rd{width:24px;height:24px;border-radius:50%;border:2px solid #d4d8d5;flex:none;display:grid;place-items:center;transition:all .2s}
+.suopt.on{border-color:var(--green);background:#f3faf7;box-shadow:0 6px 16px rgba(7,88,68,.08)}
+.suopt.on .rd{border-color:var(--green);background:var(--green)}
+.suopt.on .rd:after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px);animation:pop .3s}
+.sugender{display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.sugender .suopt{flex-direction:column;justify-content:center;gap:10px;padding:22px 16px;text-align:center}
+.sugender .oi{width:52px;height:52px;border-radius:50%;background:#f1efe9;color:var(--muted)}
+.sugender .oi svg{width:24px;height:24px}
+.sugender .suopt.on .oi{background:#e1efe9;color:var(--green)}
+.sugender .suopt.on h4{color:var(--green)}
+.sugrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.sugrid .suopt{flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px;min-height:72px;position:relative}
+.sugrid .suopt h4{font-size:14px}
+.sugrid .suopt p{font-size:11.5px;color:var(--muted-2)}
+.sugrid .suopt.on h4{color:var(--green)}
+.sugrid .suopt.on:after{content:"";position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;animation:pop .3s}
+.wheel{position:relative;height:240px;margin-top:30px;-webkit-mask:linear-gradient(transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(transparent,#000 30%,#000 70%,transparent)}
+.wheel:before{content:"";position:absolute;left:50%;top:50%;width:min(240px,70%);height:68px;transform:translate(-50%,-50%);border-radius:18px;background:#f0f8f4;border:1.5px solid #cfe5dc;pointer-events:none}
+.wlist{position:relative;height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;padding:96px 0}
+.wlist::-webkit-scrollbar{display:none}
+.wlist div{height:48px;display:flex;align-items:center;justify-content:center;gap:8px;scroll-snap-align:center;font-size:18px;font-weight:700;color:#a6aca8;transition:font-size .15s,color .15s;cursor:pointer}
+.wlist div span{display:none}
+.wlist div.on{font-size:32px;color:var(--green);font-weight:800}
+.wlist div.on span{display:inline}
+.suseg{display:grid;grid-template-columns:1fr 1fr;background:#efece6;border:1px solid #e6e2da;border-radius:16px;padding:4px;margin-top:24px}
+.suseg button{height:42px;border-radius:12px;font-size:14px;font-weight:600;color:var(--muted);transition:background .25s,color .25s,box-shadow .25s}
+.suseg button.on{background:var(--white);color:var(--green);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.suseg.solid button.on{background:var(--green);color:#fff}
+.bignum{text-align:center;margin-top:34px;font-variant-numeric:tabular-nums}
+.bignum b{font-size:60px;font-weight:800;letter-spacing:-2px;color:var(--ink)}
+.bignum.g b{color:var(--green)}
+.bignum span{font-size:20px;font-weight:700;color:var(--muted-2);margin-left:6px}
+.ruler{position:relative;margin-top:16px;height:64px;-webkit-mask:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent);mask:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
+.ruler:after{content:"";position:absolute;left:50%;top:6px;width:3px;height:38px;border-radius:3px;background:var(--green);transform:translateX(-50%);pointer-events:none}
+.rtrack{height:100%;overflow-x:auto;scrollbar-width:none;display:flex;align-items:flex-start;cursor:grab}
+.rtrack::-webkit-scrollbar{display:none}
+.rtrack i{flex:none;width:2px;margin-right:10px;height:14px;margin-top:16px;border-radius:2px;background:#c9ceca}
+.rtrack i.m{height:22px;margin-top:12px;background:#aab0ac}
+.rtrack i.M{height:30px;margin-top:8px;background:#8d938f}
+.rtrack .rp{flex:none;padding:0;width:calc(50% - 1px)}
+.ruler small{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:11px;color:var(--muted-2)}
+.sugoal{display:flex;justify-content:center;margin-top:18px}
+.sugoal span{font-size:13px;font-weight:600;color:var(--green);background:#eef7f3;border:1px solid #cfe5dc;border-radius:12px;padding:8px 14px;animation:fadeswap .3s}
+.bmicard{background:var(--white);border:1px solid #eceeec;border-radius:20px;padding:18px;margin-top:22px}
+.bmicard .bh{display:flex;justify-content:space-between;align-items:center}
+.bmicard .bh b{font-size:14px}
+.bmicard .badge{font-size:12px;font-weight:700;padding:5px 10px;border-radius:9px}
+.bmicard .bv{display:flex;align-items:baseline;gap:10px;margin:12px 0 14px}
+.bmicard .bv b{font-size:48px;font-weight:800;color:var(--green);letter-spacing:-1.5px;font-variant-numeric:tabular-nums}
+.bmicard .bv span{font-size:13px;color:var(--muted)}
+.bmibar{height:8px;border-radius:9px;background:#ebe8e1;overflow:hidden}
+.bmibar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#22c55e,#10b97f);width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.bmilab{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px}
+.prio{background:var(--white);border:1px solid #eceeec;border-radius:20px;padding:16px 18px;margin-top:14px}
+.prio b{font-size:14px}
+.prio div{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-2);margin-top:12px;line-height:1.4}
+.prio svg{width:18px;height:18px;color:var(--green);flex:none;margin-top:1px}
+.suready .lbl2{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.8px}
+.suready h1{margin-top:8px}
+.suready .suwimg{aspect-ratio:327/246}
+@media (min-width:700px){.suhead,.sufoot{padding-left:max(24px,calc(50% - 320px));padding-right:max(24px,calc(50% - 320px))}}
+
 /* ---------- ONBOARDING & FIT PLAN ---------- */
 .obslides{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .obslides::-webkit-scrollbar{display:none}
@@ -1513,44 +1614,28 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   </div></div>
 </section>
 
-<!-- ONBOARDING (logged out) -->
-<section class="screen" data-screen="onboard" style="background:#0c1310">
-  <div class="obslides" id="ob-slides">
-    <div class="obs"><img src="img/ob/onboard1.jpg" alt=""><div class="obtext"><h2>Breathe, Move, Thrive</h2><p>Wellness, meditation, and fitness—all in one place to help you live your best life.</p></div></div>
-    <div class="obs"><img src="img/ob/onboard2.jpg" alt=""><div class="obtext"><h2>Stronger Body, Sharper Mind</h2><p>Unlock your full potential with guided workouts, mindfulness practices, and wellness routines.</p></div></div>
-    <div class="obs"><img src="img/ob/onboard3.jpg" alt=""><div class="obtext"><h2>Find Your Balance</h2><p>Take small steps every day toward a healthier, happier you.</p></div></div>
-  </div>
-  <div class="obfoot">
-    <div class="obdots" id="ob-dots"><i class="on"></i><i></i><i></i></div>
-    <button class="btn" id="ob-start">Start Your Journey</button>
-    <button class="oblink" data-go="login">I already have an account</button>
-  </div>
-</section>
-
-<!-- FIT PLAN WELCOME -->
-<section class="screen" data-screen="fitwelcome">
+<!-- SIGN-UP WELCOME (logged out) -->
+<section class="screen" data-screen="onboard">
   <div class="status" data-status></div>
-  <div class="scroll"><div class="top pad fpw">
-    <img src="img/ob/img-onboard01.png" alt="" class="fpwimg">
-    <h1 class="h1" style="text-align:center;font-size:26px">Welcome to LifeFit!</h1>
-    <p class="sub" style="text-align:center;max-width:300px;margin:10px auto 0">To create a workout plan that's truly personalized, we'd love to start by learning a little about you.</p>
-    <div class="fpwlist"><span><b>11</b>quick steps</span><span><b>2</b>minutes</span><span><b>100%</b>personal</span></div>
-    <button class="btn" data-go="fitplan" style="margin-top:26px">Let's Dive In</button>
+  <div class="scroll"><div class="top pad suw">
+    <div class="sulogo"><span><svg data-i="leaf"></svg></span>LifeFit</div>
+    <div class="suwimg"><img src="img/su/welcome.jpg" alt="Woman meditating outdoors"></div>
+    <h1 class="sut">A healthier, stronger you starts today</h1>
+    <p class="sud">Your personalized journey into fitness, wellness, mind challenges, and healthy recipes.</p>
+    <div class="suav"><span class="avs"><img src="img/profile-avatar.jpg" alt=""><img src="img/aria-face.jpg" alt=""><img src="img/marcus-avatar.jpg" alt=""></span>Joined by 24K+ healthy people</div>
   </div></div>
+  <div class="sufoot"><button class="btn" id="su-start">Get Started</button><button class="sulink" id="su-signin">I already have an account</button></div>
 </section>
 
-<!-- FIT PLAN QUESTIONS -->
+<!-- SIGN-UP STEPS -->
 <section class="screen" data-screen="fitplan">
   <div class="status" data-status></div>
-  <div class="fphead">
-    <div class="fpmeta"><span>Step <b id="fp-step">1</b></span><span id="fp-of">1/11</span></div>
-    <div class="fpbar" id="fp-bar"></div>
+  <div class="suhead">
+    <div class="suhrow"><button class="sq" id="su-back" aria-label="Back"><svg data-i="chevl"></svg></button><b id="su-step">Step 1 of 12</b><span style="width:36px"></span></div>
+    <div class="subar"><i id="su-bar"></i></div>
   </div>
-  <div class="scroll"><div class="top pad" id="fp-body"></div></div>
-  <div class="fpbtns">
-    <button class="fpprev" id="fp-prev">Previous</button>
-    <button class="btn" id="fp-next">Continue</button>
-  </div>
+  <div class="scroll"><div class="top pad" id="su-body"></div></div>
+  <div class="sufoot"><button class="btn" id="su-next">Continue</button></div>
 </section>
 
 <!-- BOTTOM SHEET -->
@@ -1618,6 +1703,10 @@ const I={
  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
  logout:'<path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/>',
  userplus:'<circle cx="9" cy="8" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 4 1.5M19 14v6M16 17h6"/>',
+ leaf:'<path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15H5z"/><path d="M5 19 14 10"/>',
+ mars:'<circle cx="10" cy="14" r="6"/><path d="M14.5 9.5 20 4M15 4h5v5"/>',
+ venus:'<circle cx="12" cy="9" r="6"/><path d="M12 15v7M9 19h6"/>',
+ checkc:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>',
  heart:'<path d="M12 20s-7-4.4-9.2-8.6C1.3 8.4 3 5 6.4 5c2 0 3.6 1.2 4.4 2.6h2.4C14 6.2 15.6 5 17.6 5 21 5 22.7 8.4 21.2 11.4 19 15.6 12 20 12 20z"/>',
  brain2:'<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/>',
  bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -1721,7 +1810,7 @@ function playMedia(el){
 }
 
 const DETAIL={
-  fitplan(){fpRender()},
+  fitplan(){suRender()},
   editprofile(){fillEP()},
   legal(i){renderLegal(i)},
   contact(){$('ct-form').hidden=false;$('ct-sent').hidden=true;$('ct-form').reset()},
@@ -1812,7 +1901,7 @@ function tagStagger(root){
 function countUp(el,to,dur=900,dec=0){
   const suf=el.dataset.suf||'';if(REDUCE){el.textContent=to.toFixed(dec)+suf;return}
   const from=0,t0=performance.now();
-  (function f(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=(from+(to-from)*e).toFixed(dec)+suf;if(p<1)requestAnimationFrame(f)})(t0);
+  (function f(){const p=Math.max(0,Math.min(1,(performance.now()-t0)/dur)),e=1-Math.pow(1-p,3);el.textContent=(from+(to-from)*e).toFixed(dec)+suf;if(p<1)requestAnimationFrame(f)})(t0);
 }
 function runCounters(scr){scr.querySelectorAll('[data-count]').forEach(el=>countUp(el,+el.dataset.count))}
 function popEl(el){el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop')}
@@ -1873,7 +1962,7 @@ const LEGAL=[['Terms and Conditions',[['1. Using LifeFit','LifeFit gives you fit
 function renderLegal(i){i=+i||0;$('lg-title').textContent=LEGAL[i][0];document.querySelectorAll('[data-legal]').forEach(b=>b.classList.toggle('on',+b.dataset.legal===i));$('lgl-body').innerHTML=LEGAL[i][1].map(([h,p])=>`<h3>${h}</h3><p>${p}</p>`).join('')}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-legal]');if(b)renderLegal(b.dataset.legal)});
 // bottom sheet (logout / delete)
-const SHEETS={logout:{ic:'logout',c:'#e96f69',bg:'#fdeeed',t:'Log out of LifeFit?',p:'You can sign back in anytime with your phone number.',ok:'Log Out',go:()=>{stack.length=0;setAuthMode(false);$('ob-slides').scrollLeft=0;show('onboard',false,'fwd')}},
+const SHEETS={logout:{ic:'logout',c:'#e96f69',bg:'#fdeeed',t:'Log out of LifeFit?',p:'You can sign back in anytime with your phone number.',ok:'Log Out',go:()=>{stack.length=0;setAuthMode(false);show('onboard',false,'fwd')}},
   delete:{ic:'trash',c:'#e5484d',bg:'#fdeeed',t:'Delete your account?',p:'This permanently removes your profile, progress and favourites. This action cannot be undone.',ok:'Delete Account',go:()=>{toast('Account deletion requested (demo)')}}};
 let curSheet=null;
 function openSheet(k){const s=SHEETS[k];curSheet=s;$('sh-ic').style.cssText=`background:${s.bg};color:${s.c}`;$('sh-ic').innerHTML=`<svg data-i="${s.ic}"></svg>`;icons($('sh-ic'));$('sh-t').textContent=s.t;$('sh-p').textContent=s.p;$('sh-ok').textContent=s.ok;$('sh-ok').classList.add('danger');$('sheetbg').hidden=false;$('sheet').hidden=false;$('sh-no').focus()}
@@ -1889,7 +1978,7 @@ const otpIn=[...$('otp').querySelectorAll('input')];
 otpIn.forEach((inp,k)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);if(inp.value&&otpIn[k+1])otpIn[k+1].focus();checkOtp()});
   inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&otpIn[k-1])otpIn[k-1].focus()});
   inp.addEventListener('paste',e=>{const d=(e.clipboardData.getData('text')||'').replace(/\D/g,'').slice(0,6);if(!d)return;e.preventDefault();d.split('').forEach((c,j)=>{if(otpIn[j])otpIn[j].value=c});checkOtp()})});
-function checkOtp(){if(otpIn.every(i=>i.value)){toast(signupMode?'Verified! Let\'s set up your plan':'Verified! Welcome back');setTimeout(()=>{otpIn.forEach(i=>i.value='');stack.length=0;if(signupMode){Object.keys(FP).forEach(k=>FP[k]=k.endsWith('unit')?'kg':'');fpi=0;show('fitwelcome',false,'fwd')}else show('home',false,'tab')},600)}}
+function checkOtp(){if(otpIn.every(i=>i.value)){toast(signupMode?'Verified! Let\'s set up your plan':'Verified! Welcome back');setTimeout(()=>{otpIn.forEach(i=>i.value='');stack.length=0;if(signupMode){resetSU();show('fitplan',false,'fwd')}else show('home',false,'tab')},600)}}
 let otpT;function startOtpTimer(){let n=59;clearInterval(otpT);$('otp-resend').disabled=true;$('otp-resend').style.opacity=.4;$('otp-timer').textContent='(0:59)';otpT=setInterval(()=>{n--;$('otp-timer').textContent=n>0?`(0:${String(n).padStart(2,'0')})`:'';if(n<=0){clearInterval(otpT);$('otp-resend').disabled=false;$('otp-resend').style.opacity=1}},1000)}
 $('otp-resend').addEventListener('click',()=>{toast('New OTP sent');startOtpTimer()});
 paintPF();
@@ -1899,77 +1988,102 @@ function sizeHomeBg(){const bg=$('homebg'),card=document.querySelector('[data-sc
   const top=bg.getBoundingClientRect().top,r=card.getBoundingClientRect();bg.style.height=Math.round(r.top-top+r.height/2)+'px'}
 addEventListener('resize',sizeHomeBg);
 
-// ---------- Onboarding + sign-up Fit Plan (11 steps, copy from demo.lifefit.mobi) ----------
+// ---------- Sign-up: welcome + 12 steps ----------
 let signupMode=false;
-(()=>{const sl=$('ob-slides'),dots=[...$('ob-dots').children];
-  sl.addEventListener('scroll',()=>{const i=Math.round(sl.scrollLeft/sl.clientWidth);dots.forEach((d,k)=>d.classList.toggle('on',k===i))},{passive:true});
-  $('ob-dots').addEventListener('click',e=>{const k=dots.indexOf(e.target);if(k>=0)sl.scrollTo({left:k*sl.clientWidth,behavior:'smooth'})});
-  $('ob-start').addEventListener('click',()=>{const i=Math.round(sl.scrollLeft/sl.clientWidth);if(i<2){sl.scrollTo({left:(i+1)*sl.clientWidth,behavior:'smooth'});return}setAuthMode(true);show('login',true,'fwd')});
-  setInterval(()=>{if(cur!=='onboard'||document.hidden)return;const i=Math.round(sl.scrollLeft/sl.clientWidth);if(i<2)sl.scrollTo({left:(i+1)*sl.clientWidth,behavior:REDUCE?'auto':'smooth'})},4500);
-})();
+$('su-start').addEventListener('click',()=>{setAuthMode(true);show('login',true,'fwd')});
+$('su-signin').addEventListener('click',()=>{setAuthMode(false);show('login',true,'fwd')});
 function setAuthMode(up){signupMode=up;const h=document.querySelector('[data-screen=login] .h1'),p=document.querySelector('[data-screen=login] .sub');
   h.textContent=up?'Create your account':'Sign in or Sign Up';p.textContent=up?'Enter your phone number to get started.':'Welcome back! please enter your phone number.';
   const sw=$('auth-switch');sw.dataset.auth=up?'in':'up';sw.innerHTML=up?'<svg data-i="user"></svg>Sign In to Existing Account':'<svg data-i="userplus"></svg>Create New Account';sw.querySelector('svg').dataset.done='';icons(sw);
   document.querySelector('[data-screen=login] [type=submit]').textContent=up?'SIGN UP':'CONTINUE'}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-auth]');if(b){setAuthMode(b.dataset.auth==='up');const sc=document.querySelector('[data-screen=login] .scroll');sc.classList.remove('fadeswap');void sc.offsetWidth;sc.classList.add('fadeswap');$('lg-phone').focus()}});
 
-const FP={name:'',goal:'',gender:'',body:'',age:'',height:'',weight:'',wunit:'kg',wgoal:'',gunit:'kg',level:''};
-const OPT=(k,id,t,d,ic)=>({k,id,t,d,ic});
-const FPS=[
- {t:"Hey there! What's <b>your name?</b>",type:'text',k:'name',ph:'your name'},
- {t:'What is <b>your fitness goal?</b>',d:"Let us know what you're aiming for, so we can guide you every step of the way!",type:'opts',k:'goal',opts:[
-   OPT('goal','build_strength','Build Strength','For those looking to get stronger and increase muscle.','💪'),OPT('goal','lose_weight','Lose Weight','If shedding a few pounds is your main goal.','🔥'),
-   OPT('goal','tone_define','Tone & Define','For shaping and refining your body.','✨'),OPT('goal','relieve_stress','Relieve Stress',"If you're here for wellness and relaxation benefits.",'🧘'),
-   OPT('goal','just_stay_active','Just Stay Active','For those who simply want to keep moving and feel good.','🚶')]},
- {t:"What's <b>your gender?</b>",type:'opts',k:'gender',opts:[OPT('gender','female','Female','','img/ob/icon-female.svg'),OPT('gender','male','Male','','img/ob/icon-male.svg'),OPT('gender','non_binary','Non-Binary','','img/ob/icon-nonbinary.svg')]},
- {t:"What's Your <b>Body Type?</b>",d:"Select the option that feels closest to your current body shape. Don't worry, we're here to help you get where you want to be!",type:'opts',k:'body',opts:[
-   OPT('body','regular','Regular','A balanced body type, neither too slim nor too heavy.'),OPT('body','flabby','Flabby','More soft or loose skin, with areas that may need toning and firming.'),
-   OPT('body','overweight','Overweight','Carrying extra weight, and looking to focus on weight loss and fitness goals.'),OPT('body','flat','Flat','A leaner body type with less body fat, focusing on building muscle or toning.'),
-   OPT('body','athletic','Athletic','Muscular and fit, with a strong build from regular exercise.'),OPT('body','curvy','Curvy','Fuller figure with more curves, focusing on shaping and toning specific areas.'),
-   OPT('body','not_sure','Not Sure',"If you're unsure, don't worry! We'll help customize based on your fitness goals.")]},
- {t:'<b>How old</b> are you?',type:'num',k:'age',ph:'18',unit:'years',min:10,max:100},
- {t:'<b>How tall</b> are you?',type:'num',k:'height',ph:'170',unit:'cm',min:100,max:250},
- {t:"What's Your <b>Current Weight?</b>",type:'num',k:'weight',ph:'65',unitKey:'wunit',min:25,max:400},
- {t:"What's Your <b>Weight Goal</b>",bubble:"Way to go! Setting goals is such a powerful start, and we're here with you!🚀💪",type:'num',k:'wgoal',ph:'60',unitKey:'gunit',min:25,max:400},
- {t:'<b>How active</b> are you right now?',bubble:'Pssst! You are almost done😆👏',d:"Whether you're just starting or already active, we'll create a plan that's perfect for you.",type:'opts',k:'level',opts:[
-   OPT('level','beginner','Beginner','I am new to fitness','🌱'),OPT('level','intermediate','Intermediate','I work out 2-3 times a week','⚡'),OPT('level','advance','Advance','I Exercise regularly','🏆')]},
- {t:'Your <b>fitness summary</b>',type:'summary'},
- {t:"You're All Set!",type:'done'}];
-let fpi=0;
-$('fp-bar').innerHTML=FPS.map(()=>'<i></i>').join('');
-const kg=(v,u)=>u==='lbs'?v*0.4536:v;
-function fpValid(){const s=FPS[fpi];if(s.type==='text')return FP.name.trim().length>0;if(s.type==='opts')return !!FP[s.k];
-  if(s.type==='num'){const v=parseFloat(FP[s.k]);return v>=s.min&&v<=s.max*(s.unitKey&&FP[s.unitKey]==='lbs'?2.2:1)}return true}
-function fpRender(dir){const s=FPS[fpi];
-  $('fp-step').textContent=fpi+1;$('fp-of').textContent=(fpi+1)+'/11';[...$('fp-bar').children].forEach((b,k)=>b.classList.toggle('on',k<=fpi));
-  let h=(s.bubble?`<div class="fpbubble">${s.bubble}</div>`:'')+(s.type==='done'?'':`<h1 class="fpt">${s.t}</h1>`)+(s.d?`<p class="fpd">${s.d}</p>`:'');
-  if(s.type==='text')h+=`<input class="fpinp" id="fp-in" placeholder="${s.ph}" value="${esc(FP.name)}" autocomplete="given-name" aria-label="Your name">`;
-  if(s.type==='opts')h+=`<div class="fpopts">${s.opts.map(o=>`<button class="fpopt${FP[s.k]===o.id?' on':''}" data-opt="${o.id}">${o.ic?`<span class="oi">${o.ic.endsWith('.svg')?`<img src="${o.ic}" alt="">`:o.ic}</span>`:''}<span class="ot"><h4>${o.t}</h4>${o.d?`<p>${o.d}</p>`:''}</span><span class="ck"></span></button>`).join('')}</div>`;
-  if(s.type==='num'){const u=s.unitKey?FP[s.unitKey]:s.unit;h+=`<div class="fpnum"><input class="fpinp" id="fp-in" type="number" inputmode="decimal" placeholder="${s.ph}" value="${FP[s.k]}" aria-label="${s.k}"><span>${u}</span></div>`+(s.unitKey?`<div class="fpunit" data-unit="${s.unitKey}"><button class="${u==='kg'?'on':''}" data-u="kg">KG</button><button class="${u==='lbs'?'on':''}" data-u="lbs">LBS</button></div>`:'')}
-  if(s.type==='summary'){const w=kg(+FP.weight,FP.wunit),hgt=+FP.height/100,b=w/(hgt*hgt),cat=b<18.5?'Underweight':b<25?'Normal':b<30?'Overweight':'Obese';
-    const pos=Math.max(2,Math.min(98,b<18.5?(b-14)/4.5*25:b<25?25+(b-18.5)/6.5*25:b<30?50+(b-25)/5*25:75+Math.min(1,(b-30)/10)*25));
-    const goalT=FPS[1].opts.find(o=>o.id===FP.goal),lvl=FPS[8].opts.find(o=>o.id===FP.level);
-    h+=`<div class="fpbmi"><div class="bh"><span>Body Mass Index (BMI)</span><b>${cat}</b></div><div class="bv" id="fp-bmi">${b.toFixed(1)}</div>
-      <div class="fpscale"><i style="background:#90caf9"></i><i style="background:#81c784"></i><i style="background:#ffb74d"></i><i style="background:#e57373"></i><span class="mk" id="fp-mk" style="left:0%"></span></div>
-      <div><span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span></div></div>
-      <div class="fpsum"><div><b>Activity</b><span>${lvl?lvl.t:'-'}</span></div><div><b>Current Weight</b><span>${FP.weight} ${FP.wunit}</span></div><div><b>Weight Goals</b><span>${FP.wgoal} ${FP.gunit}</span></div><div><b>Fitness Goals</b><span>${goalT?goalT.t:'-'}</span></div></div>`;
-    setTimeout(()=>{const m=$('fp-mk');if(m)m.style.left=pos+'%'},120)}
-  if(s.type==='done')h+=`<div class="fpdone"><h1 class="fpt" style="font-weight:700">You're All Set!</h1><img src="img/ob/question11.png" alt=""><p class="fpd">Everything's set up for you. Now, let's make those goals a reality!</p></div>`;
-  $('fp-body').innerHTML=`<div class="fpq ${dir==='p'?'anim-p':dir==='n'?'anim-n':''}">${h}</div>`;
-  $('fp-prev').hidden=fpi===0;$('fp-next').textContent=s.type==='done'?'See your plan':s.type==='summary'?'Finish':'Continue';$('fp-next').disabled=!fpValid();
-  const inp=$('fp-in');if(inp){setTimeout(()=>inp.focus({preventScroll:true}),300);inp.addEventListener('input',()=>{FP[s.k]=inp.value;$('fp-next').disabled=!fpValid()});inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&fpValid())$('fp-next').click()})}
-  if(s.type==='done'&&typeof confettiBurst==='function')confettiBurst();
-}
-$('fp-body').addEventListener('click',e=>{const o=e.target.closest('[data-opt]');const s=FPS[fpi];
-  if(o){FP[s.k]=o.dataset.opt;$('fp-body').querySelectorAll('.fpopt').forEach(x=>x.classList.toggle('on',x===o));$('fp-next').disabled=false;return}
-  const u=e.target.closest('[data-u]');if(u){FP[u.parentElement.dataset.unit]=u.dataset.u;fpRender()}});
-$('fp-next').addEventListener('click',()=>{if(!fpValid())return;
-  if(fpi<FPS.length-1){fpi++;fpRender('n');document.querySelector('[data-screen=fitplan] .scroll').scrollTop=0;return}
-  // finish: personalise the app
-  PF.name=FP.name.trim()||PF.name;PF.gender=FP.gender==='female'?'Female':'Male';PF.h=+FP.height||PF.h;PF.w=Math.round(kg(+FP.weight,FP.wunit))||PF.w;paintPF();
-  stack.length=0;show('home',false,'tab');toast(`Welcome, ${PF.name.split(' ')[0]}! Your plan is ready 🎉`)});
-$('fp-prev').addEventListener('click',()=>{if(fpi>0){fpi--;fpRender('p')}});
+const SU={};
+function resetSU(){Object.assign(SU,{first:'',last:'',goal:'',gender:'',focus:new Set(),body:'',age:28,hu:'cm',h:170,wu:'kg',w:70,gw:65,act:''});suI=0}
+let suI=0;resetSU();
+const GOALS_SU=[['strength','Build Muscle & Strength','Target weights, hypertrophy & core training','dumbbell'],['cardio','Cardio & Weight Loss','HIIT burns, running & dynamic movements','flame'],['flex','Improve Flexibility & Balance','Daily stretch routines, flow state yoga','heart'],['mind','Mind Calmness & Sleep','Guided meditations & mental wellness games','moon']];
+const FOCUS=[['chest','Chest','Push exercises'],['core','Abs & Core','Stability & tone'],['legs','Legs & Glutes','Lower body power'],['back','Back & Pull','Posture & strength'],['arms','Arms & Shoulders','Upper body balance'],['full','Full Body','Overall athletic']];
+const BODY=[['lean','Lean / Ectomorph','Fast metabolism, naturally thin, active cardio base'],['athletic','Athletic / Mesomorph','Medium frame, gains muscle easily, high power ratio'],['robust','Robust / Endomorph','Broad build, slower metabolism, strength focus']];
+const ACT=[['sedentary','Sedentary','Little to no exercise, desk job'],['light','Lightly Active','Light exercise 1-3 days per week'],['moderate','Moderately Active','Moderate workout 3-5 days per week'],['very','Very Active','Heavy athletic training 6-7 days per week']];
+const lbs=kg=>kg*2.20462,ftin=cm=>{const t=Math.round(cm/2.54);return [Math.floor(t/12),t%12]};
+const opt=(id,t,d,on,ic)=>`<button class="suopt${on?' on':''}" data-o="${id}">${ic?`<span class="oi"><svg data-i="${ic}"></svg></span>`:''}<span class="ot"><h4>${t}</h4>${d?`<p>${d}</p>`:''}</span><span class="rd"></span></button>`;
+function wDisp(kg,u){return u==='kg'?kg.toFixed(1):lbs(kg).toFixed(1)}
+function rulerHTML(id,min,max,step){const n=Math.round((max-min)/step);let t='<span class="rp"></span>';for(let k=0;k<=n;k++)t+=`<i class="${k%10===0?'M':k%5===0?'m':''}"></i>`;return `<div class="ruler"><div class="rtrack" id="${id}" data-min="${min}" data-step="${step}" data-max="${max}">${t}<span class="rp"></span></div></div>`}
+function bindRuler(id,val,onv){const r=$(id);if(!r)return;const min=+r.dataset.min,step=+r.dataset.step,max=+r.dataset.max;
+  requestAnimationFrame(()=>{r.scrollLeft=(val-min)/step*12});
+  r.addEventListener('scroll',()=>{const v=Math.min(max,Math.max(min,min+Math.round(r.scrollLeft/12)*step));onv(+v.toFixed(1))},{passive:true});
+  let down=null;r.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down={x:e.clientX,s:r.scrollLeft};r.setPointerCapture(e.pointerId)});
+  r.addEventListener('pointermove',e=>{if(down)r.scrollLeft=down.s-(e.clientX-down.x)});
+  r.addEventListener('pointerup',()=>{down=null;const v=Math.round(r.scrollLeft/12);r.scrollTo({left:v*12,behavior:'smooth'})})}
+const STEPS=[
+ {v:()=>SU.first.trim().length>0,r:()=>`<h1>What's your name?</h1><p class="sd">We'll use this to personalize your healthy living journey.</p>
+   <label class="sufl" for="su-first">First Name</label><input class="suinp" id="su-first" placeholder="Alex" value="${esc(SU.first)}" autocomplete="given-name">
+   <label class="sufl" for="su-last">Last Name</label><input class="suinp" id="su-last" placeholder="Johnson" value="${esc(SU.last)}" autocomplete="family-name">
+   <div class="sutip">💡 "Living my best life" will be your profile bio - you can update it anytime.</div>`,
+  b:()=>{['first','last'].forEach(k=>{const i=$('su-'+k);i.addEventListener('input',()=>{SU[k]=i.value;suValid()});i.addEventListener('keydown',e=>{if(e.key==='Enter')k==='first'?$('su-last').focus():$('su-next').click()})});setTimeout(()=>$('su-first').focus({preventScroll:true}),350)}},
+ {v:()=>!!SU.goal,r:()=>`<h1>Choose your goal</h1><p class="sd">What do you want to prioritize in your health journey?</p><div class="suopts" data-k="goal">${GOALS_SU.map(g=>opt(g[0],g[1],g[2],SU.goal===g[0],g[3])).join('')}</div>`},
+ {v:()=>!!SU.gender,r:()=>`<h1>What is your gender?</h1><p class="sd">This helps us personalize calorie burn rates and workout presets.</p><div class="sugender" data-k="gender">${[['male','Male','mars'],['female','Female','venus']].map(g=>`<button class="suopt${SU.gender===g[0]?' on':''}" data-o="${g[0]}"><span class="oi"><svg data-i="${g[2]}"></svg></span><h4>${g[1]}</h4></button>`).join('')}</div>`},
+ {v:()=>SU.focus.size>0,r:()=>`<h1>Target focus areas</h1><p class="sd">Pick one or more muscle groups you want to train.</p><div class="sugrid" data-k="focus" data-multi>${FOCUS.map(f=>`<button class="suopt${SU.focus.has(f[0])?' on':''}" data-o="${f[0]}"><h4>${f[1]}</h4><p>${f[2]}</p></button>`).join('')}</div>`},
+ {v:()=>!!SU.body,r:()=>`<h1>Select your body type</h1><p class="sd">Helps us customize metabolic calculations for your goals.</p><div class="suopts" data-k="body">${BODY.map(b=>opt(b[0],b[1],b[2],SU.body===b[0])).join('')}</div>`},
+ {v:()=>true,r:()=>{let it='';for(let a=13;a<=90;a++)it+=`<div data-age="${a}">${a}<span>Years</span></div>`;return `<h1>How old are you?</h1><p class="sd">We use this to set safe heart rate training zones for you.</p><div class="wheel"><div class="wlist" id="su-wheel">${it}</div></div>`},
+  b:()=>{const w=$('su-wheel'),H=48;const mark=()=>{const a=13+Math.round(w.scrollTop/H);SU.age=Math.min(90,Math.max(13,a));w.querySelectorAll('div').forEach(d=>d.classList.toggle('on',+d.dataset.age===SU.age))};
+    requestAnimationFrame(()=>{w.scrollTop=(SU.age-13)*H;mark()});w.addEventListener('scroll',mark,{passive:true});
+    w.addEventListener('click',e=>{const d=e.target.closest('[data-age]');if(d)w.scrollTo({top:(+d.dataset.age-13)*H,behavior:'smooth'})})}},
+ {v:()=>true,r:()=>`<h1>What is your height?</h1><p class="sd">Used to benchmark your weight and calculate BMI accurately.</p>
+   <div class="suseg" data-u="hu"><button class="${SU.hu==='cm'?'on':''}" data-uv="cm">Centimeters</button><button class="${SU.hu==='ft'?'on':''}" data-uv="ft">Feet / Inches</button></div>
+   <div class="bignum g" id="su-hv"></div>${rulerHTML('su-hr',120,220,1)}`,
+  b:()=>{const p=v=>{SU.h=v;const [f,i]=ftin(v);$('su-hv').innerHTML=SU.hu==='cm'?`<b>${v}</b><span>cm</span>`:`<b>${f}′${i}″</b><span>ft</span>`};p(SU.h);bindRuler('su-hr',SU.h,p)}},
+ {v:()=>true,r:()=>`<h1>What's your current weight?</h1><p class="sd">We use this to calculate your BMI and daily caloric needs.</p>
+   <div class="suseg" data-u="wu"><button class="${SU.wu==='kg'?'on':''}" data-uv="kg">KG</button><button class="${SU.wu==='lbs'?'on':''}" data-uv="lbs">LBS</button></div>
+   <div class="bignum" id="su-wv"></div>${rulerHTML('su-wr',30,200,.5)}`,
+  b:()=>{const p=v=>{SU.w=v;$('su-wv').innerHTML=`<b>${wDisp(v,SU.wu)}</b><span>${SU.wu}</span>`};p(SU.w);bindRuler('su-wr',SU.w,p)}},
+ {v:()=>true,r:()=>`<h1>What's your goal weight?</h1><p class="sd">We'll pace your plan around this target milestone.</p>
+   <div class="suseg solid" data-u="wu"><button class="${SU.wu==='kg'?'on':''}" data-uv="kg">KG</button><button class="${SU.wu==='lbs'?'on':''}" data-uv="lbs">LBS</button></div>
+   <div class="bignum" id="su-gv"></div><div class="sugoal" id="su-gd"></div>${rulerHTML('su-gr',30,200,.5)}`,
+  b:()=>{const p=v=>{SU.gw=v;$('su-gv').innerHTML=`<b>${wDisp(v,SU.wu)}</b><span>${SU.wu}</span>`;const d=v-SU.w,dd=SU.wu==='kg'?Math.abs(d).toFixed(1):lbs(Math.abs(d)).toFixed(1);
+    $('su-gd').innerHTML=Math.abs(d)<.25?'<span>Maintain your current weight ✓</span>':`<span>${d<0?'−':'+'}${dd} ${SU.wu} to reach your goal ✓</span>`};p(SU.gw);bindRuler('su-gr',SU.gw,p)}},
+ {v:()=>!!SU.act,r:()=>`<h1>What's your activity level?</h1><p class="sd">Be honest - this sets your baseline metabolic rate.</p><div class="suopts" data-k="act">${ACT.map(a=>opt(a[0],a[1],a[2],SU.act===a[0])).join('')}</div>`},
+ {v:()=>true,r:()=>{const b=SU.w/((SU.h/100)**2),cat=b<18.5?['Underweight','#e0f0ff','#2a7fc9']:b<25?['Healthy ✓','#dcfce7','#15803d']:b<30?['Overweight','#fff4dc','#b26b00']:['Obese','#fdeeed','#c2564f'];
+    const d=SU.gw-SU.w,goal=GOALS_SU.find(g=>g[0]===SU.goal),fx=FOCUS.filter(f=>SU.focus.has(f[0])).map(f=>f[1].toLowerCase()),act=ACT.find(a=>a[0]===SU.act);
+    const pr=[`Targeting ${fx.length>2?fx.slice(0,2).join(', ')+' & more':fx.join(' & ')}${SU.goal==='strength'?' & hypertrophy':''}`,
+      Math.abs(d)<.25?'Maintain your current weight':d<0?`Steady fat loss trajectory (−${Math.abs(d).toFixed(1)} kg)`:`Lean mass gain trajectory (+${d.toFixed(1)} kg)`,
+      `${({sedentary:'Sedentary',light:'Light',moderate:'Moderate',very:'High'})[SU.act]||'Light'} activity baseline tracking`];
+    setTimeout(()=>{const f=$('su-bmif');if(f)f.style.width=Math.max(4,Math.min(100,(b-15)/20*100))+'%'},150);
+    return `<h1>Your fitness profile</h1><p class="sd">Based on your answers - here's what we know about you.</p>
+     <div class="bmicard"><div class="bh"><b>Calculated BMI</b><span class="badge" style="background:${cat[1]};color:${cat[2]}">${cat[0]}</span></div>
+     <div class="bv"><b id="su-bmiv">${b.toFixed(1)}</b><span>BMI Index</span></div><div class="bmibar"><i id="su-bmif"></i></div><div class="bmilab"><span>Underweight</span><span>Normal</span><span>Overweight</span></div></div>
+     <div class="prio"><b>Your Priorities</b>${pr.map(p=>`<div><svg data-i="checkc"></svg>${p}</div>`).join('')}</div>
+     ${goal?`<p class="sd" style="margin-top:14px;font-size:12.5px">Main goal: <b style="color:var(--green)">${goal[1]}</b> · ${SU.age} years</p>`:''}`},
+  b:()=>{const el=$('su-bmiv');if(el)countUp(el,+el.textContent,900,1)}},
+ {v:()=>true,r:()=>`<div class="suready"><div class="lbl2">ALL SET! 🎉</div><h1>Your personalized plan is ready</h1><p class="sd">We've crafted a wellness plan focused on strength, dynamic cardio, and progressive core training.</p>
+   <div class="suwimg"><img src="img/su/ready.jpg" alt="Woman resting after a workout"></div>
+   <div class="suav"><span class="avs"><img src="img/marcus-avatar.jpg" alt=""><img src="img/aria-face.jpg" alt=""><img src="img/live-coach.jpg" alt=""></span>Join over 24K members tracking daily targets.</div></div>`,
+  b:()=>{confettiBurst()}}
+];
+function suValid(){$('su-next').disabled=!STEPS[suI].v()}
+function suRender(dir){const s=STEPS[suI];
+  $('su-step').textContent=`Step ${suI+1} of ${STEPS.length}`;$('su-bar').style.width=((suI+1)/STEPS.length*100)+'%';
+  $('su-body').innerHTML=`<div class="suq ${dir==='p'?'anim-p':dir==='n'?'anim-n':''}">${s.r()}</div>`;icons($('su-body'));
+  $('su-next').textContent=suI===STEPS.length-1?'See Your Plan':'Continue';
+  document.querySelector('[data-screen=fitplan] .scroll').scrollTop=0;
+  s.b&&s.b();suValid()}
+$('su-body').addEventListener('click',e=>{
+  const o=e.target.closest('[data-o]');
+  if(o){const g=o.parentElement,k=g.dataset.k;
+    if(g.hasAttribute('data-multi')){const v=o.dataset.o;
+      if(v==='full'){SU.focus=SU.focus.has('full')?new Set():new Set(['full'])}else{SU.focus.delete('full');SU.focus.has(v)?SU.focus.delete(v):SU.focus.add(v)}
+      g.querySelectorAll('[data-o]').forEach(x=>x.classList.toggle('on',SU.focus.has(x.dataset.o)))}
+    else{SU[k]=o.dataset.o;g.querySelectorAll('[data-o]').forEach(x=>x.classList.toggle('on',x===o))}
+    suValid();return}
+  const u=e.target.closest('[data-uv]');
+  if(u){SU[u.parentElement.dataset.u]=u.dataset.uv;suRender()}});
+$('su-next').addEventListener('click',()=>{if(!STEPS[suI].v())return;
+  if(suI<STEPS.length-1){suI++;suRender('n');return}
+  PF.name=(SU.first.trim()+' '+SU.last.trim()).trim()||PF.name;PF.gender=SU.gender==='female'?'Female':'Male';PF.h=SU.h;PF.w=Math.round(SU.w);PF.bio='Living my best life';paintPF();
+  stack.length=0;show('home',false,'tab');toast(`Welcome, ${SU.first.trim()||'friend'}! Your plan is ready 🎉`)});
+$('su-back').addEventListener('click',()=>{if(suI>0){suI--;suRender('p')}else{setAuthMode(true);show('login',false,'back')}});
 setAuthMode(false);
+
 function confettiBurst(){if(REDUCE)return;const ph=$('phone');let cv=$('fp-confetti');if(!cv){cv=document.createElement('canvas');cv.id='fp-confetti';cv.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:40';ph.appendChild(cv)}
   const r=ph.getBoundingClientRect(),dpr=devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);
   const C=['#075844','#10b97f','#e96f69','#ffd144','#7c5cf0','#7cc4f5'],P=Array.from({length:130},()=>({x:r.width/2,y:r.height*.3,vx:(Math.random()-.5)*11,vy:-Math.random()*10-4,s:Math.random()*6+4,c:C[Math.random()*6|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
