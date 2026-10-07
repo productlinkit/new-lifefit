@@ -15,6 +15,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
 html,body{height:100%}
 body{margin:0;background:var(--stage);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
@@ -531,6 +532,89 @@ img{display:block;max-width:100%}
 @keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
 @media (min-width:700px){.gcards{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.gihero{height:280px}}
 
+/* ---------- PROFILE PAGES ---------- */
+.ptitle{font-size:16px;font-weight:700}
+.sgroup{border-radius:18px;padding:2px 14px}
+.srow{display:flex;align-items:center;gap:12px;width:100%;min-height:62px;padding:10px 0;border-top:1px solid #efefed;text-align:left}
+.sgroup>.srow:first-child{border-top:0}
+.srow .ic{width:32px;height:32px;border-radius:9px;background:#f4f5f4;display:grid;place-items:center;color:var(--green);flex:none}
+.srow .ic svg{width:16px;height:16px}
+.srow .st{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.srow .st b{font-size:14px;font-weight:600}
+.srow .st span{font-size:11.5px;color:var(--muted-2);line-height:1.35}
+.srow .toggle{margin-left:8px;flex:none}
+.srow.sub{min-height:48px;padding-left:44px}
+.srow.sub[hidden]{display:none}
+.tinp{border:1px solid #e3e6e3;border-radius:10px;padding:6px 10px;font:inherit;font-size:13px;font-weight:600;color:var(--green);background:var(--white)}
+.nic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none}
+.nic svg{width:18px;height:18px}
+.nrow{display:flex;gap:12px;align-items:flex-start;padding:14px;text-align:left;width:100%;position:relative}
+.nrow .st{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;padding-right:12px}
+.nrow b{font-size:14px;font-weight:600}
+.nrow .st>span{font-size:12px;color:var(--muted);line-height:1.4}
+.nrow em{font-style:normal;font-size:10.5px;color:var(--muted-2);margin-top:2px}
+.nrow.unread:after{content:"";position:absolute;right:14px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.shield{display:flex;gap:14px;align-items:center;padding:16px;border-radius:18px;background:var(--tint);border-color:transparent;box-shadow:none}
+.shield .st{display:flex;flex-direction:column;gap:2px}
+.shield b{font-size:14px;color:var(--green)}
+.shield .st>span{font-size:12px;color:#4a7e6e;line-height:1.4}
+.form{display:flex;flex-direction:column}
+.fl{font-size:12px;font-weight:600;color:var(--muted);margin:14px 0 6px;display:block}
+.inp{width:100%;height:46px;border-radius:12px;border:1px solid #e3e6e3;background:var(--white);padding:0 14px;font:inherit;font-size:14px;color:var(--ink);outline:0;transition:border-color .2s,box-shadow .2s}
+textarea.inp{height:auto;padding:12px 14px;resize:vertical}
+.inp:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(7,88,68,.12)}
+.two2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chgphoto{display:block;text-align:center;font-size:12px;font-weight:700;color:var(--green);letter-spacing:.5px;margin-top:12px;cursor:pointer}
+button.pav{padding:0;border-radius:50%}
+.langrow{display:flex;align-items:center;gap:12px;width:100%;min-height:58px;border-top:1px solid #efefed;text-align:left}
+.sgroup>.langrow:first-child{border-top:0}
+.langrow .fl2{font-size:22px;width:32px;text-align:center}
+.langrow .st{flex:1;display:flex;flex-direction:column}
+.langrow b{font-size:14px;font-weight:600}
+.langrow .st>span{font-size:11.5px;color:var(--muted-2)}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid #cfd4d0;display:grid;place-items:center;flex:none;transition:border-color .2s}
+.langrow.on .radio{border-color:var(--green)}
+.langrow.on .radio:after{content:"";width:12px;height:12px;border-radius:50%;background:var(--green);animation:pop .3s}
+.helphero{background:linear-gradient(135deg,#0b7a5e,#075844);color:#fff;border-radius:22px;padding:20px 16px 16px}
+.helphero b{font-size:18px}
+.helphero .search{border:0}
+.hcats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.hcats button{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11.5px;font-weight:600;background:var(--white);border:1px solid #eef0ee;border-radius:16px;padding:12px 4px;transition:transform .18s,border-color .2s,color .2s}
+.hcats button.on{border-color:var(--green);color:var(--green)}
+.faq{display:flex;flex-direction:column;gap:8px}
+.faq details{background:var(--white);border:1px solid #eef0ee;border-radius:14px;padding:0 14px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;font-size:13.5px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:20px;color:var(--green);font-weight:400;transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq details p{margin:0 0 14px;font-size:13px;line-height:1.6;color:var(--muted);animation:fadeswap .3s}
+.sent{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:40px 10px}
+.sent b{font-size:18px;margin-top:8px}
+.sent>span{font-size:13px;color:var(--muted);max-width:260px}
+.draft{font-size:11.5px;color:#9a6a12;background:#fff7e6;border:1px dashed #f1c86b;border-radius:10px;padding:8px 12px;margin-top:14px}
+.legal h3{font-size:14px;font-weight:700;margin:18px 0 6px}
+.legal p{font-size:13px;line-height:1.65;color:var(--ink-2);margin:0}
+.auth .authart{height:200px;border-radius:24px;overflow:hidden;margin-top:12px}
+.auth .authart img{width:100%;height:100%;object-fit:cover;object-position:80% 40%}
+.phone-in{display:flex;gap:8px}
+.phone-in span{height:46px;display:grid;place-items:center;padding:0 14px;border-radius:12px;background:var(--tint);color:var(--green);font-weight:700;font-size:14px}
+.authhelp{font-size:12.5px;color:var(--muted);text-align:center;margin-top:18px}
+.authhelp button{color:var(--green);font-weight:700}
+.otp{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:24px}
+.otp input{height:54px;border-radius:14px;border:1.5px solid #e3e6e3;text-align:center;font:inherit;font-size:22px;font-weight:700;color:var(--green);outline:0;min-width:0;transition:border-color .2s,transform .15s}
+.otp input:focus{border-color:var(--green);transform:translateY(-2px)}
+.sheetbg{position:absolute;inset:0;background:rgba(10,20,16,.45);z-index:20;animation:fadeswap .25s}
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:21;background:var(--white);border-radius:24px 24px 0 0;padding:10px 20px calc(22px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;animation:sheetup .35s cubic-bezier(.2,.8,.2,1);max-width:560px;margin:0 auto}
+@keyframes sheetup{from{transform:translateY(100%)}}
+.sheet .grab{width:40px;height:4px;border-radius:9px;background:#dfe3e0;margin-bottom:12px}
+.sheet .nic{width:56px;height:56px;border-radius:18px}
+.sheet .nic svg{width:24px;height:24px}
+.sheet b{font-size:18px;margin-top:8px}
+.sheet p{font-size:13px;color:var(--muted);margin:0 0 12px;line-height:1.5;max-width:300px}
+.sheet .btn{height:48px}
+.sheet .btn.danger{background:#e5484d}
+.sh-cancel{height:46px;width:100%;font-weight:600;color:var(--muted)}
+
 /* ---------- MOTION & INTERACTION ---------- */
 .btn,.chip,.nav button,.qa .t{position:relative;overflow:hidden}
 .stretch .pl{position:relative}
@@ -633,7 +717,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   <div class="status" data-status></div>
   <div class="scroll">
     <div class="greet">
-      <div><h1 class="h1">Good morning, Alex! <span class="wave">👋</span></h1><p class="sub" style="font-size:14px">Let's make today amazing.</p></div>
+      <div><h1 class="h1">Good morning, <span data-pf="first">Alex</span>! <span class="wave">👋</span></h1><p class="sub" style="font-size:14px">Let's make today amazing.</p></div>
       <button class="iconbtn" aria-label="Notifications" data-toast="No new notifications"><svg data-i="bell" style="color:var(--ink)"></svg></button>
     </div>
     <div class="pad">
@@ -887,9 +971,9 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <section class="screen gray" data-screen="profile">
   <div class="status" data-status></div>
   <div class="scroll"><div class="top pad">
-    <div class="row" style="justify-content:space-between;margin-top:12px"><h1 class="h1" style="font-size:20px">Profile</h1><button class="iconbtn" aria-label="Settings" style="width:38px;height:38px"><svg data-i="gear" style="color:var(--ink-2)"></svg></button></div>
-    <div class="pav"><img src="img/profile-avatar.jpg" alt="Alex Johnson"><span class="ed"><svg data-i="pen"></svg></span></div>
-    <div class="pname">Alex Johnson</div><div class="pbio">Living my best life</div>
+    <div class="row" style="justify-content:space-between;margin-top:12px"><h1 class="h1" style="font-size:20px">Profile</h1><button class="iconbtn" aria-label="Settings" data-go="editprofile" style="width:38px;height:38px"><svg data-i="gear" style="color:var(--ink-2)"></svg></button></div>
+    <button class="pav" data-go="editprofile" aria-label="Edit profile" style="display:block"><img src="img/profile-avatar.jpg" alt="Alex Johnson"><span class="ed"><svg data-i="pen"></svg></span></button>
+    <div class="pname" data-pf="name">Alex Johnson</div><div class="pbio" data-pf="bio">Living my best life</div>
     <div class="card stats">
       <div><b style="background:#e8f0ec;color:var(--green)" data-count="48">48</b>Workouts</div>
       <div><b style="background:#fdeeed;color:#f07a72" data-count="12">12</b>Streak Days</div>
@@ -901,13 +985,13 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
       <div class="days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
     </div>
     <div class="card menu">
-      <button><span class="ic"><svg data-i="bell"></svg></span>Notifications<span class="x"><svg class="chev" data-i="chev"></svg></span></button>
-      <button><span class="ic"><svg data-i="lock"></svg></span>Privacy &amp; Security<span class="x"><svg class="chev" data-i="chev"></svg></span></button>
-      <button><span class="ic"><svg data-i="globe"></svg></span>Language<span class="x">English<svg class="chev" data-i="chev"></svg></span></button>
+      <button data-go="notif"><span class="ic"><svg data-i="bell"></svg></span>Notifications<span class="x"><svg class="chev" data-i="chev"></svg></span></button>
+      <button data-go="privacy"><span class="ic"><svg data-i="lock"></svg></span>Privacy &amp; Security<span class="x"><svg class="chev" data-i="chev"></svg></span></button>
+      <button data-go="language"><span class="ic"><svg data-i="globe"></svg></span>Language<span class="x"><span data-pf="lang">English</span><svg class="chev" data-i="chev"></svg></span></button>
       <button id="dm" role="switch" aria-checked="false"><span class="ic"><svg data-i="moon"></svg></span>Dark Mode<span class="toggle"></span></button>
-      <button><span class="ic"><svg data-i="help"></svg></span>Help &amp; Support<span class="x"><svg class="chev" data-i="chev"></svg></span></button>
+      <button data-go="help"><span class="ic"><svg data-i="help"></svg></span>Help &amp; Support<span class="x"><svg class="chev" data-i="chev"></svg></span></button>
     </div>
-    <button class="logout" data-toast="Logged out (demo)">Log Out</button>
+    <button class="logout" data-sheet="logout">Log Out</button>
   </div></div>
   <nav class="nav" data-nav="profile"></nav>
 </section>
@@ -1125,6 +1209,184 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   </div>
 </section>
 
+<!-- EDIT PROFILE -->
+<section class="screen gray" data-screen="editprofile">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="profile" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle">Setting Profile</b><span style="width:36px"></span></div>
+    <div class="pav" style="margin-top:8px"><img src="img/profile-avatar.jpg" alt="" id="ep-photo"><span class="ed"><svg data-i="pen"></svg></span></div>
+    <label class="chgphoto">CHANGE PHOTO<input type="file" accept="image/*" id="ep-file" hidden></label>
+    <form id="ep-form" class="form">
+      <label class="fl" for="ep-name">Full name</label><input class="inp" id="ep-name" placeholder="Input your full name" autocomplete="name">
+      <label class="fl" for="ep-bio">Bio</label><input class="inp" id="ep-bio" placeholder="A short line about you">
+      <label class="fl" for="ep-email">Email Address</label><input class="inp" id="ep-email" type="email" placeholder="Input your email address" autocomplete="email">
+      <label class="fl" for="ep-dob">Date of Birth</label><input class="inp" id="ep-dob" type="date">
+      <span class="fl">Gender</span>
+      <div class="seg" id="ep-gender" style="margin-top:6px"><button type="button" class="on">Male</button><button type="button">Female</button></div>
+      <div class="two2"><div><label class="fl" for="ep-h">Height (cm)</label><input class="inp" id="ep-h" type="number" inputmode="numeric"></div><div><label class="fl" for="ep-w">Weight (kg)</label><input class="inp" id="ep-w" type="number" inputmode="numeric"></div></div>
+      <button class="btn" type="submit" style="margin-top:22px">UPDATE PROFILE</button>
+    </form>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- NOTIFICATIONS -->
+<section class="screen gray" data-screen="notif">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="profile" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle">Notifications</b><button class="sq" aria-label="Mark all as read" id="nt-read"><svg data-i="checks"></svg></button></div>
+    <div class="sec" style="margin-top:6px"><h2>Recent</h2><span style="font-size:13px;color:var(--green);font-weight:600" id="nt-count">3 new</span></div>
+    <div class="list" id="nt-list">
+      <button class="card nrow unread" data-go="live"><span class="nic" style="background:#fdeeed;color:#e96f69"><svg data-i="video"></svg></span><span class="st"><b>Marcus is live now</b><span>HIIT &amp; Glute Blast Power Hour has started. Join before the warm-up ends.</span><em>2 min ago</em></span></button>
+      <button class="card nrow unread" data-go="profile"><span class="nic" style="background:#fff4dc;color:#d58a1d"><svg data-i="flame"></svg></span><span class="st"><b>12-day streak! 🔥</b><span>You've worked out 12 days in a row. Keep it going today.</span><em>1 h ago</em></span></button>
+      <button class="card nrow unread" data-go="cooking"><span class="nic" style="background:#e5f6ea;color:#22a05a"><svg data-i="utensils"></svg></span><span class="st"><b>New recipe: Protein Parfait</b><span>45 g protein, ready in minutes. Perfect for breakfast.</span><em>Today, 07:30</em></span></button>
+      <button class="card nrow" data-go="motivation"><span class="nic" style="background:#efeafd;color:#7c5cf0"><svg data-i="bulb"></svg></span><span class="st"><b>Daily motivation</b><span>"Small steps lead to big changes."</span><em>Yesterday</em></span></button>
+    </div>
+    <div class="sec"><h2>Notify me about</h2></div>
+    <div class="card sgroup">
+      <button class="srow" role="switch" aria-checked="true" data-toggle="n-workout"><span class="ic"><svg data-i="dumbbell"></svg></span><span class="st"><b>Workout reminders</b><span>Every day at <span id="nt-time-l">07:00</span></span></span><span class="toggle on"></span></button>
+      <div class="srow sub" id="nt-time-row"><span class="st"><b>Reminder time</b></span><input type="time" id="nt-time" value="07:00" class="tinp" aria-label="Reminder time"></div>
+      <button class="srow" role="switch" aria-checked="true" data-toggle="n-live"><span class="ic"><svg data-i="video"></svg></span><span class="st"><b>Live sessions</b><span>When your coaches go live</span></span><span class="toggle on"></span></button>
+      <button class="srow" role="switch" aria-checked="true" data-toggle="n-motiv"><span class="ic"><svg data-i="bulb"></svg></span><span class="st"><b>Daily motivation</b><span>A new quote every morning</span></span><span class="toggle on"></span></button>
+      <button class="srow" role="switch" aria-checked="false" data-toggle="n-recipes"><span class="ic"><svg data-i="utensils"></svg></span><span class="st"><b>New recipes</b><span>Healthy meal ideas each week</span></span><span class="toggle"></span></button>
+      <button class="srow" role="switch" aria-checked="false" data-toggle="n-games"><span class="ic"><svg data-i="games"></svg></span><span class="st"><b>Mind games</b><span>New games and weekly challenges</span></span><span class="toggle"></span></button>
+    </div>
+    <div class="sec"><h2>Channels</h2></div>
+    <div class="card sgroup">
+      <button class="srow" role="switch" aria-checked="true" data-toggle="n-push"><span class="st"><b>Push notifications</b><span>On this device</span></span><span class="toggle on"></span></button>
+      <button class="srow" role="switch" aria-checked="false" data-toggle="n-email"><span class="st"><b>Email</b><span>Weekly progress summary</span></span><span class="toggle"></span></button>
+      <button class="srow" role="switch" aria-checked="true" data-toggle="n-sms"><span class="st"><b>SMS</b><span>Important account updates only</span></span><span class="toggle on"></span></button>
+    </div>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- PRIVACY & SECURITY -->
+<section class="screen gray" data-screen="privacy">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="profile" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle">Privacy &amp; Security</b><span style="width:36px"></span></div>
+    <div class="card shield"><span class="nic" style="background:#fff;color:var(--green);width:44px;height:44px"><svg data-i="shield"></svg></span><span class="st"><b>Your account is protected</b><span>You sign in with your phone number and a one-time OTP code.</span></span></div>
+    <div class="sec"><h2>Account</h2></div>
+    <div class="card sgroup">
+      <div class="srow"><span class="ic"><svg data-i="phone"></svg></span><span class="st"><b>Phone number</b><span>+62 812-****-4321</span></span><span class="pill">Verified</span></div>
+      <button class="srow" data-toast="1 active device"><span class="ic"><svg data-i="device"></svg></span><span class="st"><b>Logged-in devices</b><span>iPhone 15 · This device</span></span><svg class="chev" data-i="chev"></svg></button>
+      <button class="srow" role="switch" aria-checked="true" data-toggle="p-otp"><span class="ic"><svg data-i="key"></svg></span><span class="st"><b>Ask OTP on new devices</b><span>Extra check when you sign in elsewhere</span></span><span class="toggle on"></span></button>
+    </div>
+    <div class="sec"><h2>Privacy</h2></div>
+    <div class="card sgroup">
+      <button class="srow" role="switch" aria-checked="false" data-toggle="p-private"><span class="ic"><svg data-i="eye"></svg></span><span class="st"><b>Private profile</b><span>Only you can see your activity</span></span><span class="toggle"></span></button>
+      <button class="srow" role="switch" aria-checked="true" data-toggle="p-coach"><span class="ic"><svg data-i="users"></svg></span><span class="st"><b>Share progress with coaches</b><span>Coaches see your workout history</span></span><span class="toggle on"></span></button>
+      <button class="srow" role="switch" aria-checked="true" data-toggle="p-reco"><span class="ic"><svg data-i="sparkle"></svg></span><span class="st"><b>Personalized recommendations</b><span>Use my activity to suggest content</span></span><span class="toggle on"></span></button>
+    </div>
+    <div class="sec"><h2>Legal &amp; data</h2></div>
+    <div class="card sgroup">
+      <button class="srow" data-go="legal-0"><span class="ic"><svg data-i="doc"></svg></span><span class="st"><b>Terms and Conditions</b></span><svg class="chev" data-i="chev"></svg></button>
+      <button class="srow" data-go="legal-1"><span class="ic"><svg data-i="lock"></svg></span><span class="st"><b>Privacy Policy</b></span><svg class="chev" data-i="chev"></svg></button>
+      <button class="srow" data-toast="We will email your data within 48 hours"><span class="ic"><svg data-i="download"></svg></span><span class="st"><b>Download my data</b><span>Get a copy of your LifeFit data</span></span><svg class="chev" data-i="chev"></svg></button>
+      <button class="srow" data-sheet="delete"><span class="ic" style="color:#d4433b;background:#fdeeed"><svg data-i="trash"></svg></span><span class="st"><b style="color:#d4433b">Delete account</b><span>Permanently remove your account</span></span><svg class="chev" data-i="chev"></svg></button>
+    </div>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- LANGUAGE -->
+<section class="screen gray" data-screen="language">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="profile" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle">Language</b><span style="width:36px"></span></div>
+    <p class="sub" style="margin:4px 0 16px">Choose your language:</p>
+    <label class="search" style="margin:0 0 14px"><svg data-i="search"></svg><input id="lg-q" placeholder="Search language" aria-label="Search language"></label>
+    <div class="card sgroup" id="lg-list"></div>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- HELP & SUPPORT -->
+<section class="screen gray" data-screen="help">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="profile" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle">Help &amp; Support</b><span style="width:36px"></span></div>
+    <div class="helphero"><b>Hi <span data-pf="first">Alex</span>, how can we help?</b><label class="search" style="margin-top:12px"><svg data-i="search"></svg><input id="hp-q" placeholder="Search help articles" aria-label="Search help"></label></div>
+    <div class="hcats">
+      <button data-hcat="account"><span class="nic" style="background:#e8f0ec;color:var(--green)"><svg data-i="user"></svg></span>Account</button>
+      <button data-hcat="premium"><span class="nic" style="background:#fff4dc;color:#d58a1d"><svg data-i="star"></svg></span>Premium</button>
+      <button data-hcat="workout"><span class="nic" style="background:#fdeeed;color:#e96f69"><svg data-i="dumbbell"></svg></span>Workouts</button>
+      <button data-hcat="games"><span class="nic" style="background:#efeafd;color:#7c5cf0"><svg data-i="games"></svg></span>Games</button>
+    </div>
+    <div class="sec"><h2>FAQ</h2><span style="font-size:13px;color:var(--muted-2)" id="hp-count"></span></div>
+    <div class="faq" id="hp-faq"></div>
+    <div class="sec"><h2>Still need help?</h2></div>
+    <div class="card sgroup">
+      <button class="srow" data-go="contact"><span class="ic"><svg data-i="msg"></svg></span><span class="st"><b>Chat with support</b><span>Usually replies in a few minutes</span></span><svg class="chev" data-i="chev"></svg></button>
+      <button class="srow" data-go="contact"><span class="ic"><svg data-i="mail"></svg></span><span class="st"><b>Send us a message</b><span>We reply by email within 24 hours</span></span><svg class="chev" data-i="chev"></svg></button>
+    </div>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- CONTACT -->
+<section class="screen gray" data-screen="contact">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="help" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle">Contact Support</b><span style="width:36px"></span></div>
+    <form id="ct-form" class="form">
+      <label class="fl" for="ct-topic">Topic</label>
+      <select class="inp" id="ct-topic"><option>Account &amp; login</option><option>Premium &amp; payment</option><option>Workouts &amp; videos</option><option>Mind games</option><option>Something else</option></select>
+      <label class="fl" for="ct-msg">Message</label>
+      <textarea class="inp" id="ct-msg" rows="6" placeholder="Tell us what happened…"></textarea>
+      <button class="btn" type="submit" style="margin-top:20px">Send Message</button>
+    </form>
+    <div class="sent" id="ct-sent" hidden><span class="nic" style="background:var(--tint);color:var(--green);width:64px;height:64px"><svg data-i="check" style="width:28px;height:28px"></svg></span><b>Message sent</b><span>Thanks! Our team will reply to your email within 24 hours.</span><button class="btn" data-back="help" style="margin-top:18px">Back to Help</button></div>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- LEGAL -->
+<section class="screen" data-screen="legal">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad">
+    <div class="dhead"><button class="sq" data-back="privacy" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle"><span id="lg-title">Terms and Conditions</span></b><span style="width:36px"></span></div>
+    <div class="chips" style="margin-top:0"><button class="chip on" data-legal="0">Terms</button><button class="chip" data-legal="1">Privacy Policy</button></div>
+    <div class="draft">Sample text for the prototype. Replace with LifeFit's official legal copy.</div>
+    <div class="legal" id="lgl-body"></div>
+  </div></div>
+  <nav class="nav" data-nav="profile"></nav>
+</section>
+
+<!-- LOGIN -->
+<section class="screen" data-screen="login">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad auth">
+    <div class="authart"><img src="img/ex-meditation.jpg" alt=""></div>
+    <h1 class="h1" style="margin-top:22px">Sign in or Sign Up</h1>
+    <p class="sub">Welcome back! please enter your phone number.</p>
+    <form id="lg-form" class="form">
+      <label class="fl" for="lg-phone">Phone Number</label>
+      <div class="phone-in"><span>+62</span><input class="inp" id="lg-phone" type="tel" inputmode="numeric" placeholder="812 3456 7890" autocomplete="tel"></div>
+      <button class="btn" type="submit" style="margin-top:20px">CONTINUE</button>
+    </form>
+    <p class="authhelp">Having trouble logging in? <button data-go="help">Get Help</button></p>
+  </div></div>
+</section>
+
+<!-- OTP -->
+<section class="screen" data-screen="otp">
+  <div class="status" data-status></div>
+  <div class="scroll"><div class="top pad auth">
+    <div class="dhead"><button class="sq" data-back="login" aria-label="Back"><svg data-i="chevl"></svg></button><b class="ptitle"></b><span style="width:36px"></span></div>
+    <h1 class="h1">Verify Your Account</h1>
+    <p class="sub">We have sent OTP to <b id="otp-to"></b>. Paste the number to the input field below.</p>
+    <div class="otp" id="otp"><input inputmode="numeric" maxlength="1" aria-label="Digit 1"><input inputmode="numeric" maxlength="1" aria-label="Digit 2"><input inputmode="numeric" maxlength="1" aria-label="Digit 3"><input inputmode="numeric" maxlength="1" aria-label="Digit 4"><input inputmode="numeric" maxlength="1" aria-label="Digit 5"><input inputmode="numeric" maxlength="1" aria-label="Digit 6"></div>
+    <p class="authhelp">Didn't get the OTP? <button id="otp-resend">Resend OTP</button> <span id="otp-timer"></span></p>
+    <p class="authhelp" style="margin-top:4px;font-size:11px">Demo: any 6 digits work.</p>
+  </div></div>
+</section>
+
+<!-- BOTTOM SHEET -->
+<div class="sheetbg" id="sheetbg" hidden></div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="grab"></div><span class="nic" id="sh-ic"></span><b id="sh-t"></b><p id="sh-p"></p><button class="btn" id="sh-ok"></button><button class="sh-cancel" id="sh-no">Cancel</button></div>
+
 <div class="toast" id="toast"></div>
 </div>
 </div>
@@ -1173,6 +1435,18 @@ const I={
  phoneoff:'<path d="M3 3l18 18M10.7 13.3a10 10 0 0 0 4.1 2.5l1.6-1.6a1.5 1.5 0 0 1 1.5-.4l2.6.8a1.5 1.5 0 0 1 1 1.4V19a2 2 0 0 1-2.2 2A18 18 0 0 1 5.5 15M7.5 12.5A18 18 0 0 1 3 5.2 2 2 0 0 1 5 3h3a1.5 1.5 0 0 1 1.4 1l.8 2.6a1.5 1.5 0 0 1-.4 1.5L8.4 9.6"/>',
  scan:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 7v10M7 12h10"/>',
  pause:'<rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',
+ checks:'<path d="m2 12 5 5L18 6M12 17l1 1L22 9"/>',
+ shield:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+ phone:'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',
+ device:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+ key:'<circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14 9l2 2"/>',
+ eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ sparkle:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>',
+ doc:'<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h6"/>',
+ download:'<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>',
+ trash:'<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>',
+ mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+ logout:'<path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/>',
  heart:'<path d="M12 20s-7-4.4-9.2-8.6C1.3 8.4 3 5 6.4 5c2 0 3.6 1.2 4.4 2.6h2.4C14 6.2 15.6 5 17.6 5 21 5 22.7 8.4 21.2 11.4 19 15.6 12 20 12 20z"/>',
  brain2:'<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/>',
  bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -1276,6 +1550,9 @@ function playMedia(el){
 }
 
 const DETAIL={
+  editprofile(){fillEP()},
+  legal(i){renderLegal(i)},
+  contact(){$('ct-form').hidden=false;$('ct-sent').hidden=true;$('ct-form').reset()},
   workout(id){const f=LF.fitness.find(x=>x.id==id)||LF.fitness[0];
     mountMedia($('wo-media'),f.img,f.video,`${DEMO}/fitnesses/detail/${f.id}`);
     $('wo-g').textContent=f.g.includes('female')?'For Female':'For Male';$('wo-t').textContent=f.t;$('wo-d').textContent=f.dur+' Mins Duration';
@@ -1355,7 +1632,7 @@ icons(document);
 
 // ---------- Motion helpers ----------
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const ITEM_SEL='.list,.grid2,.hscroll,.qa,.coaches,.chals,.gamegrid,.gcards,.giinfo,.cstats,.stats,.eq,.ings,.macros,.stat2,.cats';
+const ITEM_SEL='.sgroup,.faq,.hcats,.list,.grid2,.hscroll,.qa,.coaches,.chals,.gamegrid,.gcards,.giinfo,.cstats,.stats,.eq,.ings,.macros,.stat2,.cats';
 function tagStagger(root){
   root.querySelectorAll('.scroll>.pad,.scroll>.top,.scroll>.greet').forEach(w=>{[...w.children].forEach((c,k)=>{c.classList.add('rv');c.style.setProperty('--i',Math.min(k,12))})});
   root.querySelectorAll(ITEM_SEL).forEach(l=>{l.classList.remove('rv');[...l.children].forEach((c,k)=>{c.classList.add('rv-item');c.style.setProperty('--i',Math.min(k,9))})});
@@ -1380,13 +1657,78 @@ $('cdots').addEventListener('click',e=>{const d=e.target.closest('i');if(!d)retu
 // live viewers tick
 setInterval(()=>{if(cur!=='live')return;const w=$('watching');const v=1.18+Math.random()*.06;w.textContent=v.toFixed(2).replace(/0$/,'')+'k';popEl(w)},2600);
 
+// ---------- Profile pages ----------
+const PF={name:'Alex Johnson',bio:'Living my best life',email:'alex.johnson@email.com',dob:'1997-06-14',gender:'Male',h:170,w:68,lang:'English'};
+function paintPF(){document.querySelectorAll('[data-pf]').forEach(el=>{const k=el.dataset.pf;el.textContent=k==='first'?PF.name.split(' ')[0]:PF[k]})}
+function fillEP(){$('ep-name').value=PF.name;$('ep-bio').value=PF.bio;$('ep-email').value=PF.email;$('ep-dob').value=PF.dob;$('ep-h').value=PF.h;$('ep-w').value=PF.w;
+  $('ep-gender').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.textContent===PF.gender))}
+$('ep-gender').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('ep-gender').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b))});
+$('ep-file').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);document.querySelectorAll('.pav img').forEach(i=>i.src=u);toast('Photo updated')});
+$('ep-form').addEventListener('submit',e=>{e.preventDefault();const n=$('ep-name').value.trim();if(!n){toast('Please enter your full name');$('ep-name').focus();return}
+  Object.assign(PF,{name:n,bio:$('ep-bio').value.trim()||PF.bio,email:$('ep-email').value.trim(),dob:$('ep-dob').value,h:+$('ep-h').value||PF.h,w:+$('ep-w').value||PF.w,gender:$('ep-gender').querySelector('.on').textContent});
+  paintPF();toast('Profile updated');stack.length=0;show('profile',false,'back')});
+// generic toggles
+document.addEventListener('click',e=>{const t=e.target.closest('[data-toggle]');if(!t)return;const tg=t.querySelector('.toggle');const on=tg.classList.toggle('on');t.setAttribute('aria-checked',on);
+  if(t.dataset.toggle==='n-workout')$('nt-time-row').hidden=!on;
+  toast(t.querySelector('b').textContent+(on?' on':' off'))});
+$('nt-time').addEventListener('change',e=>{$('nt-time-l').textContent=e.target.value;toast('Reminder set for '+e.target.value)});
+$('nt-read').addEventListener('click',()=>{document.querySelectorAll('#nt-list .unread').forEach(n=>n.classList.remove('unread'));$('nt-count').textContent='All read';toast('All notifications marked as read')});
+// language
+const LANGS=[['English','English','🇬🇧'],['Bahasa Indonesia','Indonesian','🇮🇩'],['Bahasa Melayu','Malay','🇲🇾'],['ไทย','Thai','🇹🇭'],['Tiếng Việt','Vietnamese','🇻🇳'],['Filipino','Filipino','🇵🇭'],['မြန်မာ','Burmese','🇲🇲'],['ខ្មែរ','Khmer','🇰🇭'],['العربية','Arabic','🇸🇦'],['Español','Spanish','🇪🇸'],['Français','French','🇫🇷'],['Português','Portuguese','🇧🇷']];
+function renderLang(q=''){q=q.toLowerCase();$('lg-list').innerHTML=LANGS.filter(l=>(l[0]+l[1]).toLowerCase().includes(q)).map(([n,en,f])=>`<button class="langrow${PF.lang===n?' on':''}" data-lang="${n}"><span class="fl2">${f}</span><span class="st"><b>${n}</b><span>${en}</span></span><span class="radio"></span></button>`).join('')||'<p class="sub" style="padding:16px 0;text-align:center">No language found</p>'}
+renderLang();
+$('lg-q').addEventListener('input',e=>renderLang(e.target.value));
+$('lg-list').addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(!b)return;PF.lang=b.dataset.lang;renderLang($('lg-q').value);paintPF();toast('Language set to '+PF.lang)});
+// help
+const FAQ=[['account','How do I sign in?','LifeFit uses your phone number. Enter it on the sign-in screen and type the 6-digit OTP code we send you by SMS.'],
+ ['account','How do I change my name or photo?','Go to Profile, tap the pencil on your photo or the gear icon, edit your details and tap Update Profile.'],
+ ['premium','What do I get with Premium?','Unlimited access to all features: fitness videos, live sessions, recipes, meditation, journaling and all mind games.'],
+ ['premium','How do I cancel my subscription?','Your subscription is billed through your mobile operator. Follow the unsubscribe instructions in your welcome SMS or contact support.'],
+ ['workout',"Why won't a workout video play?",'Check your internet connection and try again. Videos stream in HD, so a stable Wi-Fi or 4G connection works best.'],
+ ['workout','Can I join a live session late?','Yes. You can join any live session while it is running. Replays of popular classes appear under Popular Replays.'],
+ ['games','Do mind games need to be downloaded?','No. All games run in your browser. Tap a game and press Play Now to start.'],
+ ['games','A game is stuck on loading. What can I do?','Tap the restart button in the game bar, or open the game in a new tab.']];
+let hcat='';
+function renderFaq(){const q=$('hp-q').value.toLowerCase();const L=FAQ.filter(f=>(!hcat||f[0]===hcat)&&(f[1]+f[2]).toLowerCase().includes(q));
+  $('hp-faq').innerHTML=L.map(f=>`<details><summary>${esc(f[1])}</summary><p>${esc(f[2])}</p></details>`).join('')||'<p class="sub" style="text-align:center;padding:12px">No results found</p>';$('hp-count').textContent=L.length+' questions'}
+renderFaq();
+$('hp-q').addEventListener('input',renderFaq);
+document.querySelector('.hcats').addEventListener('click',e=>{const b=e.target.closest('[data-hcat]');if(!b)return;hcat=hcat===b.dataset.hcat?'':b.dataset.hcat;document.querySelectorAll('.hcats button').forEach(x=>x.classList.toggle('on',x.dataset.hcat===hcat));renderFaq()});
+$('ct-form').addEventListener('submit',e=>{e.preventDefault();if(!$('ct-msg').value.trim()){toast('Please write your message');$('ct-msg').focus();return}$('ct-form').hidden=true;$('ct-sent').hidden=false;icons($('ct-sent'))});
+// legal
+const LEGAL=[['Terms and Conditions',[['1. Using LifeFit','LifeFit gives you fitness, nutrition, meditation and mind-game content for personal, non-commercial use.'],['2. Your account','You sign in with your phone number. Keep your device and OTP codes private; you are responsible for activity on your account.'],['3. Subscription','Premium access is billed through your mobile operator at the price shown when you subscribe. You can unsubscribe at any time.'],['4. Health notice','Consult a doctor before starting a new exercise or diet program. Stop any exercise that causes pain or dizziness.'],['5. Changes','We may update these terms. We will tell you about important changes in the app.']]],
+ ['Privacy Policy',[['What we collect','Your phone number, profile details you add (name, email, date of birth, height and weight) and how you use the app.'],['How we use it','To run your account, personalise workouts and recommendations, and send the notifications you turn on.'],['Sharing','We do not sell your data. Coaches only see your progress if you turn on sharing in Privacy & Security.'],['Your choices','You can edit your profile, download your data or delete your account at any time from Privacy & Security.']]]];
+function renderLegal(i){i=+i||0;$('lg-title').textContent=LEGAL[i][0];document.querySelectorAll('[data-legal]').forEach(b=>b.classList.toggle('on',+b.dataset.legal===i));$('lgl-body').innerHTML=LEGAL[i][1].map(([h,p])=>`<h3>${h}</h3><p>${p}</p>`).join('')}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-legal]');if(b)renderLegal(b.dataset.legal)});
+// bottom sheet (logout / delete)
+const SHEETS={logout:{ic:'logout',c:'#e96f69',bg:'#fdeeed',t:'Log out of LifeFit?',p:'You can sign back in anytime with your phone number.',ok:'Log Out',go:()=>{stack.length=0;show('login',false,'fwd')}},
+  delete:{ic:'trash',c:'#e5484d',bg:'#fdeeed',t:'Delete your account?',p:'This permanently removes your profile, progress and favourites. This action cannot be undone.',ok:'Delete Account',go:()=>{toast('Account deletion requested (demo)')}}};
+let curSheet=null;
+function openSheet(k){const s=SHEETS[k];curSheet=s;$('sh-ic').style.cssText=`background:${s.bg};color:${s.c}`;$('sh-ic').innerHTML=`<svg data-i="${s.ic}"></svg>`;icons($('sh-ic'));$('sh-t').textContent=s.t;$('sh-p').textContent=s.p;$('sh-ok').textContent=s.ok;$('sh-ok').classList.add('danger');$('sheetbg').hidden=false;$('sheet').hidden=false;$('sh-no').focus()}
+function closeSheet(){$('sheetbg').hidden=true;$('sheet').hidden=true}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-sheet]');if(b)openSheet(b.dataset.sheet)});
+$('sheetbg').addEventListener('click',closeSheet);$('sh-no').addEventListener('click',closeSheet);
+$('sh-ok').addEventListener('click',()=>{const s=curSheet;closeSheet();s&&s.go()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+// login + OTP
+$('lg-form').addEventListener('submit',e=>{e.preventDefault();const p=$('lg-phone').value.replace(/\D/g,'');if(p.length<8){toast('Enter a valid phone number');$('lg-phone').focus();return}
+  $('otp-to').textContent='+62 '+p.replace(/(\d{3})(\d{4})(\d+)/,'$1-$2-$3');show('otp',true,'fwd');startOtpTimer();setTimeout(()=>$('otp').querySelector('input').focus(),350)});
+const otpIn=[...$('otp').querySelectorAll('input')];
+otpIn.forEach((inp,k)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);if(inp.value&&otpIn[k+1])otpIn[k+1].focus();checkOtp()});
+  inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&otpIn[k-1])otpIn[k-1].focus()});
+  inp.addEventListener('paste',e=>{const d=(e.clipboardData.getData('text')||'').replace(/\D/g,'').slice(0,6);if(!d)return;e.preventDefault();d.split('').forEach((c,j)=>{if(otpIn[j])otpIn[j].value=c});checkOtp()})});
+function checkOtp(){if(otpIn.every(i=>i.value)){toast('Verified! Welcome back');setTimeout(()=>{otpIn.forEach(i=>i.value='');stack.length=0;show('home',false,'tab')},600)}}
+let otpT;function startOtpTimer(){let n=59;clearInterval(otpT);$('otp-resend').disabled=true;$('otp-resend').style.opacity=.4;$('otp-timer').textContent='(0:59)';otpT=setInterval(()=>{n--;$('otp-timer').textContent=n>0?`(0:${String(n).padStart(2,'0')})`:'';if(n<=0){clearInterval(otpT);$('otp-resend').disabled=false;$('otp-resend').style.opacity=1}},1000)}
+$('otp-resend').addEventListener('click',()=>{toast('New OTP sent');startOtpTimer()});
+paintPF();
+
 // Router: tokens like "recipe-24" open a detail screen; a stack powers the back buttons
 const screens=[...document.querySelectorAll('.screen')];
 const stack=[];let cur='home';
 function show(token,push,mode){
   const m=String(token||'').match(/^([a-z]+)(?:-([0-9x]+))?$/);let id=m?m[1]:'home',param=m?m[2]:null;
   if(!screens.some(s=>s.dataset.screen===id)){id='home';param=null}
-  if(DETAIL[id]){if(!LF)return;DETAIL[id](param??0)}
+  if(DETAIL[id]){if(!LF&&!['editprofile','legal','contact'].includes(id))return;DETAIL[id](param??0)}
   const tok=param!=null?id+'-'+param:id;
   if(push&&tok!==cur)stack.push(cur);
   cur=tok;
