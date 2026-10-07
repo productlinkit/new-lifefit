@@ -843,6 +843,35 @@ button.pav{padding:0;border-radius:50%}
 .authswitch button{color:var(--green);font-weight:700}
 @media (min-width:700px){.obtext{left:50%;transform:translateX(-50%);width:min(560px,90%);right:auto}.obfoot{left:50%;transform:translateX(-50%);width:min(480px,92%);right:auto;padding-left:0;padding-right:0}.fphead,.fpbtns{padding-left:max(24px,calc(50% - 320px));padding-right:max(24px,calc(50% - 320px))}}
 
+/* sign-up v2: quick-action style tiles, steppers */
+.qi{width:50px;height:50px;border-radius:15px;background:var(--white);border:1px solid #eef0ee;box-shadow:0 2px 8px rgba(0,0,0,.06);display:grid;place-items:center;flex:none;transition:transform .2s}
+.qi img{width:32px;height:32px}
+.qi svg{width:24px;height:24px}
+.suopt.on .qi{transform:scale(1.06) rotate(-4deg);box-shadow:0 6px 14px rgba(7,88,68,.14)}
+.sugender .qi{width:60px;height:60px;border-radius:18px}
+.sugender .qi svg{width:28px;height:28px}
+.stats3{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.strow{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1.5px solid #eceeec;border-radius:18px;padding:14px 14px 14px 16px}
+.stl{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
+.stu{display:inline-flex;background:#f1efe9;border-radius:8px;padding:2px;width:max-content}
+.stu button{height:24px;padding:0 9px;border-radius:6px;font-size:11px;font-weight:700;color:var(--muted)}
+.stu button.on{background:var(--white);color:var(--green);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.stp{display:flex;align-items:center;gap:8px}
+.stp button{width:40px;height:40px;border-radius:12px;background:var(--tint);color:var(--green);font-size:22px;font-weight:600;display:grid;place-items:center;user-select:none;touch-action:manipulation;transition:transform .12s,background .2s}
+.stp button:active{transform:scale(.88);background:#d6ebe2}
+.stv{min-width:92px;text-align:center;font-variant-numeric:tabular-nums}
+.stv b{font-size:24px;font-weight:800;color:var(--ink)}
+.stv span{font-size:12px;font-weight:600;color:var(--muted-2);margin-left:4px}
+.bmichip{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;background:var(--tint);border-radius:14px;padding:12px}
+.bmichip span{font-size:13px;color:var(--muted)}
+.bmichip b{font-size:20px;color:var(--green);font-variant-numeric:tabular-nums}
+.bmichip em{font-style:normal;font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:8px}
+.plansum{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid #eceeec;border-radius:18px;padding:14px 16px;margin-top:20px}
+.plansum div{display:flex;flex-direction:column}
+.plansum small{font-size:10.5px;font-weight:700;letter-spacing:.8px;color:var(--muted-2)}
+.plansum b{font-size:16px;margin:2px 0}
+.plansum span{font-size:12.5px;color:var(--muted)}
+
 /* ---------- COUNTRY CODE PICKER ---------- */
 .ccbtn{height:46px;display:flex;align-items:center;gap:6px;padding:0 10px 0 12px;border-radius:12px;background:var(--tint);color:var(--green);font-weight:700;font-size:14px;flex:none;transition:transform .15s,box-shadow .2s}
 .ccbtn:active{transform:scale(.96)}
@@ -2027,82 +2056,62 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-auth]');if
 const SU={};
 function resetSU(){Object.assign(SU,{first:'',last:'',goal:'',gender:'',focus:new Set(),body:'',age:28,hu:'cm',h:170,wu:'kg',w:70,gw:65,act:''});suI=0}
 let suI=0;resetSU();
-const GOALS_SU=[['strength','Build Muscle & Strength','Target weights, hypertrophy & core training','dumbbell'],['cardio','Cardio & Weight Loss','HIIT burns, running & dynamic movements','flame'],['flex','Improve Flexibility & Balance','Daily stretch routines, flow state yoga','heart'],['mind','Mind Calmness & Sleep','Guided meditations & mental wellness games','moon']];
-const FOCUS=[['chest','Chest','Push exercises'],['core','Abs & Core','Stability & tone'],['legs','Legs & Glutes','Lower body power'],['back','Back & Pull','Posture & strength'],['arms','Arms & Shoulders','Upper body balance'],['full','Full Body','Overall athletic']];
-const BODY=[['lean','Lean / Ectomorph','Fast metabolism, naturally thin, active cardio base'],['athletic','Athletic / Mesomorph','Medium frame, gains muscle easily, high power ratio'],['robust','Robust / Endomorph','Broad build, slower metabolism, strength focus']];
-const ACT=[['sedentary','Sedentary','Little to no exercise, desk job'],['light','Lightly Active','Light exercise 1-3 days per week'],['moderate','Moderately Active','Moderate workout 3-5 days per week'],['very','Very Active','Heavy athletic training 6-7 days per week']];
+const GOALS_SU=[['strength','Build Strength','Workouts to get stronger & fitter','img/qa1.png'],['mind','Calm Mind & Better Sleep','Guided meditation & relaxation','img/qa2.png'],['eat','Eat Healthier','Simple, healthy recipes every day','img/qa3.png'],['brain','Sharpen Your Mind','Fun brain-training mind games','img/qa4.png']];
+const ACT=[['sedentary','Mostly Sitting','Little to no exercise, desk job','clock','#6b7280'],['light','Lightly Active','Light exercise 1-3 days per week','run','#e96f69'],['moderate','Moderately Active','Workout 3-5 days per week','dumbbell','#f08a3c'],['very','Very Active','Hard training 6-7 days per week','flame','#e5484d']];
 const lbs=kg=>kg*2.20462,ftin=cm=>{const t=Math.round(cm/2.54);return [Math.floor(t/12),t%12]};
-const opt=(id,t,d,on,ic)=>`<button class="suopt${on?' on':''}" data-o="${id}">${ic?`<span class="oi"><svg data-i="${ic}"></svg></span>`:''}<span class="ot"><h4>${t}</h4>${d?`<p>${d}</p>`:''}</span><span class="rd"></span></button>`;
-function wDisp(kg,u){return u==='kg'?kg.toFixed(1):lbs(kg).toFixed(1)}
-function rulerHTML(id,min,max,step){const n=Math.round((max-min)/step);let t='<span class="rp"></span>';for(let k=0;k<=n;k++)t+=`<i class="${k%10===0?'M':k%5===0?'m':''}"></i>`;return `<div class="ruler"><div class="rtrack" id="${id}" data-min="${min}" data-step="${step}" data-max="${max}">${t}<span class="rp"></span></div></div>`}
-function bindRuler(id,val,onv){const r=$(id);if(!r)return;const min=+r.dataset.min,step=+r.dataset.step,max=+r.dataset.max;
-  requestAnimationFrame(()=>{r.scrollLeft=(val-min)/step*12});
-  r.addEventListener('scroll',()=>{const v=Math.min(max,Math.max(min,min+Math.round(r.scrollLeft/12)*step));onv(+v.toFixed(1))},{passive:true});
-  let down=null;r.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down={x:e.clientX,s:r.scrollLeft};r.setPointerCapture(e.pointerId)});
-  r.addEventListener('pointermove',e=>{if(down)r.scrollLeft=down.s-(e.clientX-down.x)});
-  r.addEventListener('pointerup',()=>{down=null;const v=Math.round(r.scrollLeft/12);r.scrollTo({left:v*12,behavior:'smooth'})})}
+const qtile=(img,svg,c)=>`<span class="qi">${img?`<img src="${img}" alt="">`:`<svg data-i="${svg}" style="color:${c}"></svg>`}</span>`;
+const opt=(id,t,d,on,tile)=>`<button class="suopt${on?' on':''}" data-o="${id}">${tile||''}<span class="ot"><h4>${t}</h4>${d?`<p>${d}</p>`:''}</span><span class="rd"></span></button>`;
+const bmiOf=()=>SU.w/((SU.h/100)**2);
+const bmiCat=b=>b<18.5?['Underweight','#e0f0ff','#2a7fc9']:b<25?['Healthy','#dcfce7','#15803d']:b<30?['Overweight','#fff4dc','#b26b00']:['Obese','#fdeeed','#c2564f'];
+const STAT={age:{min:13,max:90,step:1},h:{min:120,max:220,step:1},w:{min:30,max:200,step:.5}};
+function statText(k){if(k==='age')return `<b>${SU.age}</b><span>years</span>`;
+  if(k==='h'){if(SU.hu==='ft'){const [f,i]=ftin(SU.h);return `<b>${f}′${i}″</b><span>ft</span>`}return `<b>${SU.h}</b><span>cm</span>`}
+  return SU.wu==='kg'?`<b>${SU.w.toFixed(1)}</b><span>kg</span>`:`<b>${lbs(SU.w).toFixed(1)}</b><span>lbs</span>`}
+function paintStats(){['age','h','w'].forEach(k=>{const el=$('st-'+k);if(el)el.innerHTML=statText(k)});const b=bmiOf(),c=bmiCat(b),el=$('su-bmi');
+  if(el)el.innerHTML=`<span>Your BMI</span><b>${b.toFixed(1)}</b><em style="background:${c[1]};color:${c[2]}">${c[0]}</em>`}
 const STEPS=[
  {v:()=>SU.first.trim().length>0,r:()=>`<h1>What's your name?</h1><p class="sd">We'll use this to personalize your healthy living journey.</p>
    <label class="sufl" for="su-first">First Name</label><input class="suinp" id="su-first" placeholder="Alex" value="${esc(SU.first)}" autocomplete="given-name">
-   <label class="sufl" for="su-last">Last Name</label><input class="suinp" id="su-last" placeholder="Johnson" value="${esc(SU.last)}" autocomplete="family-name">
-   <div class="sutip">💡 "Living my best life" will be your profile bio - you can update it anytime.</div>`,
+   <label class="sufl" for="su-last">Last Name <span style="font-weight:500;color:var(--muted-2)">(optional)</span></label><input class="suinp" id="su-last" placeholder="Johnson" value="${esc(SU.last)}" autocomplete="family-name">`,
   b:()=>{['first','last'].forEach(k=>{const i=$('su-'+k);i.addEventListener('input',()=>{SU[k]=i.value;suValid()});i.addEventListener('keydown',e=>{if(e.key==='Enter')k==='first'?$('su-last').focus():$('su-next').click()})});setTimeout(()=>$('su-first').focus({preventScroll:true}),350)}},
- {v:()=>!!SU.goal,r:()=>`<h1>Choose your goal</h1><p class="sd">What do you want to prioritize in your health journey?</p><div class="suopts" data-k="goal">${GOALS_SU.map(g=>opt(g[0],g[1],g[2],SU.goal===g[0],g[3])).join('')}</div>`},
- {v:()=>!!SU.gender,r:()=>`<h1>What is your gender?</h1><p class="sd">This helps us personalize calorie burn rates and workout presets.</p><div class="sugender" data-k="gender">${[['male','Male','mars'],['female','Female','venus']].map(g=>`<button class="suopt${SU.gender===g[0]?' on':''}" data-o="${g[0]}"><span class="oi"><svg data-i="${g[2]}"></svg></span><h4>${g[1]}</h4></button>`).join('')}</div>`},
- {v:()=>SU.focus.size>0,r:()=>`<h1>Target focus areas</h1><p class="sd">Pick one or more muscle groups you want to train.</p><div class="sugrid" data-k="focus" data-multi>${FOCUS.map(f=>`<button class="suopt${SU.focus.has(f[0])?' on':''}" data-o="${f[0]}"><h4>${f[1]}</h4><p>${f[2]}</p></button>`).join('')}</div>`},
- {v:()=>!!SU.body,r:()=>`<h1>Select your body type</h1><p class="sd">Helps us customize metabolic calculations for your goals.</p><div class="suopts" data-k="body">${BODY.map(b=>opt(b[0],b[1],b[2],SU.body===b[0])).join('')}</div>`},
- {v:()=>true,r:()=>{let it='';for(let a=13;a<=90;a++)it+=`<div data-age="${a}">${a}<span>Years</span></div>`;return `<h1>How old are you?</h1><p class="sd">We use this to set safe heart rate training zones for you.</p><div class="wheel"><div class="wlist" id="su-wheel">${it}</div></div>`},
-  b:()=>{const w=$('su-wheel'),H=48;const mark=()=>{const a=13+Math.round(w.scrollTop/H);SU.age=Math.min(90,Math.max(13,a));w.querySelectorAll('div').forEach(d=>d.classList.toggle('on',+d.dataset.age===SU.age))};
-    requestAnimationFrame(()=>{w.scrollTop=(SU.age-13)*H;mark()});w.addEventListener('scroll',mark,{passive:true});
-    w.addEventListener('click',e=>{const d=e.target.closest('[data-age]');if(d)w.scrollTo({top:(+d.dataset.age-13)*H,behavior:'smooth'})})}},
- {v:()=>true,r:()=>`<h1>What is your height?</h1><p class="sd">Used to benchmark your weight and calculate BMI accurately.</p>
-   <div class="suseg" data-u="hu"><button class="${SU.hu==='cm'?'on':''}" data-uv="cm">Centimeters</button><button class="${SU.hu==='ft'?'on':''}" data-uv="ft">Feet / Inches</button></div>
-   <div class="bignum g" id="su-hv"></div>${rulerHTML('su-hr',120,220,1)}`,
-  b:()=>{const p=v=>{SU.h=v;const [f,i]=ftin(v);$('su-hv').innerHTML=SU.hu==='cm'?`<b>${v}</b><span>cm</span>`:`<b>${f}′${i}″</b><span>ft</span>`};p(SU.h);bindRuler('su-hr',SU.h,p)}},
- {v:()=>true,r:()=>`<h1>What's your current weight?</h1><p class="sd">We use this to calculate your BMI and daily caloric needs.</p>
-   <div class="suseg" data-u="wu"><button class="${SU.wu==='kg'?'on':''}" data-uv="kg">KG</button><button class="${SU.wu==='lbs'?'on':''}" data-uv="lbs">LBS</button></div>
-   <div class="bignum" id="su-wv"></div>${rulerHTML('su-wr',30,200,.5)}`,
-  b:()=>{const p=v=>{SU.w=v;$('su-wv').innerHTML=`<b>${wDisp(v,SU.wu)}</b><span>${SU.wu}</span>`};p(SU.w);bindRuler('su-wr',SU.w,p)}},
- {v:()=>true,r:()=>`<h1>What's your goal weight?</h1><p class="sd">We'll pace your plan around this target milestone.</p>
-   <div class="suseg solid" data-u="wu"><button class="${SU.wu==='kg'?'on':''}" data-uv="kg">KG</button><button class="${SU.wu==='lbs'?'on':''}" data-uv="lbs">LBS</button></div>
-   <div class="bignum" id="su-gv"></div><div class="sugoal" id="su-gd"></div>${rulerHTML('su-gr',30,200,.5)}`,
-  b:()=>{const p=v=>{SU.gw=v;$('su-gv').innerHTML=`<b>${wDisp(v,SU.wu)}</b><span>${SU.wu}</span>`;const d=v-SU.w,dd=SU.wu==='kg'?Math.abs(d).toFixed(1):lbs(Math.abs(d)).toFixed(1);
-    $('su-gd').innerHTML=Math.abs(d)<.25?'<span>Maintain your current weight ✓</span>':`<span>${d<0?'−':'+'}${dd} ${SU.wu} to reach your goal ✓</span>`};p(SU.gw);bindRuler('su-gr',SU.gw,p)}},
- {v:()=>!!SU.act,r:()=>`<h1>What's your activity level?</h1><p class="sd">Be honest - this sets your baseline metabolic rate.</p><div class="suopts" data-k="act">${ACT.map(a=>opt(a[0],a[1],a[2],SU.act===a[0])).join('')}</div>`},
- {v:()=>true,r:()=>{const b=SU.w/((SU.h/100)**2),cat=b<18.5?['Underweight','#e0f0ff','#2a7fc9']:b<25?['Healthy ✓','#dcfce7','#15803d']:b<30?['Overweight','#fff4dc','#b26b00']:['Obese','#fdeeed','#c2564f'];
-    const d=SU.gw-SU.w,goal=GOALS_SU.find(g=>g[0]===SU.goal),fx=FOCUS.filter(f=>SU.focus.has(f[0])).map(f=>f[1].toLowerCase()),act=ACT.find(a=>a[0]===SU.act);
-    const pr=[`Targeting ${fx.length>2?fx.slice(0,2).join(', ')+' & more':fx.join(' & ')}${SU.goal==='strength'?' & hypertrophy':''}`,
-      Math.abs(d)<.25?'Maintain your current weight':d<0?`Steady fat loss trajectory (−${Math.abs(d).toFixed(1)} kg)`:`Lean mass gain trajectory (+${d.toFixed(1)} kg)`,
-      `${({sedentary:'Sedentary',light:'Light',moderate:'Moderate',very:'High'})[SU.act]||'Light'} activity baseline tracking`];
-    setTimeout(()=>{const f=$('su-bmif');if(f)f.style.width=Math.max(4,Math.min(100,(b-15)/20*100))+'%'},150);
-    return `<h1>Your fitness profile</h1><p class="sd">Based on your answers - here's what we know about you.</p>
-     <div class="bmicard"><div class="bh"><b>Calculated BMI</b><span class="badge" style="background:${cat[1]};color:${cat[2]}">${cat[0]}</span></div>
-     <div class="bv"><b id="su-bmiv">${b.toFixed(1)}</b><span>BMI Index</span></div><div class="bmibar"><i id="su-bmif"></i></div><div class="bmilab"><span>Underweight</span><span>Normal</span><span>Overweight</span></div></div>
-     <div class="prio"><b>Your Priorities</b>${pr.map(p=>`<div><svg data-i="checkc"></svg>${p}</div>`).join('')}</div>
-     ${goal?`<p class="sd" style="margin-top:14px;font-size:12.5px">Main goal: <b style="color:var(--green)">${goal[1]}</b> · ${SU.age} years</p>`:''}`},
-  b:()=>{const el=$('su-bmiv');if(el)countUp(el,+el.textContent,900,1)}},
- {v:()=>true,r:()=>`<div class="suready"><div class="lbl2">ALL SET! 🎉</div><h1>Your personalized plan is ready</h1><p class="sd">We've crafted a wellness plan focused on strength, dynamic cardio, and progressive core training.</p>
-   <div class="suwimg"><img src="img/su/ready.jpg" alt="Woman resting after a workout"></div>
-   <div class="suav"><span class="avs"><img src="img/marcus-avatar.jpg" alt=""><img src="img/aria-face.jpg" alt=""><img src="img/live-coach.jpg" alt=""></span>Join over 24K members tracking daily targets.</div></div>`,
-  b:()=>{confettiBurst()}}
+ {v:()=>!!SU.goal,r:()=>`<h1>What's your main goal?</h1><p class="sd">Pick one. You can explore everything else anytime.</p><div class="suopts" data-k="goal">${GOALS_SU.map(g=>opt(g[0],g[1],g[2],SU.goal===g[0],qtile(g[3]))).join('')}</div>`},
+ {v:()=>!!SU.gender,r:()=>`<h1>What is your gender?</h1><p class="sd">This helps us personalize calorie burn rates and workout presets.</p><div class="sugender" data-k="gender">${[['male','Male','mars','#2f8fd8'],['female','Female','venus','#e96f69']].map(g=>`<button class="suopt${SU.gender===g[0]?' on':''}" data-o="${g[0]}">${qtile(null,g[2],g[3])}<h4>${g[1]}</h4></button>`).join('')}</div>`},
+ {v:()=>true,r:()=>`<h1>Tell us about you</h1><p class="sd">Used to calculate your BMI and daily calorie needs.</p>
+   <div class="stats3">
+    <div class="strow"><span class="stl">Age</span><div class="stp"><button data-st="age" data-d="-1" aria-label="Decrease age">−</button><span class="stv" id="st-age"></span><button data-st="age" data-d="1" aria-label="Increase age">+</button></div></div>
+    <div class="strow"><span class="stl">Height<span class="stu" data-u="hu"><button class="${SU.hu==='cm'?'on':''}" data-uv="cm">cm</button><button class="${SU.hu==='ft'?'on':''}" data-uv="ft">ft</button></span></span><div class="stp"><button data-st="h" data-d="-1" aria-label="Decrease height">−</button><span class="stv" id="st-h"></span><button data-st="h" data-d="1" aria-label="Increase height">+</button></div></div>
+    <div class="strow"><span class="stl">Weight<span class="stu" data-u="wu"><button class="${SU.wu==='kg'?'on':''}" data-uv="kg">kg</button><button class="${SU.wu==='lbs'?'on':''}" data-uv="lbs">lbs</button></span></span><div class="stp"><button data-st="w" data-d="-1" aria-label="Decrease weight">−</button><span class="stv" id="st-w"></span><button data-st="w" data-d="1" aria-label="Increase weight">+</button></div></div>
+   </div>
+   <div class="bmichip" id="su-bmi"></div><p class="sd" style="text-align:center;font-size:12px;margin-top:8px">Tip: press and hold − / + to change faster.</p>`,
+  b:()=>{paintStats()}},
+ {v:()=>!!SU.act,r:()=>`<h1>How active are you?</h1><p class="sd">Be honest - this sets your starting level.</p><div class="suopts" data-k="act">${ACT.map(a=>opt(a[0],a[1],a[2],SU.act===a[0],qtile(null,a[3],a[4]))).join('')}</div>`},
+ {ready:1,v:()=>true,r:()=>{const b=bmiOf(),c=bmiCat(b),g=GOALS_SU.find(x=>x[0]===SU.goal)||GOALS_SU[0],a=ACT.find(x=>x[0]===SU.act)||ACT[1];
+   setTimeout(()=>{const f=$('su-bmif');if(f)f.style.width=Math.max(4,Math.min(100,(b-15)/20*100))+'%'},150);
+   return `<div class="suready"><div class="lbl2">ALL SET! 🎉</div><h1>Your plan is ready, ${esc(SU.first.trim()||'friend')}</h1><p class="sd">A wellness plan built around your goal and your current level.</p>
+   <div class="plansum"><span class="qi"><img src="${g[3]}" alt=""></span><div><small>MAIN GOAL</small><b>${g[1]}</b><span>${a[1]} · ${SU.age} years</span></div></div>
+   <div class="bmicard"><div class="bh"><b>Your BMI</b><span class="badge" style="background:${c[1]};color:${c[2]}">${c[0]} ✓</span></div><div class="bv"><b id="su-bmiv">${b.toFixed(1)}</b><span>BMI Index</span></div><div class="bmibar"><i id="su-bmif"></i></div><div class="bmilab"><span>Underweight</span><span>Normal</span><span>Overweight</span></div></div>
+   <div class="suav"><span class="avs"><img src="img/marcus-avatar.jpg" alt=""><img src="img/aria-face.jpg" alt=""><img src="img/live-coach.jpg" alt=""></span>Join over 24K members tracking daily targets.</div></div>`},
+  b:()=>{const el=$('su-bmiv');if(el)countUp(el,+el.textContent,900,1);confettiBurst()}}
 ];
+const QN=STEPS.length-1;
 function suValid(){$('su-next').disabled=!STEPS[suI].v()}
 function suRender(dir){const s=STEPS[suI];
-  $('su-step').textContent=`Step ${suI+1} of ${STEPS.length}`;$('su-bar').style.width=((suI+1)/STEPS.length*100)+'%';
+  $('su-step').textContent=s.ready?'All set':`Step ${suI+1} of ${QN}`;$('su-bar').style.width=(s.ready?100:(suI+1)/QN*100)+'%';
   $('su-body').innerHTML=`<div class="suq ${dir==='p'?'anim-p':dir==='n'?'anim-n':''}">${s.r()}</div>`;icons($('su-body'));
-  $('su-next').textContent=suI===STEPS.length-1?'See Your Plan':'Continue';
+  $('su-next').textContent=s.ready?'See Your Plan':suI===QN-1?'Finish':'Continue';
   document.querySelector('[data-screen=fitplan] .scroll').scrollTop=0;
   s.b&&s.b();suValid()}
+function stepStat(k,d){const c=STAT[k];SU[k]=+Math.min(c.max,Math.max(c.min,SU[k]+d*c.step)).toFixed(1);paintStats()}
+let holdT=null,holdI=null;
+$('su-body').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-st]');if(!b)return;e.preventDefault();const k=b.dataset.st,d=+b.dataset.d;stepStat(k,d);popEl($('st-'+k));
+  holdT=setTimeout(()=>{holdI=setInterval(()=>stepStat(k,d),70)},400)});
+['pointerup','pointerleave','pointercancel'].forEach(ev=>$('su-body').addEventListener(ev,()=>{clearTimeout(holdT);clearInterval(holdI)}));
+$('su-body').addEventListener('keydown',e=>{const b=e.target.closest('[data-st]');if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();stepStat(b.dataset.st,+b.dataset.d)}});
 $('su-body').addEventListener('click',e=>{
   const o=e.target.closest('[data-o]');
-  if(o){const g=o.parentElement,k=g.dataset.k;
-    if(g.hasAttribute('data-multi')){const v=o.dataset.o;
-      if(v==='full'){SU.focus=SU.focus.has('full')?new Set():new Set(['full'])}else{SU.focus.delete('full');SU.focus.has(v)?SU.focus.delete(v):SU.focus.add(v)}
-      g.querySelectorAll('[data-o]').forEach(x=>x.classList.toggle('on',SU.focus.has(x.dataset.o)))}
-    else{SU[k]=o.dataset.o;g.querySelectorAll('[data-o]').forEach(x=>x.classList.toggle('on',x===o))}
-    suValid();return}
+  if(o){const g=o.parentElement,k=g.dataset.k;SU[k]=o.dataset.o;g.querySelectorAll('[data-o]').forEach(x=>x.classList.toggle('on',x===o));suValid();return}
   const u=e.target.closest('[data-uv]');
-  if(u){SU[u.parentElement.dataset.u]=u.dataset.uv;suRender()}});
+  if(u){SU[u.parentElement.dataset.u]=u.dataset.uv;u.parentElement.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===u));paintStats()}});
 $('su-next').addEventListener('click',()=>{if(!STEPS[suI].v())return;
   if(suI<STEPS.length-1){suI++;suRender('n');return}
   PF.name=(SU.first.trim()+' '+SU.last.trim()).trim()||PF.name;PF.gender=SU.gender==='female'?'Female':'Male';PF.h=SU.h;PF.w=Math.round(SU.w);PF.bio='Living my best life';paintPF();
