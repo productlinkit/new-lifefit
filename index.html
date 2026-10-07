@@ -87,8 +87,8 @@ img{display:block;max-width:100%}
 .ring b small{font-size:9px;color:var(--muted);font-weight:500;line-height:1.15;text-align:center;margin-top:3px}
 .goals{display:flex;flex-direction:column;gap:8px}
 .goal{display:flex;align-items:center;gap:12px}
-.goal>i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:none}
-.goal>i svg{width:16px;height:16px}
+.goal i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:none}
+.goal i svg{width:16px;height:16px}
 .goal b{display:block;font-size:13px;font-weight:600}
 .goal span{font-size:11px;color:var(--muted-2)}
 .qa{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
@@ -631,69 +631,6 @@ button.pav{padding:0;border-radius:50%}
 [data-screen=home] .prog{box-shadow:0 12px 30px rgba(7,88,68,.18);border-color:transparent}
 @media (min-width:700px){.scroll>.homebg{max-width:none;margin:0}}
 
-/* ---------- HOME UPGRADE ---------- */
-.greet{align-items:center}
-.gdate{margin:0 0 4px;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.7)}
-.gr{display:flex;gap:8px;align-items:center}
-.streak{height:40px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);color:#fff;display:flex;align-items:center;gap:4px;font-size:14px}
-.streak b{font-weight:800}
-.bellbtn{position:relative}
-.bdot{position:absolute;top:-3px;right:-3px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:#ff6b5e;color:#fff;font-size:10px;font-weight:700;display:grid;place-items:center;border:2px solid #0b6a51}
-.week{position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:16px 16px 0}
-.week button{height:60px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .2s,background .2s}
-.week small{font-size:10px;font-weight:600;opacity:.75}
-.week b{font-size:16px;font-weight:700}
-.week i{width:5px;height:5px;border-radius:50%;background:transparent;margin-top:2px}
-.week .done i{background:#7ee2bd}
-.week .future{opacity:.55}
-.week .today{background:#fff;color:var(--green);border-color:#fff;box-shadow:0 8px 18px rgba(0,0,0,.15)}
-.week .today i{background:var(--coral)}
-.week .sel:not(.today){background:rgba(255,255,255,.28)}
-.prog h3{display:flex;justify-content:space-between;align-items:center}
-.prog .hint{font-size:10px;font-weight:600;color:var(--muted-2);letter-spacing:.3px}
-.ring{cursor:pointer;border-radius:50%}
-#ring-arc{transition:stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1)}
-.ring.full svg{filter:drop-shadow(0 0 8px rgba(16,185,127,.55))}
-.goals{flex:1;min-width:0;gap:10px}
-.goal{gap:10px}
-.goal .gt{flex:1;min-width:0}
-.goal .gt span{display:block}
-.gbar2{height:4px;border-radius:9px;background:#eef1ef;margin-top:4px;overflow:hidden}
-.gbar2 i{display:block;height:100%;border-radius:9px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
-.gplus{width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;flex:none;transition:transform .15s,background .2s,color .2s}
-.gplus svg{width:13px;height:13px}
-.gplus:active{transform:scale(.85)}
-.goal.done .gplus{background:currentColor}
-.goal.done .gplus svg{color:#fff}
-.h2ol{font-size:13px;color:var(--muted-2)}
-.h2o{display:flex;align-items:center;gap:14px;padding:16px;border-radius:20px}
-.glasses{flex:1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
-.glass{position:relative;height:46px;border-radius:6px 6px 10px 10px;border:2px solid #cfe3f3;overflow:hidden;background:#f6fafd;transition:transform .15s,border-color .3s}
-.glass:active{transform:scale(.9)}
-.glass:after{content:"";position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(180deg,#7cc4f5,#3b9ae6);transition:height .45s cubic-bezier(.2,.8,.2,1)}
-.glass.on{border-color:#7cc4f5}
-.glass.on:after{height:82%}
-.glass.on:before{content:"";position:absolute;z-index:1;left:-50%;width:200%;height:10px;bottom:76%;background:radial-gradient(circle at 10px -4px,transparent 8px,#7cc4f5 9px) 0 0/20px 10px repeat-x;opacity:.9}
-.h2oinfo{display:flex;flex-direction:column;align-items:center;min-width:64px}
-.h2oinfo b{font-size:16px;color:#2a7fc9;font-variant-numeric:tabular-nums}
-.h2oinfo span{font-size:10px;color:var(--muted-2)}
-.drop{position:relative;width:30px;height:30px;margin-bottom:2px}
-.drop svg{position:absolute;inset:0;width:30px;height:30px;fill:none;stroke:#3b9ae6;stroke-width:1.6}
-.drop i{position:absolute;left:6px;right:6px;bottom:3px;height:0;border-radius:0 0 12px 12px;background:#7cc4f5;transition:height .5s}
-.confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
-[data-tilt]{transform-style:preserve-3d;will-change:transform}
-@media (prefers-reduced-motion:no-preference){
-  .bdot:after{content:"";position:absolute;inset:-2px;border-radius:999px;border:2px solid #ff6b5e;animation:pulse2 1.8s ease-out infinite}
-  .fire{display:inline-block;animation:flame 1.2s ease-in-out infinite alternate;transform-origin:50% 90%}
-  @keyframes flame{from{transform:scale(1) rotate(-4deg)}to{transform:scale(1.15) rotate(4deg)}}
-  .week button{animation:rise .5s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0) * 50ms + 150ms)}
-  .glass.on:before{animation:wave 1.6s linear infinite}
-  @keyframes wave{to{transform:translateX(20px)}}
-  .goal.bump .gt span{animation:pop .4s}
-  .qa button:hover img{animation:pop .45s}
-}
-@media (hover:hover){.week button:hover{transform:translateY(-2px)}}
-
 /* ---------- MOTION & INTERACTION ---------- */
 .btn,.chip,.nav button,.qa .t{position:relative;overflow:hidden}
 .stretch .pl{position:relative}
@@ -797,19 +734,22 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   <div class="scroll">
     <div class="homebg" id="homebg" aria-hidden="true"></div>
     <div class="greet">
-      <div class="gl"><p class="gdate" id="h-date"></p><h1 class="h1"><span id="h-hello">Good morning</span>, <span data-pf="first">Alex</span>! <span class="wave">👋</span></h1><p class="sub" style="font-size:14px">Let's make today amazing.</p></div>
-      <div class="gr"><button class="streak" data-go="profile" aria-label="12-day streak"><span class="fire">🔥</span><b>12</b></button><button class="iconbtn bellbtn" aria-label="Notifications, 3 new" data-go="notif"><svg data-i="bell"></svg><span class="bdot">3</span></button></div>
+      <div><h1 class="h1">Good morning, <span data-pf="first">Alex</span>! <span class="wave">👋</span></h1><p class="sub" style="font-size:14px">Let's make today amazing.</p></div>
+      <button class="iconbtn" aria-label="Notifications" data-toast="No new notifications"><svg data-i="bell" style="color:var(--ink)"></svg></button>
     </div>
-    <div class="week" id="h-week" role="list" aria-label="This week"></div>
     <div class="pad">
       <div class="card prog">
-        <h3>Daily Progress <span class="hint">Tap + to log</span></h3>
+        <h3>Daily Progress</h3>
         <div class="row" style="gap:0">
-          <button class="ring" id="ring" aria-label="Daily goal progress">
-            <svg viewBox="0 0 96 96"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10b97f"/><stop offset="1" stop-color="#075844"/></linearGradient></defs><circle cx="48" cy="48" r="40" fill="none" stroke="#e7efe9" stroke-width="9"/><circle id="ring-arc" cx="48" cy="48" r="40" fill="none" stroke="url(#rg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="55.3" transform="rotate(-90 48 48)"/></svg>
-            <b><span id="ring-pct">78%</span><small>of daily<br>goal</small></b>
-          </button>
-          <div class="goals" id="goals"></div>
+          <div class="ring">
+            <svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="40" fill="none" stroke="#e7efe9" stroke-width="9"/><circle id="ring-arc" cx="48" cy="48" r="40" fill="none" stroke="#075844" stroke-width="9" stroke-dasharray="251.3" stroke-dashoffset="0" transform="rotate(-90 48 48)"/></svg>
+            <b><span data-count="78" data-suf="%">78%</span><small>of daily<br>goal</small></b>
+          </div>
+          <div class="goals">
+            <div class="goal"><i style="background:#fdeceb;color:#e96f69"><svg data-i="run"></svg></i><div><b>Move</b><span>42 / 60 min</span></div></div>
+            <div class="goal"><i style="background:#e5f6ea;color:#22a05a"><svg data-i="utensils"></svg></i><div><b>Eat Healthy</b><span>2 / 3 meals</span></div></div>
+            <div class="goal"><i style="background:#efeafd;color:#8b6cf0"><svg data-i="brain"></svg></i><div><b>Mind</b><span>12 / 20 min</span></div></div>
+          </div>
         </div>
       </div>
 
@@ -821,20 +761,14 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
         <button data-go="games"><span class="t"><img src="img/qa4.png" alt=""></span>Games</button>
       </div>
 
-      <div class="sec"><h2>Hydration</h2><span class="h2ol" id="h2o-l">5 / 8 glasses</span></div>
-      <div class="card h2o">
-        <div class="glasses" id="glasses" role="group" aria-label="Glasses of water"></div>
-        <div class="h2oinfo"><div class="drop"><i id="drop-fill"></i><svg viewBox="0 0 24 24"><path d="M12 2.5S5 10 5 14.5a7 7 0 0 0 14 0C19 10 12 2.5 12 2.5z"/></svg></div><b id="h2o-ml">1.25 L</b><span>of 2 L goal</span></div>
-      </div>
-
       <div class="sec"><h2 style="color:var(--coral)">For You Today</h2><button class="link" data-go="yoga">See all</button></div>
-      <button class="hero stretch" data-go="yoga" data-tilt>
+      <button class="hero stretch" data-go="yoga">
         <img src="img/home-stretch.jpg" alt="">
         <div class="in"><h3>10 Min Morning Stretch</h3><p>Wake up your body and mind.</p><span class="pl"><svg data-i="play"></svg></span></div>
       </button>
 
       <div class="sec"><h2>Continue Your Journey</h2><button class="link" data-go="fitness">See all</button></div>
-      <button class="journey" data-go="fitness" data-tilt style="width:100%;text-align:left">
+      <button class="journey" data-go="fitness" style="width:100%;text-align:left">
         <img src="img/home-core.jpg" alt="">
         <div class="grow" style="padding-left:8px">
           <h3>7 Day Core Challenge</h3><div class="d">Day 3 of 7</div>
@@ -1470,7 +1404,6 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <div class="sheetbg" id="sheetbg" hidden></div>
 <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="grab"></div><span class="nic" id="sh-ic"></span><b id="sh-t"></b><p id="sh-p"></p><button class="btn" id="sh-ok"></button><button class="sh-cancel" id="sh-no">Cancel</button></div>
 
-<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
 <div class="toast" id="toast"></div>
 </div>
 </div>
@@ -1531,7 +1464,6 @@ const I={
  trash:'<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>',
  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
  logout:'<path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/>',
- plus:'<path d="M12 5v14M5 12h14" stroke-width="2.6"/>',
  heart:'<path d="M12 20s-7-4.4-9.2-8.6C1.3 8.4 3 5 6.4 5c2 0 3.6 1.2 4.4 2.6h2.4C14 6.2 15.6 5 17.6 5 21 5 22.7 8.4 21.2 11.4 19 15.6 12 20 12 20z"/>',
  brain2:'<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/>',
  bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -1562,7 +1494,7 @@ const COACHES=[
  {n:'Aria',full:'Coach Aria',role:'Mindful Posture AI',tags:['YOGA','POSTURE'],t:'Today • 11:00 WIB',img:'img/aria-face.jpg',go:'call'},
  {n:'Emma',full:'Emma Sterling',role:'Vinyasa Flow Instructor',tags:['YOGA','FLEX'],t:'Today • 17:30 WIB',ini:'ES',go:'live'},
  {n:'Sarah',full:'Sarah Jenkins',role:'Restorative Yoga Coach',tags:['YOGA','MIND'],t:'Tomorrow • 07:00 WIB',ini:'SJ',go:'live'}];
-document.getElementById('coaches').innerHTML=COACHES.map(c=>`<div class="card coach" data-tilt>
+document.getElementById('coaches').innerHTML=COACHES.map(c=>`<div class="card coach">
  <div class="alert">${c.n} is online and ready for you</div>
  <div class="row" style="margin-top:18px"><div class="av">${c.img?`<img src="${c.img}" alt="">`:`<span class="ini">${c.ini}</span>`}<span class="ck"><svg data-i="check"></svg></span></div>
  <div class="grow"><div class="cname">${c.full}</div><div class="crole">${c.role}</div><div class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div></div>
@@ -1717,7 +1649,7 @@ icons(document);
 
 // ---------- Motion helpers ----------
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const ITEM_SEL='.goals,.glasses,.sgroup,.faq,.hcats,.list,.grid2,.hscroll,.qa,.coaches,.chals,.gamegrid,.gcards,.giinfo,.cstats,.stats,.eq,.ings,.macros,.stat2,.cats';
+const ITEM_SEL='.sgroup,.faq,.hcats,.list,.grid2,.hscroll,.qa,.coaches,.chals,.gamegrid,.gcards,.giinfo,.cstats,.stats,.eq,.ings,.macros,.stat2,.cats';
 function tagStagger(root){
   root.querySelectorAll('.scroll>.pad,.scroll>.top,.scroll>.greet').forEach(w=>{[...w.children].forEach((c,k)=>{c.classList.add('rv');c.style.setProperty('--i',Math.min(k,12))})});
   root.querySelectorAll(ITEM_SEL).forEach(l=>{l.classList.remove('rv');[...l.children].forEach((c,k)=>{c.classList.add('rv-item');c.style.setProperty('--i',Math.min(k,9))})});
@@ -1811,57 +1743,6 @@ paintPF();
 function sizeHomeBg(){const bg=$('homebg'),card=document.querySelector('[data-screen=home] .prog');if(!bg||!card||!card.offsetParent)return;
   const top=bg.getBoundingClientRect().top,r=card.getBoundingClientRect();bg.style.height=Math.round(r.top-top+r.height/2)+'px'}
 addEventListener('resize',sizeHomeBg);
-
-// ---------- Home: greeting, week, goals, hydration, confetti, parallax, tilt ----------
-(function(){
-  const now=new Date(),h=now.getHours();
-  $('h-hello').textContent=h<12?'Good morning':h<18?'Good afternoon':'Good evening';
-  $('h-date').textContent=now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-  const ti=(now.getDay()+6)%7,mon=new Date(now);mon.setDate(now.getDate()-ti);
-  const D=['M','T','W','T','F','S','S'],DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  $('h-week').innerHTML=D.map((d,k)=>{const dt=new Date(mon);dt.setDate(mon.getDate()+k);const st=k===ti?'today':k<ti?(WK[k]>=30?'done':'past'):'future';
-    return `<button role="listitem" class="${st}" data-day="${k}" style="--i:${k}"><small>${d}</small><b>${dt.getDate()}</b><i></i></button>`}).join('');
-  $('h-week').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(!b)return;const k=+b.dataset.day;
-    $('h-week').querySelectorAll('button').forEach(x=>x.classList.toggle('sel',x===b));popEl(b);
-    toast(k>ti?`${DN[k]}: planned · Full Body Strength`:k===ti?`Today: ${GOALS[0].v} min active so far`:`${DN[k]}: ${WK[k]} min active${WK[k]>=30?' ✓':''}`)});
-})();
-const GOALS=[{k:'Move',v:42,max:60,u:'min',step:5,c:'#e96f69',bg:'#fdeceb',ic:'run'},{k:'Eat Healthy',v:2,max:3,u:'meals',step:1,c:'#22a05a',bg:'#e5f6ea',ic:'utensils'},{k:'Mind',v:12,max:20,u:'min',step:4,c:'#8b6cf0',bg:'#efeafd',ic:'brain'}];
-const avg=()=>GOALS.reduce((a,g)=>a+Math.min(1,g.v/g.max),0)/GOALS.length,AVG0=avg();
-let ringPct=78,celebrated=false;
-function goalPct(){return Math.min(100,Math.round(78+(avg()-AVG0)/(1-AVG0)*22))}
-function renderGoals(bump){
-  $('goals').innerHTML=GOALS.map((g,k)=>{const d=g.v>=g.max;return `<div class="goal${d?' done':''}${bump===k?' bump':''}"><i style="background:${g.bg};color:${g.c}"><svg data-i="${g.ic}"></svg></i><div class="gt"><b>${g.k}</b><span>${g.v} / ${g.max} ${g.u}</span><div class="gbar2"><i style="width:${Math.min(100,g.v/g.max*100)}%;background:${g.c}"></i></div></div><button class="gplus" style="color:${g.c}" data-goal="${k}" aria-label="${d?g.k+' done':'Log '+g.step+' '+g.u+' of '+g.k}"><svg data-i="${d?'check':'plus'}"></svg></button></div>`}).join('');
-  icons($('goals'));
-}
-function setRing(p){const from=ringPct;ringPct=p;$('ring-arc').style.strokeDashoffset=(251.3*(1-p/100)).toFixed(1);
-  const el=$('ring-pct'),t0=performance.now();(function f(t){const q=Math.min(1,(t-t0)/700);el.textContent=Math.round(from+(p-from)*q)+'%';if(q<1)requestAnimationFrame(f)})(t0);
-  $('ring').classList.toggle('full',p>=100)}
-renderGoals();
-$('goals').addEventListener('click',e=>{const b=e.target.closest('[data-goal]');if(!b)return;const k=+b.dataset.goal,g=GOALS[k];
-  if(g.v>=g.max){toast(g.k+' goal already complete ✓');return}
-  g.v=Math.min(g.max,g.v+g.step);renderGoals(k);setRing(goalPct());
-  if(g.v>=g.max)toast(g.k+' goal complete! 💪');else toast(`+${g.step} ${g.u} logged`);
-  if(ringPct>=100&&!celebrated){celebrated=true;setTimeout(()=>{confetti();toast('Daily goal complete! 🎉')},500)}});
-$('ring').addEventListener('click',()=>{popEl($('ring'));toast(GOALS.map(g=>`${g.k} ${Math.round(Math.min(1,g.v/g.max)*100)}%`).join(' · '))});
-// hydration
-let water=5;
-function renderWater(){$('glasses').innerHTML=Array.from({length:8},(_,k)=>`<button class="glass${k<water?' on':''}" data-glass="${k}" aria-label="Glass ${k+1}${k<water?', full':''}"></button>`).join('');
-  $('h2o-l').textContent=`${water} / 8 glasses`;$('h2o-ml').textContent=(water*.25).toFixed(2).replace(/0$/,'')+' L';$('drop-fill').style.height=(water/8*22)+'px'}
-renderWater();
-$('glasses').addEventListener('click',e=>{const b=e.target.closest('[data-glass]');if(!b)return;const k=+b.dataset.glass;const before=water;water=(k+1===water)?k:k+1;renderWater();
-  if(water===8&&before<8){confetti();toast('Hydration goal reached! 💧')}else toast(water>before?'💧 +'+((water-before)*250)+' ml':'Updated to '+water+' glasses')});
-// confetti burst
-function confetti(){if(REDUCE)return;const cv=$('confetti'),ph=$('phone'),r=ph.getBoundingClientRect(),dpr=devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);
-  const C=['#075844','#10b97f','#e96f69','#ffd144','#7c5cf0','#7cc4f5'],P=Array.from({length:140},()=>({x:r.width/2,y:r.height*.35,vx:(Math.random()-.5)*11,vy:-Math.random()*11-4,s:Math.random()*6+4,c:C[Math.random()*C.length|0],a:Math.random()*6,va:(Math.random()-.5)*.3}));
-  const t0=performance.now();(function f(t){const el=t-t0;c.clearRect(0,0,r.width,r.height);P.forEach(p=>{p.vy+=.32;p.x+=p.vx;p.y+=p.vy;p.vx*=.99;p.a+=p.va;c.save();c.translate(p.x,p.y);c.rotate(p.a);c.globalAlpha=Math.max(0,1-el/2200);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore()});if(el<2200)requestAnimationFrame(f);else c.clearRect(0,0,r.width,r.height)})(t0)}
-// parallax header
-(()=>{const sc=document.querySelector('[data-screen=home] .scroll'),bg=$('homebg'),gl=document.querySelector('[data-screen=home] .greet');
-  sc.addEventListener('scroll',()=>{if(REDUCE)return;const y=sc.scrollTop;bg.style.transform=`translateY(${y*.45}px)`;gl.style.opacity=Math.max(0,1-y/160);gl.style.transform=`translateY(${y*.25}px)`},{passive:true})})();
-// 3D tilt on cards (mouse only)
-if(matchMedia('(hover:hover)').matches&&!REDUCE){
-  document.addEventListener('pointermove',e=>{const el=e.target.closest('[data-tilt]');document.querySelectorAll('[data-tilt].tilting').forEach(x=>{if(x!==el){x.classList.remove('tilting');x.style.transform=''}});if(!el)return;
-    const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.classList.add('tilting');el.style.transform=`perspective(700px) rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*8).toFixed(2)}deg) translateY(-3px)`});
-}
 
 // Router: tokens like "recipe-24" open a detail screen; a stack powers the back buttons
 const screens=[...document.querySelectorAll('.screen')];
