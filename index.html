@@ -2070,10 +2070,9 @@ function statText(k){if(k==='age')return `<b>${SU.age}</b><span>years</span>`;
 function paintStats(){['age','h','w'].forEach(k=>{const el=$('st-'+k);if(el)el.innerHTML=statText(k)});const b=bmiOf(),c=bmiCat(b),el=$('su-bmi');
   if(el)el.innerHTML=`<span>Your BMI</span><b>${b.toFixed(1)}</b><em style="background:${c[1]};color:${c[2]}">${c[0]}</em>`}
 const STEPS=[
- {v:()=>SU.first.trim().length>0,r:()=>`<h1>What's your name?</h1><p class="sd">We'll use this to personalize your healthy living journey.</p>
-   <label class="sufl" for="su-first">First Name</label><input class="suinp" id="su-first" placeholder="Alex" value="${esc(SU.first)}" autocomplete="given-name">
-   <label class="sufl" for="su-last">Last Name <span style="font-weight:500;color:var(--muted-2)">(optional)</span></label><input class="suinp" id="su-last" placeholder="Johnson" value="${esc(SU.last)}" autocomplete="family-name">`,
-  b:()=>{['first','last'].forEach(k=>{const i=$('su-'+k);i.addEventListener('input',()=>{SU[k]=i.value;suValid()});i.addEventListener('keydown',e=>{if(e.key==='Enter')k==='first'?$('su-last').focus():$('su-next').click()})});setTimeout(()=>$('su-first').focus({preventScroll:true}),350)}},
+ {v:()=>SU.first.trim().length>0,r:()=>`<h1>What should we call you?</h1><p class="sd">Pick a nickname. We'll use it to greet you in the app.</p>
+   <label class="sufl" for="su-first">Nickname</label><input class="suinp" id="su-first" placeholder="e.g. Alex" value="${esc(SU.first)}" autocomplete="nickname" maxlength="20">`,
+  b:()=>{const i=$('su-first');i.addEventListener('input',()=>{SU.first=i.value;suValid()});i.addEventListener('keydown',e=>{if(e.key==='Enter')$('su-next').click()});setTimeout(()=>i.focus({preventScroll:true}),350)}},
  {v:()=>!!SU.goal,r:()=>`<h1>What's your main goal?</h1><p class="sd">Pick one. You can explore everything else anytime.</p><div class="suopts" data-k="goal">${GOALS_SU.map(g=>opt(g[0],g[1],g[2],SU.goal===g[0],qtile(g[3]))).join('')}</div>`},
  {v:()=>!!SU.gender,r:()=>`<h1>What is your gender?</h1><p class="sd">This helps us personalize calorie burn rates and workout presets.</p><div class="sugender" data-k="gender">${[['male','Male','mars','#2f8fd8'],['female','Female','venus','#e96f69']].map(g=>`<button class="suopt${SU.gender===g[0]?' on':''}" data-o="${g[0]}">${qtile(null,g[2],g[3])}<h4>${g[1]}</h4></button>`).join('')}</div>`},
  {v:()=>true,r:()=>`<h1>Tell us about you</h1><p class="sd">Used to calculate your BMI and daily calorie needs.</p>
@@ -2114,7 +2113,7 @@ $('su-body').addEventListener('click',e=>{
   if(u){SU[u.parentElement.dataset.u]=u.dataset.uv;u.parentElement.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===u));paintStats()}});
 $('su-next').addEventListener('click',()=>{if(!STEPS[suI].v())return;
   if(suI<STEPS.length-1){suI++;suRender('n');return}
-  PF.name=(SU.first.trim()+' '+SU.last.trim()).trim()||PF.name;PF.gender=SU.gender==='female'?'Female':'Male';PF.h=SU.h;PF.w=Math.round(SU.w);PF.bio='Living my best life';paintPF();
+  PF.name=SU.first.trim()||PF.name;PF.gender=SU.gender==='female'?'Female':'Male';PF.h=SU.h;PF.w=Math.round(SU.w);PF.bio='Living my best life';paintPF();
   stack.length=0;show('home',false,'tab');toast(`Welcome, ${SU.first.trim()||'friend'}! Your plan is ready 🎉`)});
 $('su-back').addEventListener('click',()=>{if(suI>0){suI--;suRender('p')}else{setAuthMode(true);show('login',false,'back')}});
 setAuthMode(false);
