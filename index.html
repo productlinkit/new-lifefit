@@ -37,10 +37,14 @@ img{display:block;max-width:100%}
 .status .sb{display:flex;gap:6px;align-items:center}
 
 /* bottom nav */
-.nav{flex:none;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--white);border-top:1px solid #f1f1ef}
-.nav button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 0 6px;border-radius:16px;color:var(--muted-2);font-size:12px;font-weight:500}
-.nav button svg{width:24px;height:24px}
-.nav button.on{background:var(--tint);color:var(--green);font-weight:700}
+.nav{flex:none;position:relative;display:grid;grid-template-columns:repeat(5,1fr);padding:6px;margin:4px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--white);border:1px solid #eef0ee;border-radius:26px;box-shadow:0 12px 28px rgba(7,88,68,.13),0 2px 6px rgba(17,24,39,.05)}
+.nav button{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 7px;border-radius:20px;color:var(--muted-2);font-size:11px;font-weight:600;transition:color .3s}
+.nav .ind{position:absolute;z-index:0;top:6px;bottom:6px;left:6px;width:calc((100% - 12px) / 5);border-radius:20px;background:linear-gradient(160deg,#0b7a5e,#075844);box-shadow:0 6px 14px rgba(7,88,68,.35);transform:translateX(calc(var(--i,0) * 100%));transition:transform .5s cubic-bezier(.3,1.25,.5,1)}
+.nav .ind:after{content:"";position:absolute;left:50%;bottom:-4px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#10b97f;opacity:0}
+.nav button svg{width:22px;height:22px;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+@media (hover:hover){.nav button:not(.on):hover{color:var(--green)}.nav button:not(.on):hover svg{transform:translateY(-2px)}}
+.nav button.on{color:#fff;font-weight:700}
+.nav button.on svg{transform:translateY(-1px) scale(1.08)}
 
 /* type */
 .h1{font-size:24px;font-weight:700;letter-spacing:-.4px;margin:0;text-wrap:balance}
@@ -949,7 +953,6 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   .bigplay,.pctrl .pp2{position:relative}
   .mindb .pp:after{border-color:#fff}
   @keyframes pulse2{to{transform:scale(1.55);opacity:0}}
-  .nav button.on{animation:pillIn .35s cubic-bezier(.3,1.4,.5,1)}
   .nav button.on svg{animation:pop .5s .05s cubic-bezier(.3,1.6,.5,1)}
   @keyframes pillIn{from{transform:scale(.8);opacity:.4}}
   .badge-live:before{animation:pulse 1.2s infinite}
@@ -969,7 +972,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
   [data-screen=explore],[data-screen=healthy],[data-screen=cooking],[data-screen=fitness],[data-screen=games],[data-screen=mind],[data-screen=motivation],[data-screen=yoga],[data-screen=live],[data-screen=skill]{--maxw:1120px}
   .scroll>.pad,.scroll>.top{padding-left:24px;padding-right:24px}
   .greet{padding-left:24px;padding-right:24px}
-  .nav{grid-template-columns:repeat(5,minmax(0,112px));justify-content:center;gap:8px}
+  .nav{width:min(560px,calc(100% - 24px));margin-left:auto;margin-right:auto}
   .chips{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
   .hscroll,.coaches{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
   .grid2{grid-template-columns:repeat(3,1fr);gap:16px}
@@ -1002,7 +1005,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 .phone.dark{--bg:#0e1412;--bg-2:#0b100e;--white:#161e1b;--raise:#212b27;--line:#2a3531;--ink:#eef3f1;--ink-2:#cdd6d2;--muted:#9eaaa5;--muted-2:#7f8b86;--tint:#163a2e;--tint-2:#1b4436;--coral-bg:#3a2321;--green:#1a9a70;color-scheme:dark;color:var(--ink)}
 .phone{--raise:#eef0ee;--line:#eceeec;transition:background-color .35s}
 .phone.dark /* bottom nav */
-.nav{border-top:1px solid var(--line)}
+.nav{border-color:var(--line)}
 .phone.dark .back.circle{background:var(--raise)}
 .phone.dark .iconbtn{border:1px solid var(--line)}
 .phone.dark .chip{border:1.5px solid var(--line)}
@@ -1102,8 +1105,9 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 .phone.dark .card{box-shadow:0 2px 12px rgba(0,0,0,.35)}
 .phone.dark .homebg{background:radial-gradient(120% 70% at 85% 0%,rgba(16,185,127,.28),transparent 60%),linear-gradient(180deg,#075844 0%,#0a5a45 35%,#123f33 65%,#0f201a 85%,var(--bg-2) 100%)}
 .phone.dark [data-screen=home] .status{background:#075844}
-.phone.dark .nav{background:var(--white);border-top-color:var(--line)}
-.phone.dark .nav button.on{background:var(--tint);color:#5fd3a8}
+.phone.dark .nav{background:var(--raise);border-color:var(--line);box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.phone.dark .nav button.on{color:#fff}
+.phone.dark .nav .ind{background:linear-gradient(160deg,#1fa77b,#0b7a5e)}
 .phone.dark .cat,.phone.dark .stretch{color:#111827}
 .phone.dark .cat p,.phone.dark .stretch p{color:#374151}
 .phone.dark .sec a,.phone.dark .sec button.link{color:var(--muted-2)}
@@ -1935,7 +1939,8 @@ const NAV={std:[['home','Home','home'],['explore','Explore','search'],['games','
 const TAB_TO={home:'home',explore:'explore',games:'games',feed:'cooking',profile:'profile',live:'live'};
 document.querySelectorAll('[data-nav]').forEach(n=>{
   const act=n.dataset.nav, items=NAV[n.dataset.variant||'std'];
-  n.innerHTML=items.map(([k,l,ic])=>{const on=k===act;const fi=on&&I[ic+'f']?ic+'f':ic;return `<button class="${on?'on':''}" data-go="${TAB_TO[k]}"><svg data-i="${fi}"></svg>${l}</button>`}).join('');
+  const ai=items.findIndex(x=>x[0]===act);n.dataset.i=ai;n.style.setProperty('--i',ai);
+  n.innerHTML='<span class="ind" aria-hidden="true"></span>'+items.map(([k,l,ic])=>{const on=k===act;const fi=on&&I[ic+'f']?ic+'f':ic;return `<button class="${on?'on':''}" data-go="${TAB_TO[k]}"${on?' aria-current="page"':''}><svg data-i="${fi}"></svg>${l}</button>`}).join('');
 });
 
 // Coach carousel on Home
@@ -2312,6 +2317,7 @@ function show(token,push,mode){
     s.hidden=!on;
     if(on){const sc=s.querySelector('.scroll');if(sc)sc.scrollTop=0;runCounters(s)}});
   if(location.hash.slice(1)!==tok)history.replaceState(null,'','#'+tok);
+  {const nv=document.querySelector(`[data-screen="${id}"] .nav`);if(nv){const to=+nv.dataset.i;if(window.lastNavI!=null&&lastNavI!==to&&!REDUCE){nv.style.transition='none';nv.style.setProperty('--i',lastNavI);nv.querySelector('.ind').style.transition='none';void nv.offsetWidth;nv.querySelector('.ind').style.transition='';nv.style.setProperty('--i',to)}window.lastNavI=to}}
   id==='call'?startTimer():stopTimer();
   if(id==='home')requestAnimationFrame(sizeHomeBg);
 }
