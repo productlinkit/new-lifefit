@@ -165,6 +165,7 @@ img{display:block;max-width:100%}
 /* ---------- COOKING ---------- */
 .sq{width:36px;height:36px;border-radius:12px;background:var(--white);border:1px solid #f0f0ee;display:grid;place-items:center;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .sq svg{width:16px;height:16px}
+.sq.bk{margin:8px 0 14px}
 .feat{overflow:hidden;border-radius:18px}
 .feat img{width:100%;height:158px;object-fit:cover}
 .feat .b{padding:16px 16px 14px}
@@ -441,7 +442,7 @@ img{display:block;max-width:100%}
 .arthero{width:100%;height:200px;object-fit:cover;border-radius:18px}
 .artbody p{font-size:14.5px;line-height:1.7;color:var(--ink-2);margin:14px 0 0}
 .player{background:linear-gradient(160deg,#5b2bb3,#3d1a86);color:#fff;border-radius:24px;padding:22px 20px 24px;text-align:center;margin-top:4px}
-.disc{width:190px;height:190px;border-radius:50%;margin:6px auto 0;background:url(img/mind-banner.jpg) 78% 30%/cover;box-shadow:0 0 0 10px rgba(255,255,255,.08),0 0 0 22px rgba(255,255,255,.04)}
+.disc{width:190px;height:190px;border-radius:50%;margin:6px auto 0;background:url(img/mind-banner.jpg?v=2) 78% 30%/cover;box-shadow:0 0 0 10px rgba(255,255,255,.08),0 0 0 22px rgba(255,255,255,.04)}
 .player.on .disc{animation:spin 24s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.player.on .disc{animation:none}}
@@ -1213,7 +1214,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
       <button class="hero cat" data-go="healthy" data-k="healthy living tips"><img src="img/ex-healthy.jpg" alt=""><div class="in"><h3>Healthy<br>Living</h3><p>Tips for a better everyday</p></div></button>
       <button class="hero cat" data-go="yoga" data-k="yoga balance"><img src="img/ex-yoga.jpg" alt=""><div class="in"><h3>Yoga</h3><p>Balance body &amp; mind</p></div></button>
       <button class="hero cat" data-go="mind" data-k="meditation mind calm"><img src="img/ex-meditation.jpg" alt=""><div class="in"><h3>Meditation</h3><p>Calm your mind, find peace</p></div></button>
-      <button class="hero cat" data-go="motivation" data-k="motivation inspire"><img src="img/ex-motivation.jpg" alt=""><div class="in"><h3>Motivation</h3><p>Inspire your best self</p></div></button>
+      <button class="hero cat" data-go="motivation" data-k="motivation inspire"><img src="img/ex-motivation.jpg?v=2" alt=""><div class="in"><h3>Motivation</h3><p>Inspire your best self</p></div></button>
       <button class="hero cat" data-go="bmi" data-k="bmi calculator numbers"><img src="img/ex-bmi.jpg" alt=""><div class="in"><h3>BMI<br>Calculator</h3><p>Know your numbers</p></div></button>
       <button class="hero cat" data-go="cooking" data-k="health cooking recipes"><img src="img/ex-cooking.jpg" alt=""><div class="in"><h3>Health<br>Cooking</h3><p>Delicious &amp; healthy recipes</p></div></button>
       <button class="hero cat" data-go="games" data-k="mind games brain"><img src="img/ex-mindgames.jpg" alt=""><div class="in" style="max-width:56%"><h3>Mind Games</h3><p style="margin-top:22px">Train your brain daily</p></div></button>
@@ -1227,12 +1228,12 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <section class="screen" data-screen="fitness">
   <div class="status" data-status></div>
   <div class="scroll"><div class="top pad">
-    <button class="back" data-back="explore" aria-label="Back" style="margin-left:-8px"><svg data-i="chevl"></svg></button>
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <h1 class="h1">Fitness</h1><p class="sub">Stronger body, stronger you.</p>
     <div class="chips" data-chips id="fit-chips"><button class="chip on" data-g="male">Male</button><button class="chip" data-g="female">Female</button><button class="chip" data-g="all">All Goals</button></div>
     <div class="sec" style="margin-top:20px"><h2>Featured Programs</h2><a href="#fitness">See all</a></div>
     <div class="hero prog-banner">
-      <img src="img/fit-banner.jpg" alt="">
+      <img src="img/fit-banner.jpg?v=2" alt="">
       <div class="in"><div class="ey">INSIDE MOST</div><h3>LEAN &amp; STRONG</h3><div class="w">8 Week Program</div><div class="d">Build muscle, burn fat, feel unstoppable.</div><button class="go" id="fit-start" data-go="fitness">Start Program</button></div>
     </div>
     <div class="sec" style="margin-top:24px"><h2>Workout Plans</h2><a href="#fitness">See all</a></div>
@@ -1262,7 +1263,8 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <!-- HEALTHY LIVING -->
 <section class="screen" data-screen="healthy">
   <div class="status" data-status></div>
-  <div class="scroll"><div class="top pad" style="padding-top:20px">
+  <div class="scroll"><div class="top pad">
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <h1 class="h1">Healthy Living</h1><p class="sub">Eat well, live well.</p>
     <div class="chips" data-chips id="hl-chips"><button class="chip on" data-c="all">All</button><button class="chip" data-c="lifestyle">Lifestyle</button><button class="chip" data-c="workout">Workout</button><button class="chip" data-c="diet">Diet</button><button class="chip" data-c="recipes">Recipes</button></div>
     <div class="sec" style="margin-top:22px"><h2 id="hl-top">Top Stories</h2><span style="font-size:13px;color:var(--muted-2)" id="hl-count"></span></div>
@@ -1287,7 +1289,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
     <div class="chips" data-chips><button class="chip on">All</button><button class="chip">Live Now</button><button class="chip">HIIT</button><button class="chip">Yoga</button><button class="chip">Strength</button></div>
     <div class="sec" style="margin-top:26px"><h2 style="font-size:17px">Live Now</h2><span class="livepill">1 Session Active</span></div>
     <div class="card livecard">
-      <div class="liveimg"><img src="img/live-main.jpg" alt=""><span class="badge-live">LIVE</span><span class="watch"><svg data-i="users"></svg><span id="watching">1.2k</span> watching</span></div>
+      <div class="liveimg"><img src="img/live-main.jpg?v=2" alt=""><span class="badge-live">LIVE</span><span class="watch"><svg data-i="users"></svg><span id="watching">1.2k</span> watching</span></div>
       <div class="row" style="gap:12px;margin:12px 0 14px">
         <img src="img/live-coach.jpg" alt="" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
         <div class="grow"><b style="font-size:14px;display:block">HIIT &amp; Glute Blast Power Hour</b><span style="font-size:12px;color:var(--muted-2)">Coach Marcus Vance • HIIT</span></div>
@@ -1301,8 +1303,8 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
     </div>
     <div class="sec" style="margin-top:30px"><h2 style="font-size:17px">Popular Replays</h2><a href="#live" style="color:var(--green);font-weight:600">View All</a></div>
     <div class="grid2" style="gap:16px">
-      <div class="rp"><div class="im"><img src="img/replay1.jpg" alt=""><span class="dur">30 min</span></div><b>Core Stability 101</b><span>Marcus Vance</span><span class="r"><em>4.9 ★</em> &nbsp;•&nbsp; STRENGTH</span></div>
-      <div class="rp"><div class="im"><img src="img/replay2.jpg" alt=""><span class="dur">20 min</span></div><b>Calm &amp; Restore Mind</b><span>Sarah Jenkins</span><span class="r"><em>4.8 ★</em> &nbsp;•&nbsp; YOGA</span></div>
+      <div class="rp"><div class="im"><img src="img/replay1.jpg?v=2" alt=""><span class="dur">30 min</span></div><b>Core Stability 101</b><span>Marcus Vance</span><span class="r"><em>4.9 ★</em> &nbsp;•&nbsp; STRENGTH</span></div>
+      <div class="rp"><div class="im"><img src="img/replay2.jpg?v=2" alt=""><span class="dur">20 min</span></div><b>Calm &amp; Restore Mind</b><span>Sarah Jenkins</span><span class="r"><em>4.8 ★</em> &nbsp;•&nbsp; YOGA</span></div>
     </div>
   </div></div>
   <nav class="nav" data-nav="live" data-variant="live"></nav>
@@ -1311,7 +1313,8 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <!-- MIND GAMES -->
 <section class="screen" data-screen="games">
   <div class="status" data-status></div>
-  <div class="scroll"><div class="top pad" style="padding-top:20px">
+  <div class="scroll"><div class="top pad">
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <div class="row" style="justify-content:space-between;align-items:flex-start">
       <div><h1 class="h1">Mind Games</h1><p class="sub">Play. Train. Get Smarter.</p></div>
       <svg class="stars" data-i="star" style="width:22px;height:22px;color:#f59e0b;margin:6px 8px 0 0"></svg>
@@ -1326,9 +1329,9 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <section class="screen" data-screen="mind">
   <div class="status" data-status></div>
   <div class="scroll"><div class="top pad">
-    <button class="back" data-back="explore" aria-label="Back" style="margin-left:-8px"><svg data-i="chevl"></svg></button>
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <h1 class="h1">Mind</h1><p class="sub">Peace begins within.</p>
-    <div class="hero mindb" style="margin-top:28px"><img src="img/mind-banner.jpg" alt=""><div class="in"><h3>Breathe.<br>Relax.<br>Be Present.</h3><p>Find calm in every moment.</p></div><button class="pp" aria-label="Play" data-toast="Playing: Breathe. Relax. Be Present."><svg data-i="play"></svg></button></div>
+    <div class="hero mindb" style="margin-top:28px"><img src="img/mind-banner.jpg?v=2" alt=""><div class="in"><h3>Breathe.<br>Relax.<br>Be Present.</h3><p>Find calm in every moment.</p></div><button class="pp" aria-label="Play" data-toast="Playing: Breathe. Relax. Be Present."><svg data-i="play"></svg></button></div>
     <div class="sec" style="margin-top:24px"><h2>Guided Sessions</h2><a href="#mind">See all</a></div>
     <div class="chips" data-chips style="margin-top:0"><button class="chip on">All</button><button class="chip">Sleep</button><button class="chip">Stress Relief</button><button class="chip">Focus</button><button class="chip">Anxiety</button></div>
     <div class="list" style="margin-top:18px" id="mind-list"></div>
@@ -1340,7 +1343,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <section class="screen" data-screen="motivation">
   <div class="status" data-status></div>
   <div class="scroll"><div class="top pad">
-    <button class="back circle" data-back="explore" aria-label="Back"><svg data-i="arrowl"></svg></button>
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <h1 class="h1">Motivation</h1><p class="sub">Inspire your best self.</p>
     <div class="insp" style="margin-top:22px"><div class="lbl">DAILY INSPIRATION</div><q>The only limit to our realization of tomorrow will be our doubts of today.</q><div class="by">- Franklin D. Roosevelt</div></div>
     <div class="sec" style="margin-top:26px"><h2>Daily Challenges</h2></div>
@@ -1355,10 +1358,10 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <section class="screen" data-screen="yoga">
   <div class="status" data-status></div>
   <div class="scroll"><div class="top pad">
-    <button class="back circle" data-back="explore" aria-label="Back"><svg data-i="arrowl"></svg></button>
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <h1 class="h1">Yoga</h1><p class="sub">Balance body &amp; mind.</p>
     <div class="chips" data-chips><button class="chip on">All</button><button class="chip">Beginner</button><button class="chip">Intermediate</button><button class="chip">Advanced</button></div>
-    <button class="hero yfeat" data-toast="Playing: Morning Flow"><img src="img/yoga-featured.jpg" alt=""><span class="fb">FEATURED</span><div class="in"><h3>Morning Flow</h3><p>20 min · Energize Your Core</p></div></button>
+    <button class="hero yfeat" data-toast="Playing: Morning Flow"><img src="img/yoga-featured.jpg?v=2" alt=""><span class="fb">FEATURED</span><div class="in"><h3>Morning Flow</h3><p>20 min · Energize Your Core</p></div></button>
     <div class="sec" style="margin-top:22px"><h2>Yoga Sessions</h2></div>
     <div class="list">
       <div class="card row ys"><img class="thumb" src="img/yoga-s1.jpg" alt=""><div class="grow"><b>Vinyasa Flow</b><span>30 min · Intermediate</span></div><button class="playc" aria-label="Play" data-toast="Playing: Vinyasa Flow"><svg data-i="playo"></svg></button></div>
@@ -1374,7 +1377,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
 <section class="screen" data-screen="bmi">
   <div class="status" data-status></div>
   <div class="scroll"><div class="top pad">
-    <button class="back circle" data-back="explore" aria-label="Back"><svg data-i="arrowl"></svg></button>
+    <button class="sq bk" data-back="explore" aria-label="Back"><svg data-i="chevl"></svg></button>
     <h1 class="h1">BMI Calculator</h1><p class="sub">Know your numbers.</p>
     <div class="seg" id="sex"><button class="on">Male</button><button>Female</button></div>
     <div class="field"><label for="b-h">Height</label><span class="v"><input id="b-h" type="number" inputmode="decimal" value="170"> cm</span></div>
@@ -1466,7 +1469,7 @@ button.card:active,.cat:active,.hero:active,.btn:active,.chip:active,.qa button:
       <span class="timer"><svg data-i="userf"></svg><span id="timer">14:32</span></span>
     </div>
     <div class="video">
-      <img src="img/aria-main.jpg" alt="Coach Aria">
+      <img src="img/aria-main.jpg?v=2" alt="Coach Aria">
       <span class="scan"><svg data-i="scan"></svg>AI MOTION SCAN ACTIVE</span>
       <div class="cap"><small>ARIA (AI COACH)</small><p id="caption">"Perfect alignment. Now, keep your core engaged and exhale slowly."</p></div>
       <div class="pip" id="pip"><img src="img/aria-pip.jpg" alt="You"></div>
@@ -1968,7 +1971,7 @@ const SKILL_META={Attention:['Improve focus & concentration','img/mg1.jpg'],Memo
 const SKILL_COLOR={Attention:'linear-gradient(135deg,#e96f69,#c9474f)',Memory:'linear-gradient(135deg,#7c5cf0,#5636c9)',Coordination:'linear-gradient(135deg,#2f8fd8,#1f62b0)',Perception:'linear-gradient(135deg,#f2a516,#d9780b)',Reasoning:'linear-gradient(135deg,#0b7a5e,#075844)'};
 const SKILL_WHY={Attention:'Attention games train you to filter distractions and stay locked on what matters. A few rounds a day can sharpen focus for work, study and workouts.',Memory:'Memory games strengthen short-term recall by asking you to hold and match patterns. Regular play keeps names, numbers and lists easier to remember.',Coordination:'Coordination games link what you see with how fast you react. They improve hand-eye timing and reaction speed, which also helps in sports.',Perception:'Perception games teach you to spot colours, shapes and small differences faster. They sharpen visual processing and attention to detail.',Reasoning:'Reasoning games challenge logic and planning. Solving puzzles step by step builds problem-solving skills you use every day.'};
 const FAVS=new Set();
-const MIND_THUMBS=['img/mind-s1.jpg','img/mind-s2.jpg','img/mind-s3.jpg','img/mind-s4.jpg'];
+const MIND_THUMBS=['img/mind-s1.jpg?v=2','img/mind-s2.jpg?v=2','img/mind-s3.jpg?v=2','img/mind-s4.jpg?v=2'];
 const CAT_LABEL={lifestyle:'Lifestyle',workout:'Workout',diet:'Diet'};
 const gram=v=>v.replace(/\s*grams?/i,'g');
 
